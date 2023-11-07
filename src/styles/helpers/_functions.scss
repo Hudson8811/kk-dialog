@@ -1,0 +1,37 @@
+@use 'sass:math';
+// @function rem($px) {
+//     @return ($px / 16) +rem;
+// }
+
+@function vw($px, $resolutiond: 1920) {
+	$temp: #{math.div($px, $resolutiond) * 100};
+	@return $temp +'vw';
+}
+@function vw2($px, $resolutiond: 390) {
+	$temp: #{math.div($px, $resolutiond) * 100};
+	@return $temp +'vw';
+}
+
+@function vh($px, $resolutiond: 1080) {
+	$temp: #{math.div($px, $resolutiond) * 100};
+	@return $temp +'vh';
+}
+
+@function vh2($px, $resolutiond: 1024) {
+	$temp: #{math.div($px, $resolutiond) * 100};
+	@return $temp +'vh';
+}
+
+@function _get-media-width($width, $maxmin) {
+	@if map-get($media-list, $width) {
+		$width: map-get($media-list, $width);
+
+		@if $maxmin {
+			@return $width;
+		} @else {
+			@return $width + 1;
+		}
+	} @else {
+		@return $width;
+	}
+}

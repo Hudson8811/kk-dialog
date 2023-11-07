@@ -1,0 +1,99 @@
+.footer {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	background: $fonBlack;
+	color: #fff;
+	z-index: 60;
+	&__section {
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		background: $fonBlack;
+		
+		.layout--trio {
+			min-height: vw(925);
+			&__col {
+				flex-flow: column nowrap;
+				padding-top: vw(30);
+				padding-bottom: vw(30);
+				&:nth-child(1) {
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+	&__title {
+		color: #fff;
+	}
+	&__politic {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		&__title {
+			color: #fff;
+		}
+		&__text {
+			color: #fff;
+			display: flex;
+			justify-content: flex-end;
+			width: 100%;
+			max-width: vw(290);
+			text-align: right;
+		}
+
+	}
+	&__menu {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+		flex-flow: column nowrap;
+		margin-bottom: vw(90);
+		&__link {
+			position: relative;
+			display: block;
+			color: #fff;
+			cursor: pointer;
+			text-decoration: none;
+			transition: all 0.3s;
+			margin-bottom: vw(18);
+			&:hover {
+				transition: all 0.3s;
+				color: $green;
+			}
+
+		}
+		&--contacts {
+			.footer__menu__link {
+				margin-bottom: vw(9);
+			}
+		}
+	}
+	&__group {
+		position: absolute;
+		left: vw(30);
+		bottom: vw(30);
+		color: #fff;
+	}
+	.contacts__form {
+		&__title {
+			margin-bottom: vw(155);
+		}
+		&__input {
+			&--name  {
+				margin-bottom: vw(70);
+			}
+		}
+		&__textarea {
+			min-height: vw(259);
+		}
+		&__btn {
+			min-height: vw(82);
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+@mixin max($width) {
+	$width: _get-media-width($width, true);
+	@media only screen and (max-width: $width + 'px') {
+		@content;
+	}
+}
+
+@mixin min($width) {
+	$width: _get-media-width($width,false);
+	@media only screen and (min-width: $width + 'px') {
+		@content;
+	}
+}
