@@ -53,11 +53,10 @@ block content
 		.container
 			.layout--trio
 				.layout--trio__col.js-animation__col--1
-
 				.layout--trio__col.js-animation__col--2
 					.animation__title.title__60 
 						!='<p>"Dиалог"</p> - российский производитель №1 оборудования <span>для организации эффективных, комфортных и безопасных мест для курения.</span>'
-					.card
+					a(href="#").card
 						.card__title
 							!="Курительные  <br>кабины"
 						.card__picture 
@@ -69,7 +68,7 @@ block content
 									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>									
-					.card
+					a(href="#").card
 						.card__title
 							!="Уличные павильоны <br>для курения"
 						.card__picture 
@@ -81,7 +80,7 @@ block content
 									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>									
-					.card
+					a(href="#").card
 						.card__title
 							!="Курительные  <br>столы"
 						.card__picture 
@@ -93,7 +92,7 @@ block content
 									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>									
-					.card.card--opacity
+					a(href="#").card.card--opacity
 						.card__title
 							!="Оборудование <br>курительных комнат"
 						.card__bottom
@@ -102,7 +101,7 @@ block content
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>					
 				.layout--trio__col.js-animation__col--3
-					.card
+					a(href="#").card
 						.card__title
 							!="Павильоны для курения <br>с вытяжной вентиляцией"
 						.card__picture 
@@ -114,7 +113,7 @@ block content
 									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>									
-					.card
+					a(href="#").card
 						.card__title
 							!="Воздухоочистители от <br>табачного дыма и запаха"
 						.card__picture 
@@ -129,20 +128,67 @@ block content
 	
 	.section(id="main3" data-color="white").industry__section.section--white
 		.container
-			.layout--trio
+			.layout--trio.industry__slider--all
 				.layout--trio__col
 				.layout--trio__col
-					.industry__title.title__60 
-						!="Почему «Диалог» – производитель <span>№ 1 в России?</span>"
-					.industry__desc
-						.industry__subtitle.title__32 Производство комплектов фильтров
-						.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
+					.swiper-container.industry__slider.industry__slider--one.js-industry--one__slider
+						.swiper-wrapper
+							.industry__slide.swiper-slide
+								.industry__title.title__60 
+									!="Почему «Диалог» – производитель <span>№ 1 в России?</span>"
+								.industry__desc
+									.industry__subtitle.title__32 Производство комплектов фильтров
+									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
+							
+							.industry__slide.swiper-slide
+								.industry__title.title__60 
+									!="Почему «Диалог» – производитель <span>№ 2 в России?</span>"
+								.industry__desc
+									.industry__subtitle.title__32 Производство комплектов фильтров
+									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
+							
+							.industry__slide.swiper-slide
+								.industry__title.title__60 
+									!="Почему «Диалог» – производитель <span>№ 3 в России?</span>"
+								.industry__desc
+									.industry__subtitle.title__32 Производство комплектов фильтров
+									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
+							
+							.industry__slide.swiper-slide
+								.industry__title.title__60 
+									!="Почему «Диалог» – производитель <span>№ 4 в России?</span>"
+								.industry__desc
+									.industry__subtitle.title__32 Производство комплектов фильтров
+									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
+							
 				.layout--trio__col
-					.industry__label 
-						.industry__label__date 02
-						.industry__label__num /03
-					.industry__picture 
-						img(src="img/industry__picture__1.png", alt="")
+					//- .industry__label 
+					//- 	.industry__label__date 02
+					//- 	.industry__label__num /03
+					.swiper-container.industry__slider.industry__slider--two.js-industry--two__slider
+						.swiper-wrapper
+							.industry__slide.swiper-slide
+								.industry__picture 
+									img(src="img/industry__picture__1.png", alt="")
+							.industry__slide.swiper-slide
+								.industry__picture 
+									img(src="img/industry__picture__2.png", alt="")
+							.industry__slide.swiper-slide
+								.industry__picture 
+									img(src="img/industry__picture__1.png", alt="")
+							.industry__slide.swiper-slide
+								.industry__picture 
+									img(src="img/industry__picture__2.png", alt="")
+						.swiper-buttons
+							.swiper-button-prev
+								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+								<path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
+								</svg>
+							.swiper-button-next
+								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+								<path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
+								</svg>
+					.swiper-pagination.swiper-pagination__industry__slider--two
 	.section(id="main4" data-color="gray").certification__section.section--gray
 		.container
 			.layout--trio
@@ -152,9 +198,9 @@ block content
 						!="Сертификацияи законодательство"
 					.certification__text.text__20 
 						!="Наш производственный холдинг «Диалог» предлагает свои услуги в организации мест курения с использованием курительных кабин, техническое исполнение которых полностью отвечает требованиям нового закона и дает потребителям значительные удобства своею простотой и универсальностью. Курительные кабины «Диалог» надежно и полностью локализуют табачный дым и запахи, благодаря встроенной автоматической системе рециркуляционной воздухоочистки. При этом не требуются подсоединение кабины к системе вентиляции, и не требуется выделение специального изолированного помещения. Кабина может быть установлена в любом удобном месте, позволяющем подключиться к обычной электрической розетке. Встроенная вентиляционная система и подсветка включается автоматически, работает с низким уровнем шума и электропотребления, с автоматическим включением и отключением по окончании пользования."
-					.certification__btn.btn Подробнее
+					a(href="#").certification__btn.btn Подробнее
 				.layout--trio__col
-					.card.card--format
+					a(href="#").card.card--format
 						.card__title
 							!="Федеральный закон Российской Федерации от 23 февраля 2013 г. N 15-ФЗ"
 						.card__bottom
@@ -164,7 +210,7 @@ block content
 									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>		
-					.card.card--format
+					a(href="#").card.card--format
 						.card__title
 							!="Федеральный закон Российской Федерации от 23 февраля 2013 г. N 15-ФЗ"
 						.card__bottom
@@ -185,6 +231,15 @@ block content
 				.layout--reverse__col
 					.swiper-container.clients__slider.js-clients__slider
 						.swiper-wrapper
+							.clients__slide.swiper-slide
+								img(src="img/clients__slide__1.png", alt="")
+						
+							.clients__slide.swiper-slide
+								img(src="img/clients__slide__2.png", alt="")
+						
+							.clients__slide.swiper-slide
+								img(src="img/clients__slide__3.png", alt="")
+						
 							.clients__slide.swiper-slide
 								img(src="img/clients__slide__1.png", alt="")
 						

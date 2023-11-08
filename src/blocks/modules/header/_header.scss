@@ -11,19 +11,36 @@
 	z-index: 9999;
 	height: vw(110);
 	box-sizing: border-box;
-	// @include max(mdHeader) {
-	// 	height: 55px;
-	// }
+	@include max(md) {
+		height: vw2(50);
+	}
 	.layout {
 		height: 100%;
+		@include max(md) {
+			flex-flow: row nowrap;
+		}
 		&__col {
 			&:nth-child(1) {
 				padding-top: vw(20);
 				background: #EFEFEF;
+				@include max(md) {
+					flex:1 0 66.666%;
+					max-width: 66.666%;
+					border-right: none;
+					padding-right: vw2(15);
+					padding-left: vw2(15);
+					background: #fff;
+				}
 			}
 			&:nth-child(2) {
 				padding-top: vw(20);
 				background: #fff;
+				@include max(md) {
+					max-width: vw(629);
+					flex:1 0 33.333%;
+					max-width: 33.333%;
+					padding-right: vw2(15);
+				}
 			}
 		}
 	}
@@ -33,7 +50,7 @@
 		height: 18px;
 		padding: 0;
 		margin-top: -8px;
-		@include max(mdHeader) {
+		@include max(md) {
 			display: block;
 		}
 		&-box {
@@ -70,6 +87,9 @@
 		justify-content: space-between;
 		align-items: center;
 		height: 100%;
+		@include max(md) {
+			max-width: 100%;
+		}
 	}
 }
 
@@ -100,14 +120,6 @@
 		align-items: center;
 		width: 65%;
 		height: 100%;
-
-		@include max(lg) {
-			width: 65%;
-		}
-		@include max(mdHeader) {
-			width: 89%;
-			display: none;
-		}
 		&__item {
 			position: relative;
 			display: flex;
@@ -164,9 +176,6 @@
 			flex-flow: column nowrap;
 			opacity: 0;
 			transition: all .3s;
-			@include max(lg) {
-				min-width: auto;
-			}
 			&.active {
 				display: flex;
 				opacity: 1;
@@ -386,12 +395,12 @@
 			margin-right: 0;
 			&--mob {
 				display: none;
-				@include max(mdHeader) {
+				@include max(md) {
 					display: flex;
 				}
 			}
 			&--desc {
-				@include max(mdHeader) {
+				@include max(md) {
 					display: none;
 				}
 			}

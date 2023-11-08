@@ -7,7 +7,7 @@
 	$temp: #{math.div($px, $resolutiond) * 100};
 	@return $temp +'vw';
 }
-@function vw2($px, $resolutiond: 390) {
+@function vw2($px, $resolutiond: 576) {
 	$temp: #{math.div($px, $resolutiond) * 100};
 	@return $temp +'vw';
 }
