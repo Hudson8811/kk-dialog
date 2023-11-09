@@ -3612,7 +3612,7 @@ body {
 }
 
 .title__60 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 3.125vw;
   font-style: normal;
   font-weight: 500;
@@ -3632,7 +3632,7 @@ body {
 }
 
 .title__40 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 2.0833333333vw;
   font-style: normal;
   font-weight: 500;
@@ -3652,7 +3652,7 @@ body {
 }
 
 .title__32 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 1.6666666667vw;
   font-style: normal;
   font-weight: 500;
@@ -3672,7 +3672,7 @@ body {
 }
 
 .text__16 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 0.8333333333vw;
   font-style: normal;
   font-weight: 400;
@@ -3682,7 +3682,7 @@ body {
 }
 
 .text__24 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 1.25vw;
   font-style: normal;
   font-weight: 400;
@@ -3691,7 +3691,7 @@ body {
 }
 
 .text__20 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 1.0416666667vw;
   font-style: normal;
   font-weight: 400;
@@ -3700,7 +3700,7 @@ body {
 }
 
 .text__13 {
-  color: #212A39;
+  color: #0C2448;
   font-size: 0.6770833333vw;
   font-style: normal;
   font-weight: 500;
@@ -4467,6 +4467,7 @@ body {
 .industry__title {
   max-width: 29.53125vw;
   margin-bottom: 1.0416666667vw;
+  color: #0C2448;
 }
 
 .industry__desc {
@@ -4640,7 +4641,6 @@ body {
   padding-bottom: 1.875vw;
   justify-content: flex-start;
   flex-flow: column nowrap;
-  border-right: none;
 }
 
 .certification__section .layout--trio__col:nth-child(3) {
@@ -4650,10 +4650,14 @@ body {
 
 .certification__title {
   margin-bottom: 3.8541666667vw;
+  color: #0C2448;
+  font-weight: 500;
 }
 
 .certification__text {
   margin-bottom: 1.4583333333vw;
+  max-width: 25.8854166667vw;
+  color: #0C2448;
 }
 
 .clients__section .layout--reverse {
@@ -6163,6 +6167,10 @@ body {
 
   .industry__slider--two {
     height: 86.8055555556vw;
+  }
+
+  .certification__section .layout--trio__col:nth-child(2) {
+    border-right: none;
   }
 
   .certification__title {
