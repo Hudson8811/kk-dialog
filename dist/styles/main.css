@@ -5452,8 +5452,8 @@ body {
   line-height: normal;
   letter-spacing: 0.1215277778vw;
   text-decoration: none;
-  width: 7.6388888889vw;
-  height: 7.6388888889vw;
+  width: 4.1666666667vw;
+  height: 4.1666666667vw;
   transition: all 0.3s;
   border-radius: 1.2152777778vw;
   margin-left: 3.4722222222vw;
@@ -5712,6 +5712,10 @@ body {
   align-items: flex-end;
 }
 
+.footer__politic--mob {
+  display: none;
+}
+
 .footer__politic__title {
   color: #fff;
 }
@@ -5758,6 +5762,17 @@ body {
   left: 1.5625vw;
   bottom: 1.5625vw;
   color: #fff;
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.footer__group:hover {
+  transition: all 0.3s;
+  color: #25CA6A;
 }
 
 .footer .contacts__form__title {
@@ -6035,6 +6050,10 @@ body {
     padding-top: 3.4722222222vw;
   }
 
+  .animation__bg {
+    display: none;
+  }
+
   .animation__desc__picture {
     max-width: 50.5208333333vw;
     margin-bottom: 8.6805555556vw;
@@ -6264,12 +6283,39 @@ body {
     max-width: 100%;
     flex: 1 0 100%;
     border-right: none;
-    min-height: 39.9305555556vw;
+    min-height: 22.5694444444vw;
     margin-bottom: 5.2083333333vw;
+    order: 1;
+    padding: 0;
+    padding-top: 3.4722222222vw;
+  }
+
+  .footer__section .layout--trio__col:nth-child(2) {
+    flex-flow: row nowrap;
+    order: 2;
+    margin-bottom: 8.6805555556vw;
+  }
+
+  .footer__section .layout--trio__col:nth-child(3) {
+    padding-bottom: 5.2083333333vw;
+    order: 3;
+  }
+
+  .footer__politic--desc {
+    display: none;
+  }
+
+  .footer__politic--mob {
+    display: flex;
+    margin-top: 5.2083333333vw;
   }
 
   .footer__politic__text {
     max-width: 50.3472222222vw;
+  }
+
+  .footer__group {
+    left: 0;
   }
 }
 

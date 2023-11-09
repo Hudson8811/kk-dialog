@@ -27,11 +27,25 @@
 						max-width: 100%;
 						flex: 1 0 100%;
 						border-right: none;
-						min-height: vw2(230);
+						min-height: vw2(130);
 						margin-bottom: vw2(30);
+						order:1;
+						padding: 0;
+						padding-top: vw2(20);
 					}
 				}
 				&:nth-child(2) {
+					@include max(md) {
+						flex-flow: row nowrap;
+						order: 2;
+						margin-bottom: vw2(50);
+					}
+				}
+				&:nth-child(3) {
+					@include max(md) {
+						padding-bottom: vw2(30);
+						order: 3;
+					}
 				}
 			}
 		}
@@ -44,6 +58,18 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		&--desc{
+			@include max(md) {
+				display: none;
+			}
+		}
+		&--mob{
+			display: none;
+			@include max(md) {
+				display: flex;
+				margin-top: vw2(30);
+			}
+		}
 		&__title {
 			color: #fff;
 		}
@@ -92,6 +118,19 @@
 		left: vw(30);
 		bottom: vw(30);
 		color: #fff;
+		text-decoration: none;
+		display: block;
+		color: #fff;
+		cursor: pointer;
+		text-decoration: none;
+		transition: all 0.3s;
+		&:hover {
+			transition: all 0.3s;
+			color: $green;
+		}
+		@include max(md) {
+			left: 0;
+		}
 	}
 	.contacts__form {
 		&__title {

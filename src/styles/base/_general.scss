@@ -991,6 +991,9 @@ body {
         top: 0;
         right: 0;
         width: 100%;
+        @include max(md) {
+            display: none;
+        }
         img, picture {
             position: relative;
             display: block;
