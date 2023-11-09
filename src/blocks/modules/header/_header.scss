@@ -12,7 +12,7 @@
 	height: vw(110);
 	box-sizing: border-box;
 	@include max(md) {
-		height: vw2(50);
+		height: vw2(70);
 	}
 	.layout {
 		height: 100%;
@@ -24,11 +24,13 @@
 				padding-top: vw(20);
 				background: #EFEFEF;
 				@include max(md) {
-					flex:1 0 66.666%;
-					max-width: 66.666%;
+					flex:1 0 33.333%;
+					max-width: 33.333%;
 					border-right: none;
 					padding-right: vw2(15);
 					padding-left: vw2(15);
+					padding-bottom: vw2(10);
+					padding-top: vw2(10);
 					background: #fff;
 				}
 			}
@@ -36,48 +38,50 @@
 				padding-top: vw(20);
 				background: #fff;
 				@include max(md) {
-					max-width: vw(629);
-					flex:1 0 33.333%;
-					max-width: 33.333%;
+					flex:1 0 66.666%;
+					max-width: 66.666%;
 					padding-right: vw2(15);
+					padding-left: vw2(15);
+					padding-bottom: vw2(10);
+					padding-top: vw2(10);
 				}
 			}
 		}
 	}
 	.hamburger {
 		display: none;
-		width: 20px;
-		height: 18px;
+		width: vw2(20);
+		height: vw2(18);
 		padding: 0;
-		margin-top: -8px;
+		margin-top: vw2(-8);
 		@include max(md) {
 			display: block;
 		}
 		&-box {
-			width: 20px;
-			height: 18px;
+			width: vw2(20);
+			height: vw2(18);
 		}
 		.hamburger-inner,
 		.hamburger-inner::before,
 		.hamburger-inner::after {
-			width: 20px;
-			height: 2px;
+			width: vw2(20);
+			height: vw2(2);
 		}
 		.hamburger-inner::after {
-			top: -10px; 
+			top: vw2(-10); 
 			bottom: auto;
 		}
 		.hamburger-inner::before{
-			top: -5px;
-			width: 15px;
+			top: vw2(-5);
+			width: vw2(-15);
 		}
 		
 		&.is-active {
 			.hamburger-inner{
-				transform: translate3d(0, -5px, 0) rotate(-45deg);
+				transform: translate3d(0, vw2(-5), 0) rotate(-45deg);
 				&::before{
 					top: 0px;
-					width: 20px;
+					width: vw2(20);
 				}
 			}
 		}
@@ -103,6 +107,11 @@
 		width: vw(217);
 		min-width: vw(217);
 		margin-right: vw(37);
+		@include max(md) {
+			width: vw2(140);
+			min-width: vw2(140);
+			margin-right: vw2(20);			
+		}
 		img {
 			position: relative;
 			display: inline-block;
@@ -120,6 +129,9 @@
 		align-items: center;
 		width: 65%;
 		height: 100%;
+		@include max(md) {
+			display: none;
+		}
 		&__item {
 			position: relative;
 			display: flex;
@@ -329,6 +341,9 @@
 		align-items: center;
 		flex-flow: row nowrap;
 		width: fit-content;
+		@include max(md) {
+			display: none;
+		}
 		&__item {
 			position: relative;
 			display: flex;
@@ -413,25 +428,28 @@
 		align-items: center;
 		height: 100%;
 		width: 100%;
+		@include max(md) {
+			justify-content: space-between;
+		}
 	}
 }
 .mob-menu {
 	position: relative;
 	display: flex;
 	width: 100%;
-	max-width: 400px;
-	padding: 32px  16px 44px 16px;
-	padding-top: 40px;
+	max-width: vw2(390);
+	padding: vw2(32) vw2(16) vw2(44) vw2(16);
+	padding-top: vw2(40);
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	z-index: 9999;
 	background: $mainDark;
-	height: calc(100vh - vw(54));
+	height: calc(100vh - vw2(70));
 	overflow-y: auto;
 	&__section {
 		position: fixed;
-		top: 55px;
+		top: vw2(70);
 		left: 100vw;
 		width: 0vw;
 		height: 0vh;
@@ -463,7 +481,7 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		background: rgba(6, 6, 6, 0.592);
+		background: rgba(12, 36, 72, 0.5);
 		z-index: 990;
 	}
 	&--list {
@@ -512,12 +530,13 @@
 		display: block;
 		color: $white;
 		text-align: right;
-		font-size: 22px;
+		font-size: vw2(22);
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
-		letter-spacing: 1.1px;
+		letter-spacing: vw2(1.1);
 		text-transform: uppercase;
+		margin-bottom: vw2(20);
 
 		a {
 			display: block;
@@ -525,16 +544,16 @@
 			position: relative;
 			color: $white;
 			text-align: right;
-			font-size: 22px;
+			font-size: vw2(22);
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
-			letter-spacing: 1.1px;
+			letter-spacing: vw2(1.1);
 			text-transform: uppercase;
 			transition: all 0.3s;
 			&:hover {
 				transition: all 0.3s;
-				color: $grey;
+				color: $green;
 			}		
 		}
 
@@ -581,8 +600,8 @@
 		flex-flow: row nowrap;
 		left: auto;
 		top: auto;
-		margin-top: 22px;
-		margin-left: -12px;
+		margin-top: vw2(22);
+		margin-left: vw2(-12);
 		&__text {
 			display: none;
 		}
@@ -591,18 +610,31 @@
 			justify-content: center;
 			align-items: center;
 			color: #fff;
-			font-size: 14px;
+			font-size: vw2(14);
 			font-style: normal;
 			font-weight: 500;
 			line-height: normal;
-			letter-spacing: 0.7px;
+			letter-spacing: vw2(0.7);
 			text-decoration: none;
-			width: 44px;
-			height: 44px;
+			width: vw2(44);
+			height: vw2(44);
 			transition: all 0.3s;
-			border-radius: 7px;
+			border-radius: vw2(7);
+			margin-left: vw2(20);
 			&__text {
 				display: none;
+			}
+			&__picture {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				display: block;
+				img {
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
 			}
 			&:hover {
 				transition: all 0.3s;
@@ -610,200 +642,147 @@
 			}
 		}
 	}
-	.mob-menu--list.accordions{
-		.accordion {
-			width: 100%;
-			overflow: hidden;
+	.mob-menu--list{
+		&__item {
 			position: relative;
-			margin-bottom: 0px;
 			display: block;
-			&__intro {
-				position: relative;
-				cursor: pointer;
-				color: $grey;
-				font-size: 14px;
+			color: #fff;
+			font-size: vw2(25);
+			font-style: normal;
+			font-weight: 300;
+			line-height: normal;
+			letter-spacing: vw2(0.5);
+			margin-bottom: vw2(16);
+			text-decoration: none;
+			text-transform: uppercase;
+			&--two {
+				font-size: vw2(18);
 				font-style: normal;
-				font-weight: 550;
+				font-weight: 300;
 				line-height: normal;
-				letter-spacing: 0.7px;
-				display: flex;
-				text-transform: uppercase;
-				background: transparent;
-				flex-flow: row nowrap;
-				justify-content: flex-start;
-				align-items: center;
-				transition: all 0.3s;
-				margin-bottom: 30px;
-				&:hover {
-					transition: all 0.3s;
-					color: $white;
-					svg {
-						fill: $white;
-						path {
-							fill: $white;
-						}
-					}
+				letter-spacing: vw2(0.5);
+				margin-bottom: vw2(10);
+				margin-left: vw2(20);				
+			}
+		}
+		.accordion-group { 
+			position: relative;
+			// margin-bottom: vw2(16);
+			// min-height: vw2(28);
+			width: 100%;
+		}
+		.accordion-link + .accordion-header.open {
+			color: #25CA6A;
+
+		}
+		.accordion-link {
+			position: relative;
+			top: 0;
+			left: vw2(25);
+			width: 100%;
+			color: #fff;
+			font-size: vw2(25);
+			font-style: normal;
+			font-weight: 300;
+			line-height: normal;
+			letter-spacing: vw2(0.5);
+			margin-bottom: vw2(16);
+			margin-bottom: 0px;
+			margin-left: 0px;
+			cursor: pointer;
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 0px;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+		.accordion-body {
+				display: none;
+				padding-left: vw2(10);
+				margin-bottom: vw2(20);
+				width: 100%;
+		}
+		// .accordion-body > * > .accordion-body {
+		// 		margin: 0;
+		// }
+		.accordion-header {
+			color: #fff;
+			font-size: vw2(25);
+			font-style: normal;
+			font-weight: 300;
+			line-height: normal;
+			letter-spacing: vw2(0.5);
+			margin-bottom: vw2(16);
+			margin-left: vw2(25);
+			cursor: pointer;
+			position: relative;
+			display: flex;
+			justify-content: flex-start;
+			min-height: vw2(28);
+			padding-left: 0px;
+			text-transform: uppercase;
+			&::before {
+				content: url(../img/folder.svg);
+				margin-right: vw2(8);
+				position: relative;
+				height: vw2(12);
+				display: none;
+			}
+		}
+		.accordion-header::after {
+				content: url(../img/svg/open__row.svg);
+				color: #25CA6A;
+				position: absolute;
+				width: vw2(20);
+				height: vw2(20);
+				left: vw2(-25);
+				top: vw2(-5);
+				height: vw2(12);
+				transition: all .3s;
+				transform: rotate(45deg);
+				animation-name: accordionRotationOpen;
+				animation-duration: .2s;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
+		}
+		.accordion-link + .accordion-header.open {
+			color: $green;
+		}
+		.accordion-header.open {
+				color: #25CA6A;
+				margin-bottom: vw2(16);
+				&::before {
+					content: url(../img/folder__red.svg);
 				}
-				&__img {
-					width: auto;
-					height: auto;
-					display: flex;
-					justify-content: flex-start;
-					align-items: center;
-					margin-right: 13px;
-					animation-name: rotationCloseMenuSidebar;
+				&::after {
+					animation-name: accordionRotationClose;
 					animation-duration: .2s;
 					animation-iteration-count: 1;
 					animation-timing-function: linear;
 					animation-fill-mode: forwards;
-					margin-left: 15px;
-					&:hover {
-						background: transparent;
-					}
 				}
-				a {
-					position: relative;
-					cursor: pointer;
-					color: #fff;
-					font-size: 14px;
-					font-style: normal;
-					font-weight: 500;
-					line-height: normal;
-					letter-spacing: 0.7px;
-					text-transform: uppercase;
-					padding-right: 0;
-					background: transparent;
-					flex-flow: row nowrap;
-					text-decoration: none;
-					width: 100%;
-					transition: all 0.3s;
-					&:hover {
-						transition: all 0.3s;
-						color: $white;
-					}
-				}
-				p {
-					color: $grey;
-					font-size: 14px;
-					font-style: normal;
-					font-weight: 500;
-					line-height: normal;
-					letter-spacing: 0.7px;
-					transition: all 0.3s;
-					&:hover {
-						transition: all 0.3s;
-						color: $white;
-					}
-				}
-			} 
-		
-			&__content {
-				max-height: 0;
-				overflow: hidden;
-				will-change: max-height;
-				transition: all 0.25s ease-out;
-				opacity: 0;
-				position: relative;
-				background: transparent;
-				max-width: 98%;
-				transition: all 0.1s;
-				cursor: pointer;
-				color: $grey;
-				font-size: 14px;
-				font-style: normal;
-				font-weight: 550;
-				line-height: normal;
-				letter-spacing: 0.7px;
-				display: flex;;
-				justify-content: flex-start;
-				align-items: flex-start;
-				flex-flow: column;
-				margin-bottom: 0;
-				a {
-					color: $grey;
-					font-size: 14px;
-					font-style: normal;
-					font-weight: 550;
-					line-height: normal;
-					letter-spacing: 0.7px;
-					padding-right: 50px;
-					margin-bottom: 22px;
-					width: 100%;
-					transition: all 0.3s;
-					text-decoration: none;
-					&:hover {
-						transition: all 0.3s;
-						color: $white;
-					}
-				}
-			} 
-		
-			&__active {
-				.accordion__intro {
-					color: $white;
-					font-size: 14px;
-					font-style: normal;
-					font-weight: 500;
-					line-height: normal;
-					letter-spacing: 0.7px;
-					transition: all 0.3s;
-					a {
-						color: $white;
-					}
-					p {
-						color: $white;
-					}
-					.accordion__intro__img {
-						animation-name: rotationOpenMenuSidebar;
-						animation-duration: .2s;
-						animation-iteration-count: 1;
-						animation-timing-function: linear;
-						animation-fill-mode: forwards;
-						svg {
-							fill: $white;
-							path {
-								fill: $white;
-							}
-						}
-	
-					}
-		
-				}
-				.accordion__content{
-					background: transparent;
-					opacity: 1;
-					width: 100%;
-					margin-left: 20px;
-					transition: all 0.1s;
-					margin-bottom: 30px;
-		
-				}
-		
-		
-			}
-		
-		
 		}
-		@keyframes rotationOpenMenuSidebar  {
+		@keyframes accordionRotationOpen  {
 			0% {
 				transform-origin: 50% 50%;
-				transform: rotate(0deg);
+				transform: rotate(30deg);
 			}
 		
 			100% {
 				transform-origin: 50% 50%;
-				transform: rotate(-90deg);
+				transform: rotate(0deg);
 			}
 		
 		}
-		@keyframes rotationCloseMenuSidebar {
+		@keyframes accordionRotationClose {
 			0% {
 				transform-origin: 50% 50%;
-				transform: rotate(-90deg);
+				transform: rotate(0deg);
 			}
 			100% {
 				transform-origin: 50% 50%;
-				transform: rotate(0deg);
+				transform: rotate(30deg);
 			}
 		
 		}

@@ -21,6 +21,17 @@
 				padding-bottom: vw(30);
 				&:nth-child(1) {
 					justify-content: space-between;
+					@include max(md) {
+						display: flex;
+						width: 100%;
+						max-width: 100%;
+						flex: 1 0 100%;
+						border-right: none;
+						min-height: vw2(230);
+						margin-bottom: vw2(30);
+					}
+				}
+				&:nth-child(2) {
 				}
 			}
 		}
@@ -42,6 +53,9 @@
 			justify-content: flex-end;
 			width: 100%;
 			max-width: vw(290);
+			@include max(md) {
+				max-width: vw2(290);
+			}
 			text-align: right;
 		}
 
