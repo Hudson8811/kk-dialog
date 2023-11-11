@@ -1,0 +1,66 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Contacts Page";
+
+block content
+	.header-bg.header-bg--full-white 
+		.container
+			.layout
+				.layout__col
+				.layout__col
+	.section.contacts__section.section--gray
+		.container
+			.contacts
+				.layout
+					.layout__col
+						.contacts__title.title__95 Контакты
+						.contacts__row
+							.contacts__name.text__13 Наши реквизиты
+							.contacts__option.text__20
+								p.text__20 
+									!="Курительные Кабины Диалог<br>115230, г.Москва, Варшавское шоссе, дом 46.<br>ИНН 7725825940 / КПП 507501001<br>р/с 40702810038000067203<br>в ПАО «СБЕРБАНК» г. Москва<br>к/с 30101810400000000225 БИК 044525225<br>e-mail: info@kk-dialog.ru"
+					
+						.contacts__row
+							.contacts__name.text__13 Департамент продаж
+							.contacts__option.text__20
+								p.text__20 
+									!="Центральный офис"
+								a(href="tel:+74997847890").contacts__link.link.text__20  +7 (499) 784-78-90 
+								a(href="mailto:sales@kk-dialog.ru").contacts__link.link.text__20  (( sales@kk-dialog.ru ))
+						.contacts__row
+							.contacts__name.text__13 По общим вопросам и экспортным поставкам:
+							.contacts__option.text__20
+								a(href="mailto:info@kk-dialog.ru").contacts__link.link.text__20  info@kk-dialog.ru
+						.contacts__row
+							.contacts__name.text__13 Контакты руководящих лиц ООО "Курительные Кабины Диалог"
+							.contacts__option.contacts__option--director.text__20
+								.contacts__director
+									.contacts__director__name.text__20
+										!="Руководитель проекта Варламов Алексей Игоревич,"
+									.contacts__director__contacts
+										a(href="mailto:varlamov@kk-dialog.ru").contacts__link.link.text__20  varlamov@kk-dialog.ru
+						
+								.contacts__director
+									.contacts__director__name.text__20
+										!="Руководитель проекта Варламов Алексей Игоревич,"
+									.contacts__director__contacts
+										a(href="mailto:varlamov@kk-dialog.ru").contacts__link.link.text__20  varlamov@kk-dialog.ru
+						
+								.contacts__director
+									.contacts__director__name.text__20
+										!="Руководитель проекта Варламов Алексей Игоревич,"
+									.contacts__director__contacts
+										a(href="mailto:varlamov@kk-dialog.ru").contacts__link.link.text__20  varlamov@kk-dialog.ru
+						
+								.contacts__director
+									.contacts__director__name.text__20
+										!="Руководитель проекта Варламов Алексей Игоревич,"
+									.contacts__director__contacts
+										a(href="mailto:varlamov@kk-dialog.ru").contacts__link.link.text__20  varlamov@kk-dialog.ru
+						
+					.layout__col
+						.contacts__map
+							#js-map.contacts__map__item
+								//- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aebeaff5254b284c038cedd4e4eace9ceb6df9e58d1e143167db02be7b369ebb9&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
