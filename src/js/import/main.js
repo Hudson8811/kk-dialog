@@ -1,8 +1,24 @@
 jQuery(function () { 
 
 
-
-
+  var list = $(".js-wrapper-boxes .box-more");
+	console.log(list)
+  var numToShow = 3; //сколько показывать элементов
+  var button = $(".more");
+  var numInList = list.length;
+  list.hide();
+  if (numInList > numToShow) {
+    button.show();
+  }
+  list.slice(0, numToShow).show();
+  button.click(function() {
+    var showing = list.filter(':visible').length;
+    list.slice(showing - 1, showing + numToShow).fadeIn();
+    var nowShowing = list.filter(':visible').length;
+    if (nowShowing >= numInList) {
+      button.hide();
+    }
+  });
 	function bodyNoScroll() {
 		let bodyBodymotionless = document.querySelector('body')
 		bodyBodymotionless.classList.add("Bodymotionless")
@@ -108,6 +124,7 @@ jQuery(function () {
 			// watchSlidesProgress: true,
 			// preventInteractionOnTransition: true,
 			// loop: true,
+			// spaceBetween: 30,
 			slidesPerView: 3,
 			navigation: {
 				nextEl: slider.find('.swiper-button-next')[0],
@@ -279,9 +296,27 @@ jQuery(function () {
     
 	});
 
+	function modalForm() {
+		// event.preventDefault();
+		$.fancybox.open({
+			src: "#modal-form",
+			type: "inline",
+			touch: false
 
+		});
+		
+	}	
+	$('.js-btn__modal-form').on('click', function () {
+		$.fancybox.close();
+		setTimeout(() => {
+			modalForm();
+			bodyNoScroll();
+		}, 500) 
 
-	
+	});
+	$(document).on('afterClose.fb', function( e, instance, slide ) {
+    bodyYesScroll();
+	});	
 
 });
 

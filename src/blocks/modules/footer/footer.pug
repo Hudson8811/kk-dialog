@@ -30,7 +30,7 @@ footer.footer
 						.contacts__form__bottom
 							a(href="#").contacts__form__btn.btn Отправить
 							.contacts__form__mess.text__16
-								!='"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa'
+								!='Нажатием на кнопку "Отправить" я даю согласие на обработку моих персональных данных.'
 								//- <div class="checkbox">
 								//- 	<input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
 								//- 	<label for="color-1">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa</label>
@@ -39,3 +39,22 @@ footer.footer
 						.footer__politic__title.text__16 Dиалог 2023
 						.footer__politic__text.text__16 Все права защищены. Использование любых материалов возможно только с разрешения правообладателя.				
 
+
+	//.js-btn__modal-form
+	<div id="modal-form" class="modal-reg" style="display:none">
+		form.contacts__form.contacts__form--white 
+			.contacts__form__title.title__32  Контактная форма
+			input(type="text", name="" placeholder="Имя").contacts__form__input.contacts__form__input--name.text__13
+			input(type="email", name="" placeholder="Email").contacts__form__input.text__13
+			//- input(type="tel", name="" placeholder="Телефон").contacts__form__input.js-mask-phone
+			textarea(name="", cols="30", rows="10" placeholder="Сообщение").contacts__form__textarea.text__13
+			.contacts__form__bottom
+				a(href="#").contacts__form__btn.btn Отправить
+				.contacts__form__mess.text__16
+					!='Нажатием на кнопку "Отправить" я даю согласие на обработку моих персональных данных.'
+					//- <div class="checkbox">
+					//- 	<input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
+					//- 	<label for="color-1">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa</label>
+					//- </div>
+
+	</div>
