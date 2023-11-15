@@ -102,7 +102,6 @@ jQuery(function () {
 
 
   var list = $(".js-wrapper-boxes .box-more");
-	console.log(list)
   var numToShow = 3; //сколько показывать элементов
   var button = $(".more");
   var numInList = list.length;
@@ -242,10 +241,9 @@ jQuery(function () {
 		group.find('.js-industry--one__slider').each(function () {
 				var slider = $(this)
 				industryOne = new Swiper(slider[0], {
-						centeredSlides: true,
-						centeredSlidesBounds: true,
 						slidesPerView: 1,
 						watchOverflow: true,
+						autoHeight: true,
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
 						// direction: 'horizontal',
@@ -272,6 +270,7 @@ jQuery(function () {
 						watchSlidesProgress: true,
 						preventInteractionOnTransition: true,
 						slidesPerView: 1,
+						autoHeight: true,
 						// thumbs: {
 						// 		swiper: industryOne
 						// },
