@@ -25,7 +25,8 @@
 				padding-top: vw(20);
 				background: transparent;
 				border-right: none;
-				padding-bottom: vw(17);
+				padding-bottom: vw(0);
+				padding-right: vw(20);
 				@include max(md) {
 					flex:1 0 33.333%;
 					max-width: 33.333%;
@@ -41,6 +42,8 @@
 				padding-top: vw(20);
 				background: transparent;
 				padding-bottom: vw(17);
+				padding-right: vw(15);
+				padding-left: 30px;
 				@include max(md) {
 					flex:1 0 66.666%;
 					max-width: 66.666%;
@@ -231,7 +234,7 @@
 				text-transform: uppercase;
 				padding-bottom: vw(9);
 				margin-bottom: vw(9);
-				border-bottom: vw(1) solid  rgba(0, 0, 0, 0.2);
+				border-bottom: 1px solid  rgba(0, 0, 0, 0.2);
 				text-transform: none;
 				&:last-child {
 					margin-bottom: 0;
@@ -291,8 +294,8 @@
 				flex-flow: column nowrap;
 				padding-left: vw(35);
 				padding-right: vw(35);
-				border-right: vw(1) solid rgba(0, 0, 0, 0.2);
-
+				border-right: 1px solid rgba(0, 0, 0, 0.2);
+				
 				&:first-child {
 					padding-left: 0;
 				}
@@ -332,14 +335,15 @@
 					text-transform: uppercase;
 					margin-bottom: vw(10);
 					text-transform: none;
+					width: 100%;
+					max-width: vw(170);
+					height: auto;
 					&:last-child {
 						margin-bottom: 0;
 					}
 					a{
 						position: relative;
-						display: flex;
-						justify-content: flex-start;
-						align-items: flex-start;
+						display: inline-block;
 						color: $black;
 						font-size: vw(13);
 						font-style: normal;
@@ -349,6 +353,10 @@
 						text-transform: uppercase;
 						text-decoration: none;
 						transition: all .3s;
+						width: 100%;
+						height: auto;
+						white-space: wrap;
+						text-align: left;
 						&:hover {
 							transition: all .3s;
 							color: $green;
@@ -386,7 +394,7 @@
 			text-decoration: none;
 			white-space: nowrap;
 			color: $fonBlack;
-			margin-right: vw(18);
+			margin-right: vw(8);
 			transition: all .3s;
 			cursor: pointer;
 			&:last-child {
@@ -454,6 +462,7 @@
 		align-items: flex-start;
 		height: 100%;
 		width: 100%;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 		@include max(md) {
 			justify-content: space-between;
 			align-items: center;
@@ -497,9 +506,14 @@
 				}
 				&:nth-child(2) {
 					background: #fff;
+					.header__buttons {
+						border-bottom: none;
+				
+					}	
 				}
 			}
 		}
+
 	}
 	&--full-gray {
 		.layout {
@@ -515,9 +529,14 @@
 				}
 				&:nth-child(2) {
 					background: #EFEFEF;
+					.header__buttons {
+						border-bottom: none;
+				
+					}	
 				}
 			}
 		}
+
 	}
 	&--combine {
 		.layout {

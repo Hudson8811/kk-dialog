@@ -34,35 +34,42 @@
 		&:hover {
 			transition: all .3s;
 			color: $grey;
-			&::after {
-				content: url(../img/svg/breadcrumbs--active.svg);
-			
+			svg  {
+
 			}
 		}
-		&::after {
-			position: relative;
-			display: block;
-			width: vw(10);
-			margin-left: vw(7);
-			margin-right: vw(7);
-			padding-bottom: vw(2);
-			content: url(../img/svg/breadcrumbs--active.svg);
-			@include max(sm) {
-				margin-left: vw2(7);
-				margin-right: vw2(7);
-			}
-		}
+		// &::after {
+		// 	position: relative;
+		// 	display: block;
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	align-items: center;
+		// 	width: vw(10);
+		// 	margin-left: vw(7);
+		// 	margin-right: vw(7);
+		// 	margin-bottom: vw(2);
+		// 	content: url(../img/svg/breadcrumbs--active.svg);
+		// 	@include max(sm) {
+		// 		margin-left: vw2(7);
+		// 		margin-right: vw2(7);
+		// 		margin-bottom: vw2(200);
+		// 	}
+		// }
 		svg {
 			position: relative;
 			display: block;
-			width: vw(10);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: vw(5);
 			margin-left: vw(7);
 			margin-right: vw(7);
-			padding-bottom: vw(2);
-			content: url(../img/svg/breadcrumbs--active.svg);
-			@include max(sm) {
+			margin-bottom: vw(2);
+			@include max(md) {
+				width: vw2(5);
 				margin-left: vw2(7);
 				margin-right: vw2(7);
+				margin-bottom: vw2(0);
 			}
 		}
 		&:last-child {

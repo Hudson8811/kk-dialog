@@ -143,7 +143,7 @@ jQuery(function () {
 				industryOne = new Swiper(slider[0], {
 						slidesPerView: 1,
 						watchOverflow: true,
-						autoHeight: true,
+						// autoHeight: true,
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
 						// direction: 'horizontal',
@@ -170,7 +170,7 @@ jQuery(function () {
 						watchSlidesProgress: true,
 						preventInteractionOnTransition: true,
 						slidesPerView: 1,
-						autoHeight: true,
+						// autoHeight: true,
 						// thumbs: {
 						// 		swiper: industryOne
 						// },
@@ -199,85 +199,83 @@ jQuery(function () {
 	  industryOne.controller.control = industryTwo;
 		industryTwo.controller.control = industryOne;
 	});
-	$(function ($, window, document, undefined) {
-    "use strict";
-    var pluginName = 'simpleAccordion',
-    defaults = {
-        multiple: false,
-        speedOpen: 300,
-        speedClose: 150,
-        easingOpen: null,
-        easingClose: null,
-        headClass: 'accordion-header',
-        bodyClass: 'accordion-body',
-        openClass: 'open',
-        defaultOpenClass: 'default-open',
-        cbClose: null, //function (e, $this) {},
-        cbOpen: null //function (e, $this) {}
-    };
-    function Accordion(element, options) {
-        this.$el = $(element);
-        this.options = $.extend({}, defaults, options);
-        this._defaults = defaults;
-        this._name = pluginName;
-        if (typeof this.$el.data('multiple') !== 'undefined') {
-            this.options.multiple = this.$el.data('multiple');
-            } else {
-            this.options.multiple = this._defaults.multiple;
-        }
-        this.init();
-    }
-    Accordion.prototype = {
-        init: function () {
-            var o = this.options,
-            $headings = this.$el.children('.' + o.headClass);
-            $headings.on('click', {_t:this}, this.headingClick);
-            $headings.filter('.' + o.defaultOpenClass).first().click();
-        },
-        headingClick: function (e) {
-            var $this = $(this),
-            _t = e.data._t,
-            o = _t.options,
-            $headings = _t.$el.children('.' + o.headClass),
-            $currentOpen = $headings.filter('.' + o.openClass);
-            if (!$this.hasClass(o.openClass)) {
-                if ($currentOpen.length && o.multiple === false) {
-                    $currentOpen.removeClass(o.openClass).next('.' + o.bodyClass).slideUp(o.speedClose, o.easingClose, function () {
-                        if ($.isFunction(o.cbClose)) {
-                            o.cbClose(e, $currentOpen);
-                        }
-                        $this.addClass(o.openClass).next('.' + o.bodyClass).slideDown(o.speedOpen, o.easingOpen, function () {
-                            if ($.isFunction(o.cbOpen)) {
-                                o.cbOpen(e, $this);
-                            }
-                        });
-                    });
-                    } else {
-                    $this.addClass(o.openClass).next('.' + o.bodyClass).slideDown(o.speedOpen, o.easingOpen, function () {
-                        $this.removeClass(o.defaultOpenClass);
-                        if ($.isFunction(o.cbOpen)) {
-                            o.cbOpen(e, $this);
-                        }
-                    });
-                }
-                } else {
-                $this.removeClass(o.openClass).next('.' + o.bodyClass).slideUp(o.speedClose, o.easingClose, function () {
-                    if ($.isFunction(o.cbClose)) {
-                        o.cbClose(e, $this);
-                    }
-                });
-            }
-        }
-    };
-    $.fn[pluginName] = function (options) {
-        return this.each(function () {
-            if (!$.data(this, 'plugin_' + pluginName)) {
-                $.data(this, 'plugin_' + pluginName,
-                new Accordion(this, options));
-            }
-        });
-    };
-	}(jQuery, window, document));
+
+	var pluginName = 'simpleAccordion',
+	defaults = {
+			multiple: false,
+			speedOpen: 300,
+			speedClose: 150,
+			easingOpen: null,
+			easingClose: null,
+			headClass: 'accordion-header',
+			bodyClass: 'accordion-body',
+			openClass: 'open',
+			defaultOpenClass: 'default-open',
+			cbClose: null, //function (e, $this) {},
+			cbOpen: null //function (e, $this) {}
+	};
+	function Accordion(element, options) {
+			this.$el = $(element);
+			this.options = $.extend({}, defaults, options);
+			this._defaults = defaults;
+			this._name = pluginName;
+			if (typeof this.$el.data('multiple') !== 'undefined') {
+					this.options.multiple = this.$el.data('multiple');
+					} else {
+					this.options.multiple = this._defaults.multiple;
+			}
+			this.init();
+	}
+	Accordion.prototype = {
+			init: function () {
+					var o = this.options,
+					$headings = this.$el.children('.' + o.headClass);
+					$headings.on('click', {_t:this}, this.headingClick);
+					$headings.filter('.' + o.defaultOpenClass).first().click();
+			},
+			headingClick: function (e) {
+					var $this = $(this),
+					_t = e.data._t,
+					o = _t.options,
+					$headings = _t.$el.children('.' + o.headClass),
+					$currentOpen = $headings.filter('.' + o.openClass);
+					if (!$this.hasClass(o.openClass)) {
+							if ($currentOpen.length && o.multiple === false) {
+									$currentOpen.removeClass(o.openClass).next('.' + o.bodyClass).slideUp(o.speedClose, o.easingClose, function () {
+											if ($.isFunction(o.cbClose)) {
+													o.cbClose(e, $currentOpen);
+											}
+											$this.addClass(o.openClass).next('.' + o.bodyClass).slideDown(o.speedOpen, o.easingOpen, function () {
+													if ($.isFunction(o.cbOpen)) {
+															o.cbOpen(e, $this);
+													}
+											});
+									});
+									} else {
+									$this.addClass(o.openClass).next('.' + o.bodyClass).slideDown(o.speedOpen, o.easingOpen, function () {
+											$this.removeClass(o.defaultOpenClass);
+											if ($.isFunction(o.cbOpen)) {
+													o.cbOpen(e, $this);
+											}
+									});
+							}
+							} else {
+							$this.removeClass(o.openClass).next('.' + o.bodyClass).slideUp(o.speedClose, o.easingClose, function () {
+									if ($.isFunction(o.cbClose)) {
+											o.cbClose(e, $this);
+									}
+							});
+					}
+			}
+	};
+	$.fn[pluginName] = function (options) {
+			return this.each(function () {
+					if (!$.data(this, 'plugin_' + pluginName)) {
+							$.data(this, 'plugin_' + pluginName,
+							new Accordion(this, options));
+					}
+			});
+	};
 	
 	$('.accordion-group').simpleAccordion({
     
@@ -388,9 +386,10 @@ function MapInit() {
 if (window.innerWidth > 992){
 	window.addEventListener('scroll', event => {
 		let navigationLinks = document.querySelectorAll('.side-bar__item');
-		let fromTop = window.scrollY + 180;
+		let fromTop = window.scrollY + 200;
 		navigationLinks.forEach(link => {
 			let section = document.querySelector(link.hash);
+			console
 			if (
 				section.offsetTop <= fromTop &&
 				section.offsetTop + section.offsetHeight > fromTop
@@ -423,7 +422,7 @@ let tl = gsap.timeline({
 var initMode = null;
 
 
-let addTime = 850;
+let addTime = 500;
 
 let st1, st2, st3;
 let tl1 = gsap.timeline({});
@@ -510,6 +509,7 @@ function reInit(){
 }
 
 function initScrollAnimationDesktop(){
+
 	tl1.fromTo(".js-animation__col--2", {
 		y: "0%"
 	}, {
@@ -518,14 +518,14 @@ function initScrollAnimationDesktop(){
 		ease: "none",
 		onStart: function () {
 			// $('.side-bar').removeClass('active');
-			$('.side-bar').addClass('active');
+			$('.side-bar').addClass('active', "blue");
 			$('.side-bar__item--start').addClass('active');
 		},
-		onReverseComplete: function () {
-			$('.side-bar').removeClass('active');
-			// $('.side-bar').addClass('active');
-			$('.side-bar__item--start').addClass('active');
-		}
+		// onReverseComplete: function () {
+		// 	$('.side-bar').removeClass('active');
+		// 	// $('.side-bar').addClass('active');
+		// 	$('.side-bar__item--start').addClass('active');
+		// }
 	}, "0");
 	tl1.fromTo(".animation__bg.animation__bg__1", {
 		y: "0%"
@@ -540,7 +540,7 @@ function initScrollAnimationDesktop(){
 		y: "0%"
 	}, {
 		// y: -1 * (col3Height - animationSectionHeight),
-		y: "-100%",
+		y: "-105%",
 		duration: 0.5,
 		ease: "none",
 
