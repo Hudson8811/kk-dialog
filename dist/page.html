@@ -237,10 +237,23 @@
       <!--.js-btn__modal-form--><div id="modal-form" class="modal-reg" style="display:none">
       <form class="contacts__form contacts__form--white"> 
         <div class="contacts__form__title title__32"> Контактная форма</div>
-        <input class="contacts__form__input contacts__form__input--name text__13" type="text" name="" placeholder="Имя">
-        <input class="contacts__form__input text__13" type="email" name="" placeholder="Email">
-        <textarea class="contacts__form__textarea text__13" name="" cols="30" rows="10" placeholder="Сообщение"></textarea>
-        <div class="contacts__form__bottom"><a class="contacts__form__btn btn" href="#">Отправить</a>
+        <div class="contacts__form__input-block contacts__form__input-block--name error">
+          <input class="contacts__form__input text__13" type="text" name="">
+          <div class="contacts__form__input-block__name">Имя</div>
+          <div class="contacts__form__input-block__error">Неправильное имя</div>
+        </div>
+        <div class="contacts__form__input-block">
+          <input class="contacts__form__input text__13" type="email" name="">
+          <div class="contacts__form__input-block__name">Email</div>
+          <div class="contacts__form__input-block__error">Неправильное email</div>
+        </div>
+        <div class="contacts__form__input-block">
+          <textarea class="contacts__form__textarea text__13" name="" cols="30" rows="10"></textarea>
+          <div class="contacts__form__input-block__name">Сообщение</div>
+          <div class="contacts__form__input-block__error">Неправильное cообщение</div>
+        </div>
+        <div class="contacts__form__bottom">
+          <button class="contacts__form__btn btn" type="submit">Отправить</button>
           <div class="contacts__form__mess text__16">Нажатием на кнопку "Отправить" я даю согласие на обработку моих персональных данных.
           </div>
         </div>

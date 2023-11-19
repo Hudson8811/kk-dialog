@@ -9,4 +9,7 @@
 @@include("./libs/ScrollToPlugin.min.js")
 
 //my files
+
+@@include("./import/modules.js")
+@@include("./import/components.js")
 @@include("./import/main.js")

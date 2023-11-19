@@ -14,11 +14,17 @@ block content
 		.container 
 			.breadcrumbs
 				a.breadcrumbs__item.text__13 
-					| Главная
+					!="Главная"
+					<svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8" fill="none">
+					<path d="M1.00049 7.00049L4.00117 3.99981L1.00049 0.999129" stroke="black"/>
+					</svg>
+				a.breadcrumbs__item.text__13
+					!="следующая страница"
+					<svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8" fill="none">
+					<path d="M1.00049 7.00049L4.00117 3.99981L1.00049 0.999129" stroke="black"/>
+					</svg>
 				a.breadcrumbs__item.text__13 
-					| следующая страница
-				a.breadcrumbs__item.text__13 
-					| Текущая страница
+					!='Текущая страница'
 	.section.customers__section.section--gray
 		.customers
 			.customers__top

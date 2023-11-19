@@ -98,6 +98,129 @@ a.destroy=function(){for(var f=0;f<a.elems.length;f++)a.elems[f].style.cssText=d
 
 
 //my files
+
+
+$( ".header__menu__item" ).mouseenter(function () {
+  let headerMenuItem = $(this);
+  let headerMenuList = headerMenuItem.children( '.header__menu__list' )
+  headerMenuList.addClass('active')
+});
+$( ".header__menu__item" ).mouseleave(function () {
+  let headerMenuItem = $(this);
+  let headerMenuList = headerMenuItem.children( '.header__menu__list' )
+  headerMenuList.removeClass('active')
+});
+
+
+let overlayBg = document.querySelector(".mob-menu--overlay");
+let mobMenu = document.querySelector(".mob-menu__section");
+let humb = document.querySelector(".hamburger");
+
+var hamburger = $(".hamburger");
+hamburger.on("click", function(e) {
+  hamburger.toggleClass("is-active");
+});
+var search = $(".header__other__search");
+search.click( function(e) {
+  $(this).children(".header__other__search__input").addClass("active"); 
+
+});
+$(document).mouseup(function (e){ 
+  var search = $(".header__other__search");
+  if (!search.is(e.target) 
+      && search.has(e.target).length === 0) { 
+        search.children(".header__other__search__input").removeClass("active"); 
+  }
+});
+
+overlayBg.addEventListener("click", function () {
+  mobMenu.classList.remove("active");
+  humb.classList.remove("is-active");
+  bodyYesScroll()
+});
+humb.addEventListener("click", function () {
+  let kye = mobMenu.classList.contains("active");
+  if (kye == false) {
+    mobMenu.classList.add("active");
+    bodyNoScroll()
+  }else {
+    mobMenu.classList.remove("active");
+    bodyYesScroll()
+  }
+});
+
+
+
+
+
+
+
+
+
+$('.product-card__slider').each(function () {
+  var galleryThumbs;
+  var galleryMain;
+  var group = $(this);
+  group.find('.gallery-thumbs').each(function () {
+      var slider = $(this)
+      galleryThumbs = new Swiper(slider[0], {
+          centeredSlides: true,
+          centeredSlidesBounds: true,
+          slidesPerView: 3,
+          watchOverflow: true,
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+          direction: 'horizontal',
+          centeredSlides: false,
+          centeredSlidesBounds: false,
+          autoHeight: true,
+          spaceBetween: 20,
+          navigation: {
+              nextEl: ".gallery-thumbs-next",
+              prevEl: ".gallery-thumbs-prev"
+          },
+          breakpoints: {
+              // when window width is >= 480px
+              992: {
+                  direction: 'vertical',
+                  spaceBetween: 20,
+              },
+          }
+      })
+  });
+
+  group.find('.gallery-main').each(function () {
+      var slider = $(this)
+      galleryMain = new Swiper(slider[0], {
+          watchOverflow: true,
+          watchSlidesVisibility: true,
+          watchSlidesProgress: true,
+          preventInteractionOnTransition: true,
+          slidesPerView: 1,
+          autoHeight: true,
+          thumbs: {
+              swiper: galleryThumbs
+          },
+          navigation: {
+              nextEl: ".gallery-main-next",
+              prevEl: ".gallery-main-prev"
+          },
+          // breakpoints: {
+          //     // when window width is >= 480px
+          //     992: {
+          //         slidesPerView: 2.2,
+          //         spaceBetween: 30
+          //     },
+          // }
+      })
+    //   galleryMain.controller.control = galleryThumbs;
+  });
+
+//   galleryThumbs.controller.control = galleryMain;
+  galleryMain.controller.control = galleryThumbs;
+});
+
+
 jQuery(function () { 
 
 
@@ -228,6 +351,24 @@ jQuery(function () {
 			navigation: {
 				nextEl: slider.find('.swiper-button-next')[0],
 				prevEl: slider.find('.swiper-button-prev')[0]
+			},
+		});
+
+	})
+	var seeAlso
+	$('.js-see-also__slider').each(function(){
+		var slider=$(this)
+		var seeAlso = new Swiper(slider[0], {
+			// watchOverflow: true,
+			// watchSlidesVisibility: true,
+			// watchSlidesProgress: true,
+			// preventInteractionOnTransition: true,
+			// loop: true,
+			spaceBetween: 35,
+			slidesPerView: "auto",
+			navigation: {
+				prevEl: ".see-also__button-prev",
+				nextEl: ".see-also__button-next",
 			},
 		});
 
@@ -483,7 +624,9 @@ function MapInit() {
 	
 }
 
-if (window.innerWidth > 992){
+
+let sideBar = document.querySelector(".side-bar");
+if (window.innerWidth > 999 && sideBar !== null){
 	window.addEventListener('scroll', event => {
 		let navigationLinks = document.querySelectorAll('.side-bar__item');
 		let fromTop = window.scrollY + 200;

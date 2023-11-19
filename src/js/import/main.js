@@ -132,6 +132,24 @@ jQuery(function () {
 		});
 
 	})
+	var seeAlso
+	$('.js-see-also__slider').each(function(){
+		var slider=$(this)
+		var seeAlso = new Swiper(slider[0], {
+			// watchOverflow: true,
+			// watchSlidesVisibility: true,
+			// watchSlidesProgress: true,
+			// preventInteractionOnTransition: true,
+			// loop: true,
+			spaceBetween: 35,
+			slidesPerView: "auto",
+			navigation: {
+				prevEl: ".see-also__button-prev",
+				nextEl: ".see-also__button-next",
+			},
+		});
+
+	})
 
 
 	$('.industry__slider--all').each(function () {
@@ -383,7 +401,9 @@ function MapInit() {
 	
 }
 
-if (window.innerWidth > 992){
+
+let sideBar = document.querySelector(".side-bar");
+if (window.innerWidth > 999 && sideBar !== null){
 	window.addEventListener('scroll', event => {
 		let navigationLinks = document.querySelectorAll('.side-bar__item');
 		let fromTop = window.scrollY + 200;
