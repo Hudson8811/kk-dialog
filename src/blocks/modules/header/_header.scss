@@ -9,7 +9,7 @@
 	padding: 0;
 	background: transparent;
 	z-index: 9999;
-	height: vw(110);
+	height: vw(123);
 	box-sizing: border-box;
 	@include max(md) {
 		height: vw2(70);
@@ -25,7 +25,7 @@
 				padding-top: vw(20);
 				background: transparent;
 				border-right: none;
-				padding-bottom: vw(0);
+				padding-bottom: vw(17);
 				padding-right: vw(20);
 				@include max(md) {
 					flex:1 0 33.333%;
@@ -479,7 +479,7 @@
 	width: 100%;
 	padding: 0;
 	z-index: 100;
-	height: vw(110);
+	height: vw(123);
 	box-sizing: border-box;
 	@include max(md) {
 		height: vw2(70);

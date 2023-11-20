@@ -10,6 +10,9 @@ html {
 	color: $fonBlack;
     scroll-behavior: smooth;
 }
+a, button {
+    cursor: pointer;
+}
 body.Bodymotionless {
 	width: 100vw;
 	min-height: 100vh;
@@ -80,7 +83,7 @@ body {
 }
 .site-main {
 	flex: 1 0 auto;
-    padding-top: vw(110);
+    padding-top: vw(123);
     background: $greyFon;
     overflow: hidden;
     width: 100%;
@@ -2724,6 +2727,147 @@ body {
         }
     }
 }
+.product-card {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    min-height: vw(893);
+    align-items: stretch;
+    width: 100%;
+    flex-flow: row nowrap;
+    padding-top: vw(11);
+    padding-bottom: vw(33);
+    &__col {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        &__top {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            flex-flow: column nowrap;
+        }
+        &__bottom {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            flex-flow: column nowrap;
+        }
+        &:nth-child(1) {
+           width: vw(319); 
+           justify-content: space-between;
+           align-items: flex-start;
+        }
+        &:nth-child(2) {
+           width: calc(100% - vw(319)); 
+        }
+    }
+    &__section {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      .layout {
+            .layout__col {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-flow: column nowrap;
+            }
+        }    
+    }
+    &__title {
+        margin-bottom: vw(20);
+    }
+    &__cost {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        margin-bottom: vw(24);
+        &__title {
+            margin-bottom: vw(5);
+           color: rgba(33, 42, 57, 0.2);
 
+        }
+    }
+    &__links {
+        position: relative;
+        display: flex;
+        width: vw(246);
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: vw(18);
+        background: #FFF;
+        padding: vw(7) vw(5);
+        margin-bottom: vw(19);        
+    }
+    &__link {
+        position: relative;
+        width: vw(114);
+        min-height: vw(48);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $black;
+        transition: all 0.3s;
+        &:hover {
+            background: $green;
+            transition: all 0.3s;
+        }
+        &.active {
+            background: #212A39;
+            color: #fff;
+        }
+    }
+    &__color {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+        &__title {
+            margin-bottom: vw(15);
+            color: rgba(33, 42, 57, 0.2);            
+        }
+        &__filter {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: vw(7);
+            background: #E7E7E7;
+            &__item {
+               position: relative;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               width: vw(48);
+               height: vw(48);
+               border-radius: vw(14);
+               margin-right: vw(6);
+               &:last-child {
+                margin-right: none;
+               }
+               &.active{ 
+                border: 2px solid #30E97D;
+               }
+            }
+        }
+
+    }
+}
   
 
