@@ -1621,167 +1621,6 @@ body {
         border-radius: vw(14);
     }
 }
-.clients  {
-    &__section {       
-        .layout--reverse {
-            min-height: vw(692);
-            @include max(md) {
-                min-height: vw2(250);
-            }
-            &__col {
-                &:nth-child(1) {
-                    border-right: none;
-                    @include max(md) {
-                        display: none;
-                    }
-                }
-                &:nth-child(2) {
-                    border-right: none;
-                    padding-right: 0;
-                }
-            }
-        }
-        .layout--trio {
-            min-height: vw(692);
-            position: absolute;
-            top: 0;
-            left: 0;
-            @include max(md) {
-                display: none;
-            }
-            &__col {
-                &:nth-child(1) {
-
-                }
-                &:nth-child(2) {
-                }
-                &:nth-child(3) {
-                }
-            }
-        }
-    }
-    &__title {
-        margin-bottom: vw(74);
-    }
-    &__text {
-        margin-bottom: vw(28);
-    }
-    &__slider {
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 100%;
-        overflow: hidden;
-        .swiper-buttons {
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: vw(90);
-            width: 100%;
-            max-width: vw(186);
-            top: auto;
-            bottom: 0;
-            left: vw(30);
-            overflow: visible;
-            z-index: 15;
-            @include max(md) {
-                height: vw2(50);
-                width: 100%;
-                max-width: vw2(70);
-                top: auto;
-                bottom: 0;
-                left: vw2(20);
-            }
-            .swiper-button-prev,.swiper-button-next {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: vw(83);
-                height: vw(83);
-                min-width: vw(83);
-                min-height: vw(83);
-                border-radius: vw(14);
-                top: 0;
-                @include max(md) {
-                    width: vw2(30);
-                    height: vw2(30);
-                    min-width: vw2(30);
-                    min-height: vw2(30);
-                    border-radius: vw2(8);           
-                }
-                svg {
-                    width: vw(9.67);
-                    height: vw(9.67);
-                    min-width: vw(9.67);
-                    min-height: vw(9.67);
-                    @include max(md) {
-                        width: vw2(9.67);
-                        height: vw2(9.67);
-                        min-width: vw2(9.67);
-                        min-height: vw2(9.67)                
-                    }            
-                }
-                &::after {
-                    font-size: 0;
-                    display: none;
-                }
-          
-          
-            }
-            .swiper-button-prev {
-               left: 0;
-          
-            }
-            .swiper-button-next {
-                right: 0;
-          
-            }
-        }
-    }
-    &__slide {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        height: 100%;
-        padding-left: vw(50);
-        padding-right: vw(50);
-        @include max(xl) {
-            width:  vw(250); 
-        }
-        @include max(md) {
-            padding-left: vw2(15);
-            padding-right: vw2(15);
-        }
-        picture, img {
-            position:relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center center;
-        }
-        &__picture  {
-            position: relative;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 100%;
-            &::before {
-                position: relative;
-                content: "";
-                width: 100%;
-                padding-top: 115.53%;
-            }
-
-        }
-
-    }
-}
 
 .contacts {
     position: relative;
@@ -2737,6 +2576,9 @@ body {
     flex-flow: row nowrap;
     padding-top: vw(11);
     padding-bottom: vw(33);
+    @include max(md) {
+        flex-flow: column nowrap;
+    }
     &__col {
         position: relative;
         display: flex;
@@ -2763,21 +2605,109 @@ body {
            width: vw(319); 
            justify-content: space-between;
            align-items: flex-start;
+           @include max(md) {
+            width: 100%;
+            margin-bottom: vw2(30);
+           }
         }
         &:nth-child(2) {
-           width: calc(100% - vw(319)); 
+           width: calc(100% - vw(319));
+           @include max(md) {
+            width: 100%;
+           }
         }
     }
     &__section {
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-      .layout {
+        .layout {
+            min-height: vw(893);
+            align-items: flex-start;
+            @include max(md) {
+
+            }
             .layout__col {
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
                 flex-flow: column nowrap;
+                height: 100%;
+                overflow: hidden;
+                &:nth-child(1) {
+                    margin-bottom: vw2(100);
+                }
+                &:nth-child(2) {
+                    background: #fff;
+                    padding-right: vw(0);
+                    padding-left: vw(30);
+                    @include max(md) {
+                        flex: 1 0 100%;
+                        max-width: 100%;
+                        border-right: none;
+                        padding-right: vw(0);
+                        padding-left: vw(0);
+                        background: transparent;
+                    }
+                }
             }
         }    
+    }
+    &__content {
+        height: 100%;
+        overflow: auto;
+        padding-right: vw(30);
+        &::-webkit-scrollbar {
+            width: vw(5);
+            background-color: #ffff;
+          }
+          
+        &::-webkit-scrollbar-thumb {
+            border-radius: 35px;
+            background: #D9D9D9;
+          }
+          
+        &::-webkit-scrollbar-track {
+            border-radius: 35px;
+            background: #fff;
+          }
+        .clients__slider {
+            width: calc(100% + vw(30));
+            // min-height: vw(293);
+            .clients__slide {
+                padding-left: vw(0);
+                padding-right: vw(0);
+                // padding-left: vw(17);
+                // padding-right: vw(17);
+            }
+            .swiper-buttons {
+                display: none;
+            }
+        }
+
+        
+    }
+    &__tabs {
+        width: calc(100% - vw(15)) !important;
+        @include max(md) {
+            width: 100%;
+        }
+    }
+    &__shadow {
+        position: absolute;
+        width: 100%;
+        height: vw(122);
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background: #fff;
+        opacity: 0.6;
+        @include max(md) {
+           display: none; 
+        }
+    }
+    &__pane {
+        position: relative;
+        height: 100%;
+
     }
     &__title {
         margin-bottom: vw(20);
@@ -2790,6 +2720,9 @@ body {
         align-items: flex-start;
         flex-flow: column nowrap;
         margin-bottom: vw(24);
+        @include max(md) {
+            margin-bottom: vw2(15);
+        }
         &__title {
             margin-bottom: vw(5);
            color: rgba(33, 42, 57, 0.2);
@@ -2800,14 +2733,21 @@ body {
         position: relative;
         display: flex;
         width: vw(246);
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: vw(214);
         justify-content: space-between;
         align-items: center;
         border-radius: vw(18);
         background: #FFF;
         padding: vw(7) vw(5);
-        margin-bottom: vw(19);        
+        margin-bottom: vw(19); 
+        @include max(md) {
+            width: vw2(246);
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: vw2(18);
+            padding: vw2(7) vw2(5);
+            margin-bottom: vw2(19);             
+        }       
     }
     &__link {
         position: relative;
@@ -2818,11 +2758,16 @@ body {
         justify-content: center;
         align-items: center;
         background: rgba(0, 0, 0, 0.1);
-        border-radius: 14px;
+        border-radius: vw(14);
         text-decoration: none;
         text-transform: uppercase;
         color: $black;
         transition: all 0.3s;
+        @include max(md) {
+            width: vw2(114);
+            min-height: vw2(48);
+            border-radius: vw2(14);
+        }
         &:hover {
             background: $green;
             transition: all 0.3s;
@@ -2838,9 +2783,15 @@ body {
         justify-content: flex-start;
         align-items: flex-start;
         flex-flow: column nowrap;
+        @include max(md) {
+            margin-bottom: vw2(30);
+        }
         &__title {
             margin-bottom: vw(15);
-            color: rgba(33, 42, 57, 0.2);            
+            color: rgba(33, 42, 57, 0.2); 
+            @include max(md) {
+                margin-bottom: vw2(15);
+            }           
         }
         &__filter {
             position: relative;
@@ -2848,7 +2799,12 @@ body {
             justify-content: flex-start;
             align-items: flex-start;
             padding: vw(7);
+            border-radius: vw(14);
             background: #E7E7E7;
+            @include max(md) {
+                padding: vw2(7);
+                border-radius: vw2(14);
+            }   
             &__item {
                position: relative;
                display: flex;
@@ -2858,6 +2814,12 @@ body {
                height: vw(48);
                border-radius: vw(14);
                margin-right: vw(6);
+               @include max(md) {
+                width: vw2(48);
+                height: vw2(48);
+                border-radius: vw2(14);
+                margin-right: vw2(6);
+            }   
                &:last-child {
                 margin-right: none;
                }
@@ -2868,6 +2830,89 @@ body {
         }
 
     }
+    &__desc {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        padding: vw(22) vw(16) vw(22) vw(24);
+        border-radius: vw(18);
+        background: #FFF; 
+        @include max(md) {
+            padding: vw2(15);
+            border-radius: vw2(14);           
+        }
+    }
+    &__clients{
+        &__text {
+            max-width: vw(100);
+            color: #212A39;
+            margin-bottom: vw(53);
+        }
+    }
 }
   
+.nav-tabs {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: vw(10);
+    padding-bottom: vw(27);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    @include max(md) {
+        padding-top: vw2(15);
+        padding-bottom: vw2(15);
+        margin-bottom: vw2(20);
+    }
+}
+.nav-tab {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-right: vw(8);
+    color: $black;
+    border-radius: vw(14);
+    background: rgba(33, 42, 57, 0.09);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: vw(16) vw(19);
+    cursor: pointer;
+    transition: all 0.3s;
+    @include max(md) {
+        margin-right: vw2(8);
+        border-radius: vw2(14);
+        padding: vw2(16) vw2(19);
+    }
+    &.active {
+        transition: all 0.3s;
+        background: $black;
+        color: #fff;
+    }
+}
+.tab-content {
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+.tab-pane {
+    display: none;
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+    padding-top: vw(20);
+}
+.tab-pane.active {
+    display: flex;
+}
+
 

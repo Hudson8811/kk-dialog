@@ -1,5 +1,5 @@
 
-$('.product-card__slider').each(function () {
+$('.portfolio__slider').each(function () {
   var galleryThumbs;
   var galleryMain;
   var group = $(this);
@@ -10,9 +10,7 @@ $('.product-card__slider').each(function () {
           watchOverflow: true,
           watchSlidesVisibility: true,
           watchSlidesProgress: true,
-          direction: 'horizontal',
-          autoHeight: true,
-          spaceBetween: 20,
+          spaceBetween: 17,
           navigation: {
               nextEl: ".gallery-thumbs-next",
               prevEl: ".gallery-thumbs-prev"
@@ -20,8 +18,8 @@ $('.product-card__slider').each(function () {
           breakpoints: {
               // when window width is >= 480px
               992: {
-                  direction: 'vertical',
-                  spaceBetween: 20,
+  
+                  spaceBetween: 17,
               },
           }
       })

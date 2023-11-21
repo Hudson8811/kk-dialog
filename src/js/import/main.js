@@ -1,5 +1,16 @@
 jQuery(function () { 
 
+	$(".product-card__tab").on("click", function(e) {
+		e.preventDefault();
+		var nav = $(this);
+		var current_list = $('.product-card__content');
+		var nav_attr = nav.attr("data-tab");
+		var target_tab = current_list.find('.product-card__tab__pane[data-tab-content="'+nav_attr+'"]');
+		nav.addClass('active').siblings().removeClass('active');
+		target_tab.addClass('active').siblings().removeClass('active');
+	})
+
+
 
   var list = $(".js-wrapper-boxes .box-more");
   var numToShow = 3; //сколько показывать элементов
@@ -111,24 +122,6 @@ jQuery(function () {
 							spaceBetween: 0
 					},
 			}
-		});
-
-	})
-	var clientsSlider
-	$('.js-clients__slider').each(function(){
-		var slider=$(this)
-		var clientsSlider = new Swiper(slider[0], {
-			// watchOverflow: true,
-			// watchSlidesVisibility: true,
-			// watchSlidesProgress: true,
-			// preventInteractionOnTransition: true,
-			// loop: true,
-			// spaceBetween: 30,
-			slidesPerView: 3,
-			navigation: {
-				nextEl: slider.find('.swiper-button-next')[0],
-				prevEl: slider.find('.swiper-button-prev')[0]
-			},
 		});
 
 	})
@@ -332,6 +325,8 @@ jQuery(function () {
 	$(document).on('afterClose.fb', function( e, instance, slide ) {
     bodyYesScroll();
 	});	
+
+
 
 });
 

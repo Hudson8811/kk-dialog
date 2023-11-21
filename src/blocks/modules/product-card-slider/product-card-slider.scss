@@ -33,7 +33,7 @@
 
   }
   .gallery-main {
-    width: calc(100% - 160px);
+    width: calc(100% - vw(124));
     overflow: hidden;
     z-index: 5;
     @include max(md) {
@@ -48,15 +48,15 @@
       align-items: center;
       width: 100%;
       cursor: pointer;
-      &[data-filter="01"] {
-        background: #E4E6E8
-      }
-      &[data-filter="02"] {
-        background: #fff
-      }
-      &[data-filter="03"] {
-        background: #CECECE
-      }
+      // &[data-filter="01"] {
+      //   background: #E4E6E8
+      // }
+      // &[data-filter="02"] {
+      //   background: #fff
+      // }
+      // &[data-filter="03"] {
+      //   background: #CECECE
+      // }
 
       &:before {
         content: "";
@@ -152,7 +152,32 @@
     height: 100%;
     max-height: vw(700);
     overflow: hidden;
-
+    &__counter {
+      position: absolute;
+      left: 0;
+      bottom: vw(149);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      z-index: 100;
+      box-sizing: border-box;
+      width: vw(124);
+      height: vw(124);
+      padding: vw(20);
+      cursor: pointer;
+      border-radius: vw(14);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.75);
+      color: #000;
+      font-size: vw(20);
+      font-style: normal;
+      font-weight: 500;
+      line-height: vw(27);
+      @include max(md) {
+        display: none;
+      }
+    }
     @include max(md) {
       width: 100%;
       height: auto;
@@ -163,7 +188,7 @@
       display: flex;
       order: -1;
       width: vw(124);
-      margin-left: 36px;
+      margin-left: vw(111);
       justify-content: flex-start;
       align-items: flex-start;
       @include max(md) {
@@ -184,7 +209,13 @@
       padding: vw(20);
       cursor: pointer;
       border-radius: vw(14);
+      overflow: hidden;
       background: #FFF;
+      @include max(md) {
+        width: vw2(124);
+        height: vw2(124);
+        border-radius: vw2(14);
+      }
       &:before {
         content: "";
         width: 100%;

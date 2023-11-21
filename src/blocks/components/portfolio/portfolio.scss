@@ -1,0 +1,286 @@
+.portfolio{
+  &__slider {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
+    width: 100%;
+    // height: 100%;
+    border-radius: 0px;
+    z-index: 5;
+    margin-bottom: vw(21);
+    @include max(md) {
+
+    }
+    &__wrap {
+      position: relative;
+      width: 100%;
+      &--desc {
+        @include max(lg) {
+          display: none;
+        }
+      }
+      &--mob {
+        display: none;
+        @include max(lg) {
+          display: block;
+        }
+      }
+    }
+    .gallery-main {
+      width:  100%;
+      overflow: hidden;
+      z-index: 5;
+      margin-bottom: vw(18);
+      @include max(md) {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .swiper-slide{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-radius: vw(14);
+        overflow: hidden;
+        cursor: pointer;
+
+  
+        &:before {
+          content: "";
+          width: 100%;
+          display: block;
+          padding-top: 61.41%;   
+          position: relative;
+          
+        }
+        img, picture {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center center;
+          z-index: 1;
+        }
+      }
+      .swiper-buttons {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: vw(60);
+        width: 100%;
+        max-width: vw(110);
+        top: vw(22);
+        left: vw(22);
+        overflow: visible;
+        z-index: 15;
+        @include max(md) {
+          height: vw2(40);
+          max-width: vw2(70);
+          top: vw2(22);
+          left: vw2(22);
+        }
+        .swiper-button-prev,.swiper-button-next {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: vw(49);
+            height: vw(49);
+            min-width: vw(49);
+            min-height: vw(49);
+            border-radius: vw(14);
+            top: 0;
+            @include max(md) {
+                width: vw2(30);
+                height: vw2(30);
+                min-width: vw2(30);
+                min-height: vw2(30);
+                border-radius: vw2(8);           
+            }
+            svg {
+                width: vw(9.67);
+                height: vw(9.67);
+                min-width: vw(9.67);
+                min-height: vw(9.67);
+                @include max(md) {
+                    width: vw2(9.67);
+                    height: vw2(9.67);
+                    min-width: vw2(9.67);
+                    min-height: vw2(9.67)                
+                }            
+            }
+            &::after {
+                font-size: 0;
+                display: none;
+            }
+      
+      
+        }
+        .swiper-button-prev {
+           left: 0;
+      
+        }
+        .swiper-button-next {
+            right: 0;
+      
+        }
+    }
+    }
+    
+    
+    .gallery-thumbs {
+      order: -1;
+      width: 100%;
+      z-index: 5;
+      height: 100%;
+      max-height: vw(700);
+      overflow: hidden;
+      padding-bottom: vw(21);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      @include max(md) {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        padding-bottom: vw2(20);
+        margin-bottom: vw2(20);
+      }
+      &__counter {
+        position: absolute;
+        right: vw(2);
+        bottom: vw(22);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        z-index: 100;
+        box-sizing: border-box;
+        width: vw(103);
+        height: vw(103);
+        padding: vw(20);
+        cursor: pointer;
+        border-radius: vw(14);
+        overflow: hidden;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.41) 0%, rgba(0, 0, 0, 0.41) 100%);
+        color: #fff;
+        font-size: vw(20);
+        font-style: normal;
+        font-weight: 500;
+        line-height: vw(27);
+        @include max(md) {
+          display: none;
+        }
+      }
+      &__section {
+        position: relative;
+        display: flex;
+        order: -1;
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include max(md) {
+          width: 100%;
+          height: auto;
+          margin-left: 0;
+        }
+      }
+      .swiper-slide {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        width: vw(102);
+        height: vw(102);
+        padding: vw(0);
+        cursor: pointer;
+        border-radius: vw(14);
+        overflow: hidden;
+        background: transparent;
+        @include max(md) {
+          width: vw2(102);
+          height: vw2(102);
+          border-radius: vw2(14);
+        }
+        &:before {
+          content: "";
+          width: 100%;
+          display: block;
+          padding-top: 100%;   
+          position: relative;
+          
+        }
+        img, picture {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center center;
+          z-index: 1;
+        }
+    
+  
+    
+        &-thumb-active {
+          opacity: 1;
+          border: 3px solid $green;
+          // img {
+          //   margin-left: -15px;
+          // }
+        }
+      }
+      &__swiper-buttons {
+        display: none;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 193px;
+        @include max(md) {
+         display: none;
+        }
+        .swiper-button-next {
+          bottom: 50px;
+          top: auto;
+          transform: rotate(0deg);
+          left: calc(50% - 15px);
+          width: 30px;
+          height: 30px;
+          &::after {
+            content: url(../img/svg/button-next.svg);
+          }
+        }
+        .swiper-button-prev {
+          bottom: auto;
+          top: 60px;
+          transform: rotate(0deg);
+          left: calc(50% - 15px);
+          width: 30px;
+          height: 30px;
+          &::after {
+            content: url(../img/svg/button-prev.svg);
+          }
+        }
+      }
+    
+    }
+  }
+
+  
+}
+

@@ -44,11 +44,158 @@ block content
 							include ../../blocks/modules/product-card-slider/product-card-slider
 
 				.layout__col
-						.start__slide__title.title__40 Курительные кабины
-							.start__slide__picture
-								img(src="img/start__slide__1.png", alt="")
-							.start__slide__text.text__16 Небольшое описание данной кабины
-
+					.nav-tabs.product-card__tabs
+						a.product-card__tab.nav-tab.text__13(href="#" data-tab="1" ) Описание
+						a.product-card__tab.nav-tab.text__13(href="#" data-tab="2" ) характеристики
+						a.product-card__tab.nav-tab.text__13.active(href="#" data-tab="3" ) Галерея
+					.tab-content.product-card__content
+						.product-card__tab__pane.tab-pane(data-tab-content="1")
+							.text-block 
+								h2 Ключевые качества
+								br
+								br
+								p
+									!='<b>Точность измерений</b> обеспечивается передачей значений твёрдости от Государственных Эталонов Твердости РФ непосредственно портативному твердомеру для металлов, минуя промежуточные звенья государственной поверочной схемы.'
+								br
+								p 
+									!='<b>Прямое измерение по основным шкалам твёрдости</b> (Роквелла, Бринелля, Виккерса и Шора) достигается за счет калибровки только с помощью эталонных мер твердости без использования переводных таблиц, которые "зашиты" в программы других твердомеров, увеличивающих погрешность измерения.'
+								br
+								p 
+									!='<b>Возможность самостоятельно откалибровать твердомер</b> (в течение нескольких минут), что позволяет восстановить точность показаний переносного твердомера при возможном износе механических частей датчика (пружина, боёк) в процессе интенсивной эксплуатации.'
+								br
+								p 
+									!='<b>Удобство передачи и обработки данных на компьютере</b>  достигается за счет подключения твердомера к современному высокоскоростному порту USB и использования эксклюзивного програмного обеспечения.'
+								br
+								p 
+									!='<b>Высокая степень защиты</b> алюминиевого, герметичного, пыле-влагозащищенного, термостойкого корпуса электронного блока.'
+								br
+								p 
+									!='<b>3 года гарантийного обслуживания и последующая техническая поддержка.</b> '
+								br
+								p 
+									!="Ультразвуковой, динамический и комбинированный твердомеры предназначены для неразрушающего контроля твёрдости изделий в цеховых, лабораторных и полевых условиях. Твердомеры достоверно измеряют твердость металлов и сплавов по шкалам твердости:"
+								ul 
+									li основным: Роквелла (HRC), Бринелля (HB), Виккерса (HV) и Шора (HSD);
+									li дополнительным: Роквелла (HRB), Супер-Роквелла (HRN и HRT), Лейба (HL) и другим.
+								p 
+									!='Позволяют измерять твердость металлов существенно отличающихся по свойствам от стали (алюминиевых, медных сплавов и т.д.) и определять предел прочности на растяжение изделий из углеродистых сталей перлитного класса.'
+								p 
+									!='Твердомеры <a href="#">зарегистрированы</a> в государственных реестрах утвержденных типов средств измерений России, Украины, Белоруссии и Казахстана, а также в отраслевых реестрах ОАО "РЖД" и Госкорпорации "Росатом".'
+								p 
+									!='Центр "МЕТ" имеет <a href="#">лицензию</a> на производство твердомеров.'
+							br
+							br
+							.text-block 
+								h2 Преимущества перед стационарными <br>твердомерами  
+								br
+								br
+								p
+									!='<b>Работа с поверхностным слоем металла:</b> cтационарные твердомеры под действием больших нагрузок "продавливают" поверхностный слой, подвергнутый наплавлению, напылению, механической, термической и другим видам поверхностной обработки металла.'
+								br
+								p
+									!='<b>Крупногабаритные изделия и труднодоступные места в изделиях:</b> для стационарных твердомеров подобный контроль твердости недоступен из-за технических и конструкционных ограничений.'
+								br
+								p
+									!='<b>Измерения на месте производства и эксплуатации изделий:</b> портативность позволяет измерять твёрдость изделия непосредственно на месте производства и эксплуатации изделий в цеховых, лабораторных и полевых условиях.'
+								br
+								p
+									!='<b>8 шкал твердости:</b> экспресс-анализ твёрдости изделия по 8-ми различным шкалам твёрдости (в отличии от 1-3 шкал в стационарных твердомерах).'
+								br
+								p
+									!='<b>Высокая производительность:</b> время одного измерения портативным твердомером в 5-10 раз меньше времени измерения стационарным.'
+								br 
+						.product-card__tab__pane.tab-pane(data-tab-content="2")
+							.text-block 
+								<table>
+									<tr>
+										<th>Количество курящих</th>
+										<th>до 7 человек одновременно</th>
+									</tr>
+									<tr>
+										<th>Ориентировочные размеры, мм (Д х Ш х В)</th>
+										<th>2200 х 1700 х 2700 мм</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+									<tr>
+										<th>Воздухообмен</th>
+										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
+									</tr>
+								</table>
+						.product-card__tab__pane.tab-pane.active(data-tab-content="3")
+							include ../../blocks/components/portfolio/portfolio						
+							include ../../blocks/components/clients__slider-product/clients__slider-product
+					.product-card__shadow
 	.section.see-also__section.section--gray
 		.container
 			.layout--one
@@ -129,256 +276,6 @@ block content
 								<path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
 								</svg>
 							.swiper-button-next.see-also__button-next
-								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-								<path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
-								</svg>
-
-
-
-
-
-	.section(id="main1" data-color="blue").animation__section.section--blue
-		.container
-			.layout--trio
-				.layout--trio__col.js-animation__col--1
-				.layout--trio__col.js-animation__col--2
-					.animation__title(id="main1" data-color="blue").title__60 
-						!='<span class="green">"Dиалог"</span > - российский производитель №1 оборудования <span>для организации эффективных, комфортных и безопасных мест для курения.</span>'
-					a(href="#").card(id="main2" data-color="blue")
-						.card__title
-							!="Курительные  <br>кабины"
-						.card__picture 
-							img(src="img/card__picture__1.png", alt="")
-						.card__bottom
-							.card__bottom__text.text__16
-								!="Для организации автономных мест курения внутри зданий без необходимости выделять отдельное помещение"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>									
-					a(href="#").card
-						.card__title
-							!="Уличные павильоны <br>для курения"
-						.card__picture 
-							img(src="img/card__picture__2.png", alt="")
-						.card__bottom
-							.card__bottom__text.text__16
-								!="Для организации автономных мест курения внутри зданий без необходимости выделять отдельное помещение"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>									
-					a(href="#").card
-						.card__title
-							!="Курительные  <br>столы"
-						.card__picture 
-							img(src="img/card__picture__3.png", alt="")
-						.card__bottom
-							.card__bottom__text.text__16
-								!="Для организации автономных мест курения внутри зданий без необходимости выделять отдельное помещение"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>									
-					a(href="#").card.card--opacity
-						.card__title
-							!="Сервисная<br> служба"
-						.card__bottom
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>					
-				
-				.layout--trio__col.js-animation__col--3
-					.animation__desc
-						.animation__desc__picture 	
-							img(src="img/animation__desc__picture__1.png", alt="")
-						.animation__desc__text.text__24
-							!="Мы производим полный ассортимент продукции для решения проблем организации мест для курения и удаления табачного дыма. В зависимости от специфики курения в вашей организации, а также от характеристик мест, выделенных под курение сотрудников, Вы можете подобрать оборудование, максимально отвечающее Вашим потребностям, а именно:"
-					a(href="#").card
-						.card__title
-							!="Павильоны для курения <br>с вытяжной вентиляцией"
-						.card__picture 
-							img(src="img/card__picture__4.png", alt="")
-						.card__bottom
-							.card__bottom__text.text__16
-								!="Для организации автономных мест курения внутри зданий без необходимости выделять отдельное помещение"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>									
-					a(href="#").card
-						.card__title
-							!="Воздухоочистители от <br>табачного дыма и запаха"
-						.card__picture 
-							img(src="img/card__picture__5.png", alt="")
-						.card__bottom
-							.card__bottom__text.text__16
-								!="Для организации автономных мест курения внутри зданий без необходимости выделять отдельное помещение"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>									
-		
-					a(href="#").card
-						.card__title
-							!="Оборудование <br> курительных комнат"
-						.card__picture 
-							img(src="img/card__picture__6.png", alt="")
-						.card__bottom
-							.card__bottom__text.text__16
-								!="Для организации автономных мест курения внутри зданий без необходимости выделять отдельное помещение"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>									
-		
-		.animation__bg.animation__bg__1
-			img(src="img/animation__bg__1.png", alt="")
-
-	.section(id="main3" data-color="white").industry__section.section--white
-		.container
-			.layout--trio.industry__slider--all
-				.layout--trio__col
-				.layout--trio__col
-					.swiper-container.industry__slider.industry__slider--one.js-industry--one__slider
-						.swiper-wrapper
-							.industry__slide.swiper-slide
-								.industry__title.title__60 
-									!="Почему «Диалог» – производитель <span>№ 1 в России?</span>"
-								.industry__desc
-									.industry__subtitle.title__32 Производство комплектов фильтров
-									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
-							
-							.industry__slide.swiper-slide
-								.industry__title.title__60 
-									!="Почему «Диалог» – производитель <span>№ 2 в России?</span>"
-								.industry__desc
-									.industry__subtitle.title__32 Производство комплектов фильтров
-									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
-							
-							.industry__slide.swiper-slide
-								.industry__title.title__60 
-									!="Почему «Диалог» – производитель <span>№ 3 в России?</span>"
-								.industry__desc
-									.industry__subtitle.title__32 Производство комплектов фильтров
-									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
-							
-							.industry__slide.swiper-slide
-								.industry__title.title__60 
-									!="Почему «Диалог» – производитель <span>№ 4 в России?</span>"
-								.industry__desc
-									.industry__subtitle.title__32 Производство комплектов фильтров
-									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
-							
-							.industry__slide.swiper-slide
-								.industry__title.title__60 
-									!="Почему «Диалог» – производитель <span>№ 4 в России?</span>"
-								.industry__desc
-									.industry__subtitle.title__32 Производство комплектов фильтров
-									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
-							
-				.layout--trio__col
-					//- .industry__label 
-					//- 	.industry__label__date 02
-					//- 	.industry__label__num /03
-					.swiper-container.industry__slider.industry__slider--two.js-industry--two__slider
-						.swiper-wrapper
-							.industry__slide.swiper-slide
-								.industry__picture 
-									img(src="img/industry__picture__1.png", alt="")
-							.industry__slide.swiper-slide
-								.industry__picture 
-									img(src="img/industry__picture__2.jpg", alt="")
-							.industry__slide.swiper-slide
-								.industry__picture 
-									img(src="img/industry__picture__3.jpg", alt="")
-							.industry__slide.swiper-slide
-								.industry__picture 
-									img(src="img/industry__picture__4.jpg", alt="")
-						
-							.industry__slide.swiper-slide
-								.industry__picture 
-									img(src="img/industry__picture__4.jpg", alt="")
-						
-						.swiper-buttons.swiper-buttons--green
-							.swiper-button-prev
-								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-								<path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
-								</svg>
-							.swiper-button-next
-								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-								<path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
-								</svg>
-					.swiper-pagination.swiper-pagination__industry__slider--two
-	.section(id="main4" data-color="gray").certification__section.section--gray
-		.container
-			.layout--trio
-				.layout--trio__col
-				.layout--trio__col
-					.certification__title.title__60 	
-						!="Сертификация и законодательство"
-					.certification__text
-						.text-block.blue
-							p
-								!="Наш производственный холдинг «Диалог» предлагает свои услуги в организации мест курения с использованием курительных кабин, техническое исполнение которых полностью отвечает требованиям нового закона и дает потребителям значительные удобства своею простотой и универсальностью. Курительные кабины «Диалог» надежно и полностью локализуют табачный дым и запахи, благодаря встроенной автоматической системе рециркуляционной воздухоочистки. При этом не требуются подсоединение кабины к системе вентиляции, и не требуется выделение специального изолированного помещения. Кабина может быть установлена в любом удобном месте, позволяющем подключиться к обычной электрической розетке. Встроенная вентиляционная система и подсветка включается автоматически, работает с низким уровнем шума и электропотребления, с автоматическим включением и отключением по окончании пользования."
-					a(href="#").certification__btn.btn Подробнее
-				.layout--trio__col
-					a(href="#").card.card--format
-						.card__title
-							!="Федеральный закон Российской Федерации от 23 февраля 2013 г. N 15-ФЗ"
-						.card__bottom
-							.card__bottom__format
-								!="<span>PDF</span> 2.5 мб"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>		
-					a(href="#").card.card--format
-						.card__title
-							!="Федеральный закон Российской Федерации от 23 февраля 2013 г. N 15-ФЗ"
-						.card__bottom
-							.card__bottom__format
-								!="<span>PDF</span> 2.5 мб"
-							.card__bottom__btn.btn
-									<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
-									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
-									</svg>
-	.section(id="main5" data-color="white").clients__section.section--white
-		.container
-			.layout--trio
-				.layout--trio__col
-				.layout--trio__col
-				.layout--trio__col
-			.layout--reverse
-				.layout--reverse__col
-				.layout--reverse__col
-					.swiper-container.see-also__slider.js-clients__slider
-						.swiper-wrapper
-							.see-also__slide.swiper-slide
-								img(src="img/clients__slide__1.png", alt="")
-						
-							.see-also__slide.swiper-slide
-								img(src="img/clients__slide__2.png", alt="")
-						
-							.see-also__slide.swiper-slide
-								img(src="img/clients__slide__3.png", alt="")
-						
-							.see-also__slide.swiper-slide
-								img(src="img/clients__slide__1.png", alt="")
-						
-							.see-also__slide.swiper-slide
-								img(src="img/clients__slide__2.png", alt="")
-						
-							.see-also__slide.swiper-slide
-								img(src="img/clients__slide__3.png", alt="")
-						
-						.swiper-buttons.swiper-buttons--green
-							.swiper-button-prev
-								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
-								<path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
-								</svg>
-							.swiper-button-next
 								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
 								<path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
 								</svg>
