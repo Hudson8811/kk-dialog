@@ -132,14 +132,14 @@
 			&::before {
 				content: '';
 				display: block;
-				height: 4px;
-				width: 4px;
+				height: 1px;
+				width: vw(6);
 				-webkit-border-radius: 50%;
 				-moz-border-radius: 50%;
 				border-radius: 50%;
 				background-color: $mainDark;
-				left: -15px;
-				top: 13px;
+				left: vw(-15);
+				top: vw(14);
 				position: absolute;
 			}
 		}
@@ -183,6 +183,9 @@
       min-height: vw(71);
       border-bottom: 1px solid #E3E3E3;
       @include max(md) {
+        padding: vw2(12) vw2(48) vw2(27) 0;
+        text-align: left;
+        min-height: vw2(71);
       }
       &:first-child {
       }
@@ -208,6 +211,11 @@
         text-transform: uppercase;       
         letter-spacing: vw(0.325);
         line-height: normal;
+        @include max(md) {
+          font-size: vw2(13);      
+          letter-spacing: vw2(0.325);
+          line-height: normal;
+      }  
       }
       &:last-child {
       }
@@ -229,10 +237,20 @@
     }
     tr {
       &:last-child {
-        td {
+        th,td {
           &:first-child {
+            @include max(md) {
+              padding: vw2(12) vw2(48) vw2(27) 0;
+              padding-bottom: 0;
+              border-bottom: none;
+            }
           }
           &:last-child {
+            @include max(md) {
+              padding: vw2(12) vw2(48) vw2(27) 0;
+              padding-bottom: 0;
+              border-bottom: none;
+            }
           }
         }
       }

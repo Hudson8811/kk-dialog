@@ -19,7 +19,7 @@ $('.product-card__slider').each(function () {
           },
           breakpoints: {
               // when window width is >= 480px
-              992: {
+              993: {
                   direction: 'vertical',
                   spaceBetween: 20,
               },

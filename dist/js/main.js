@@ -177,7 +177,7 @@ $('.product-card__slider').each(function () {
           },
           breakpoints: {
               // when window width is >= 480px
-              992: {
+              993: {
                   direction: 'vertical',
                   spaceBetween: 20,
               },
@@ -410,25 +410,36 @@ jQuery(function () {
 		target_tab.addClass('active').siblings().removeClass('active');
 	})
 
+	function showMore (item, counter) {
+		var list = item;
+		var numToShow = counter; //сколько показывать элементов
+		var button = $(".more");
+		var numInList = list.length;
+		list.hide();
+		if (numInList > numToShow) {
+			button.show();
+		}
+		list.slice(0, numToShow).show();
+		button.click(function() {
+			var showing = list.filter(':visible').length;
+			list.slice(showing - 1, showing + numToShow).fadeIn();
+			var nowShowing = list.filter(':visible').length;
+			if (nowShowing >= numInList) {
+				button.hide();
+			}
+		});
+	}
+	var articlesItem = $(".js-wrapper-boxes .box-more");
+	var companyCardItem = $(".company-card__list .box-more");
+	if(articlesItem.length > 0 ) {
+		showMore (articlesItem, 3);
+	}
+	if(companyCardItem.length > 0) {
+		showMore (companyCardItem, 2);
+	}
+	
 
 
-  var list = $(".js-wrapper-boxes .box-more");
-  var numToShow = 3; //сколько показывать элементов
-  var button = $(".more");
-  var numInList = list.length;
-  list.hide();
-  if (numInList > numToShow) {
-    button.show();
-  }
-  list.slice(0, numToShow).show();
-  button.click(function() {
-    var showing = list.filter(':visible').length;
-    list.slice(showing - 1, showing + numToShow).fadeIn();
-    var nowShowing = list.filter(':visible').length;
-    if (nowShowing >= numInList) {
-      button.hide();
-    }
-  });
 	function bodyNoScroll() {
 		let bodyBodymotionless = document.querySelector('body')
 		bodyBodymotionless.classList.add("Bodymotionless")
@@ -540,6 +551,13 @@ jQuery(function () {
 				prevEl: ".see-also__button-prev",
 				nextEl: ".see-also__button-next",
 			},
+		// 	breakpoints: {
+		// 		// when window width is >= 480px
+		// 		993: {
+		// 			spaceBetween: 35,
+		// 			slidesPerView: "auto",
+		// 		},
+		// }
 		});
 
 	})
@@ -820,6 +838,7 @@ if (window.innerWidth > 999 && sideBar !== null){
 		});
 	});
 }
+
 
 
 gsap.registerPlugin(ScrollTrigger);
