@@ -28,12 +28,6 @@ block content
 										.product-card__color__filter__item(data-filter="01" style="background: #E4E6E8")
 										.product-card__color__filter__item(data-filter="02" style="background: #fff")
 										.product-card__color__filter__item(data-filter="03" style="background: #CECECE")
-										.color-list__wrap
-											.color-list__selected
-												.color-list__selected__element(data-filter="3005")
-													.color-list__selected--color
-														img(src="img/main/selected--color--2.jpg", alt="" loading="lazy" )
-							
 							.product-card__col__bottom
 								.product-card__desc.text__20
 									!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
@@ -49,7 +43,7 @@ block content
 						a.product-card__tab.nav-tab.text__13(href="#" data-tab="2" ) характеристики
 						a.product-card__tab.nav-tab.text__13.active(href="#" data-tab="3" ) Галерея
 					.tab-content.product-card__content
-						.product-card__tab__pane.tab-pane(data-tab-content="1")
+						.product-card__tab__pane.product-card__tab__pane--text.tab-pane(data-tab-content="1")
 							.text-block 
 								h2 Ключевые качества
 								br
@@ -104,7 +98,8 @@ block content
 								p
 									!='<b>Высокая производительность:</b> время одного измерения портативным твердомером в 5-10 раз меньше времени измерения стационарным.'
 								br 
-						.product-card__tab__pane.tab-pane(data-tab-content="2")
+						.product-card__shadow
+						.product-card__tab__pane.product-card__tab__pane--text.tab-pane(data-tab-content="2")
 							.text-block 
 								<table>
 									<tr>
@@ -192,10 +187,10 @@ block content
 										<th>50-ти кратный воздухообмен(не менее показателей согласно п. 8.5 СНиП 31-05-2003 и СанПиН 2.1.6.1032-01)</th>
 									</tr>
 								</table>
+						.product-card__shadow
 						.product-card__tab__pane.tab-pane.active(data-tab-content="3")
 							include ../../blocks/components/portfolio/portfolio						
 							include ../../blocks/components/clients__slider-product/clients__slider-product
-					.product-card__shadow
 	.section.see-also__section.section--gray
 		.container
 			.layout--one
@@ -207,7 +202,7 @@ block content
 								.see-also__slide.swiper-slide
 									a(href="#").card.card--see-also
 										.card__title
-											!="Курительные  <br>кабины"
+											!="Курительные кабины"
 										.card__picture 
 											img(src="img/card__picture__1.png", alt="")
 										.card__bottom
@@ -220,7 +215,7 @@ block content
 								.see-also__slide.swiper-slide
 									a(href="#").card.card--see-also
 										.card__title
-											!="Курительные  <br>кабины"
+											!="Курительные кабины"
 										.card__picture 
 											img(src="img/card__picture__1.png", alt="")
 										.card__bottom
@@ -233,7 +228,7 @@ block content
 								.see-also__slide.swiper-slide
 									a(href="#").card.card--see-also
 										.card__title
-											!="Курительные  <br>кабины"
+											!="Курительные кабины"
 										.card__picture 
 											img(src="img/card__picture__1.png", alt="")
 										.card__bottom
@@ -246,7 +241,7 @@ block content
 								.see-also__slide.swiper-slide
 									a(href="#").card.card--see-also
 										.card__title
-											!="Курительные  <br>кабины"
+											!="Курительные кабины"
 										.card__picture 
 											img(src="img/card__picture__1.png", alt="")
 										.card__bottom
@@ -259,7 +254,7 @@ block content
 								.see-also__slide.swiper-slide
 									a(href="#").card.card--see-also
 										.card__title
-											!="Курительные  <br>кабины"
+											!="Курительные кабины"
 										.card__picture 
 											img(src="img/card__picture__1.png", alt="")
 										.card__bottom
@@ -269,7 +264,19 @@ block content
 													<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
 													<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 													</svg>
-
+								.see-also__slide.swiper-slide
+									a(href="#").card.card--see-also
+										.card__title
+											!="Курительные кабины"
+										.card__picture 
+											img(src="img/card__picture__1.png", alt="")
+										.card__bottom
+											.card__bottom__text.text__16
+												!=""
+											.card__bottom__btn.btn
+													<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+													<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
+													</svg>
 						.swiper-buttons.swiper-buttons--white
 							.swiper-button-prev.see-also__button-prev
 								<svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">

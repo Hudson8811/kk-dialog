@@ -10,8 +10,11 @@
     border-radius: 0px;
     z-index: 5;
     margin-bottom: vw(21);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding-top: vw(30);
+    margin-top: vw(30);
     @include max(md) {
-
+      padding-top: vw2(30);
     }
     &__wrap {
       position: relative;
@@ -86,7 +89,7 @@
         @include max(md) {
           height: vw2(40);
           max-width: vw2(70);
-          top: vw2(22);
+          top: vw2(52);
           left: vw2(22);
         }
         .swiper-button-prev,.swiper-button-next {

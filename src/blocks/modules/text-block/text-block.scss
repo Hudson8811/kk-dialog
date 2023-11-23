@@ -102,7 +102,7 @@
 		position: relative;
 		display: block;
 		width: 100%;
-		padding-left: 25px;
+		padding-left: vw(15);
 		padding-top: 0;
 		margin-top: 0;
     color: $black;
@@ -114,7 +114,7 @@
         font-size: vw2(20);
         font-style: normal;
         line-height: 1; /* 98.163% */
-        margin-bottom: 10px;
+        margin-bottom: vw(10);
     }  
 		li {
 			position: relative;
@@ -264,10 +264,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 440px;
+    max-width: vw(440);
     background: $grey;
-    border-radius: 15px;
-    margin-bottom: 50px;
+    border-radius: vw(15);
+    margin-bottom: vw(50);
     &:before {
       content: "";
       display: block;
@@ -316,86 +316,13 @@
       
     }
     table {
-      width: 100%;
-      table-layout: fixed;
-      margin-bottom: 50px;
-      overflow: hidden;
-      border-spacing: 0;
-      &:last-child {
-        margin-bottom: 0;
-      }
-      @include max(xs) {
-        margin-bottom: 40px;
-      }
-      th,td {
-        word-wrap: break-word;
-        padding: 19px 16px 19px 23px;
-        @include max(xs) {
-          padding: 12px 18px;
-        }
-        &:first-child {
-          border-left: 1px solid #E3E3E3;
-        }
-        &:last-child {
-          border-right: 1px solid #E3E3E3;
-  
-        }
-      }
       th {
-        background: $grey;
-        border-bottom: 1px solid #E3E3E3;
-        border-right: 1px solid #E3E3E3;
-        border-top: 1px solid #E3E3E3;
         color: #0C2448;
-        font-size: vw(20);
-        font-style: normal;
-        font-weight: 400;
-        line-height: vw(27); /* 131.25% */ 
-        @include max(md) {
-            font-size: vw2(20);
-            font-style: normal;
-            line-height: 1; /* 98.163% */
-        }  
-        &:first-child {
-          border-radius: 15px 0 0 0px;
-        }
-        &:last-child {
-          border-radius: 0  15px 0 0px;
-        }
-      }
-  
-      th + th +th {
-        border-right: none;
+
       }
       td {
-        border-bottom: 1px solid #E3E3E3;
-        border-right: 1px solid #E3E3E3;
-        background: $white;
-        color:  #454545;
-        @include max(xs) {
-          font-size: 11px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-        }
-        &:first-child {
-          border-left: 1px solid #E3E3E3;
-        }
-      }
-      td + td + td {
-        border-right: none;
-      }
-      tr {
-        &:last-child {
-          td {
-            &:first-child {
-              border-radius: 0 0 0 15px;
-            }
-            &:last-child {
-              border-radius: 0 0 15px  0px;
-            }
-          }
-        }
+        color: #0C2448;
+
       }
   
     }

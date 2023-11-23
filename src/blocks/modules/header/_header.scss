@@ -28,7 +28,7 @@
 				padding-bottom: vw(17);
 				padding-right: vw(20);
 				@include max(md) {
-					flex:1 0 33.333%;
+					flex:1 0 33.33%;
 					max-width: 33.333%;
 					border-right: none;
 					padding-right: vw2(15);
@@ -42,8 +42,8 @@
 				padding-top: vw(20);
 				background: transparent;
 				padding-bottom: vw(17);
-				padding-right: vw(15);
-				padding-left: 30px;
+				padding-right: vw(30);
+				padding-left: vw(30);
 				@include max(md) {
 					flex:1 0 66.666%;
 					max-width: 66.666%;
@@ -66,6 +66,9 @@
 					background: #fff;
 				}
 			}
+		}
+		.header__buttons {
+			border-bottom: none;
 		}
 	}
 	.hamburger {
@@ -466,6 +469,7 @@
 		@include max(md) {
 			justify-content: space-between;
 			align-items: center;
+			border-bottom: none;
 		}
 	}
 }

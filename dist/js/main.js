@@ -184,8 +184,8 @@ $('.product-card__slider').each(function () {
           }
       })
   });
-
-  group.find('.gallery-main').each(function () {
+  function startGalleryMain() {
+    group.find('.gallery-main').each(function () {
       var slider = $(this)
       galleryMain = new Swiper(slider[0], {
           watchOverflow: true,
@@ -211,48 +211,42 @@ $('.product-card__slider').each(function () {
       })
 
     //   galleryMain.controller.control = galleryThumbs;
-  });
+    });
+  }
+  startGalleryMain()
+
+  
   var wrap = $(this).closest('.product-card');
+  var galleryMainStorage = $(".gallery-main__storage .swiper-slide")
+  var galleryThumbsStorage = $(".gallery-thumbs__storage .swiper-slide")
   wrap.find('.product-card__color__filter__item').on( 'click', function() {
     var filter = $(this).attr('data-filter');
+    function filterMainStorage() {
+      let finishGalleryMainStorage = galleryMainStorage.filter(function() {
+         return $(this).attr('data-filter') == filter;
+      })
+      galleryMain.removeAllSlides();
+      galleryMain.appendSlide(finishGalleryMainStorage);
+      startGalleryMain()
+      
+    }
+    function filterThumbsStorage() {
+      let finishgalleryThumbsStorage = galleryThumbsStorage.filter(function() {
+         return $(this).attr('data-filter') == filter;
+      })
+      galleryThumbs.removeAllSlides();
+      galleryThumbs.appendSlide(finishgalleryThumbsStorage);
+      startGalleryMain()
+    }
+    filterMainStorage()
+    filterThumbsStorage()
+
     $(".product-card__color__filter__item").removeClass("active");
-    if(filter==='all'){
-        wrap.find('.swiper-slide').css('display', '');
-        wrap.find('.color-list__selected__element').css('display', '');
-    }
-    else{
-        wrap.find('.swiper-slide').css('display', 'none');
-        wrap.find('.swiper-slide[data-filter="' + filter+'"').css('display', '').addClass("active");
-        wrap.find('.color-list__selected__element').css('display', 'none');
-        wrap.find('.color-list__selected__element[data-filter="' + filter+'"').css('display', '').addClass("active");
-        
-        
-    }
-
-    // $.not(this).removeClass('news__categories-item--active');
     $( this ).addClass('active' );
-
-    function updateGalleryMain() {
-      galleryMain.updateSize();
-      galleryMain.updateSlides();
-      galleryMain.updateProgress();
-      galleryMain.updateSlidesClasses();
-      galleryMain.slideTo(0);
-      galleryMain.scrollbar.updateSize();
-    }
-    function updateGalleryThumbs() {
-      galleryThumbs.updateSize();
-      galleryThumbs.updateSlides();
-      galleryThumbs.updateProgress();
-      galleryThumbs.updateSlidesClasses();
-      galleryThumbs.slideTo(0);
-      galleryThumbs.scrollbar.updateSize();
-    }
-    updateGalleryMain();
-    updateGalleryThumbs();
-
     return false;
   });
+
+
   wrap.find('.product-card__color__filter__item').first().trigger("click")
 
 
@@ -438,69 +432,7 @@ jQuery(function () {
 		showMore (companyCardItem, 2);
 	}
 	
-
-
-	function bodyNoScroll() {
-		let bodyBodymotionless = document.querySelector('body')
-		bodyBodymotionless.classList.add("Bodymotionless")
-		
-	}
-	function bodyYesScroll() {
-		let bodyBodymotionless = document.querySelector('body')
-		bodyBodymotionless.classList.remove("Bodymotionless")	
-	}
 	
-	$( ".header__menu__item" ).mouseenter(function () {
-		let headerMenuItem = $(this);
-		let headerMenuList = headerMenuItem.children( '.header__menu__list' )
-		headerMenuList.addClass('active')
-	});
-	$( ".header__menu__item" ).mouseleave(function () {
-		let headerMenuItem = $(this);
-		let headerMenuList = headerMenuItem.children( '.header__menu__list' )
-		headerMenuList.removeClass('active')
-	});
-
-
-	let overlayBg = document.querySelector(".mob-menu--overlay");
-	let mobMenu = document.querySelector(".mob-menu__section");
-	let humb = document.querySelector(".hamburger");
-
-	var hamburger = $(".hamburger");
-	hamburger.on("click", function(e) {
-		hamburger.toggleClass("is-active");
-	});
-	var search = $(".header__other__search");
-	search.click( function(e) {
-		$(this).children(".header__other__search__input").addClass("active"); 
-
-	});
-	$(document).mouseup(function (e){ 
-		var search = $(".header__other__search");
-		if (!search.is(e.target) 
-				&& search.has(e.target).length === 0) { 
-					search.children(".header__other__search__input").removeClass("active"); 
-		}
-	});
-
-	overlayBg.addEventListener("click", function () {
-		mobMenu.classList.remove("active");
-		humb.classList.remove("is-active");
-		bodyYesScroll()
-	});
-	humb.addEventListener("click", function () {
-		let kye = mobMenu.classList.contains("active");
-		if (kye == false) {
-			mobMenu.classList.add("active");
-			bodyNoScroll()
-		}else {
-			mobMenu.classList.remove("active");
-			bodyYesScroll()
-		}
-
-
-	});
-
 
 	var startSlider
 	$('.js-start__slider').each(function(){
@@ -759,6 +691,15 @@ $(window).scroll(function() {
 	}
 });
 
+function bodyNoScroll() {
+	let bodyBodymotionless = document.querySelector('body')
+	bodyBodymotionless.classList.add("Bodymotionless")
+	
+}
+function bodyYesScroll() {
+	let bodyBodymotionless = document.querySelector('body')
+	bodyBodymotionless.classList.remove("Bodymotionless")	
+}
 
 function MapInit() {
 
@@ -845,18 +786,12 @@ gsap.registerPlugin(ScrollTrigger);
 // gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollToPlugin);
 
-let tl = gsap.timeline({
-	onComplete: function (){
-			$('body').addClass('active');
-			$('.loader').addClass('hide');
-	}
-});
+let tl = gsap.timeline({});
 
 
 var initMode = null;
 
-
-let addTime = 500;
+let addTime = 350;
 
 let st1, st2, st3;
 let tl1 = gsap.timeline({});
@@ -870,21 +805,13 @@ let animationSectionHeight, siteMainHeight;
 let urlParams = new URLSearchParams(window.location.search);
 let yValue = urlParams.get('y');
 
-
+let animationSection = $('.animation__section')
 function initAnimation(){
 	siteMainHeight = $('.site-main').innerHeight();
 	animationSectionHeight =  $('.animation__section').innerHeight();
 	col2Height =  $('.js-animation__col--2').innerHeight();
 	col3Height =  $('.js-animation__col--3').innerHeight();
-
-	s3Width =  $('.section3').innerWidth();
-
-	
-
-	
-
-
-	if (window.innerWidth > 992){
+	if (window.innerWidth > 992 && animationSection.length > 0 ){
 			if (initMode != 'desk'){
 					window.scrollTo({
 							top: 0,
@@ -894,20 +821,6 @@ function initAnimation(){
 					reInit();
 					initScrollAnimationDesktop();
 			}
-	} else if(window.innerWidth > 0){
-			if (initMode != 'tablet'){
-					if (initMode != null){
-							window.scrollTo({
-									top: 0,
-									behavior: "instant"
-							});
-					}
-					initMode = 'tablet';
-					reInit();
-					initScrollAnimationTablet();
-			}
-
-			$('body').addClass('active');
 	}
 }
 
@@ -918,8 +831,7 @@ var dwidth = $(window).width();
 $(window).on('resize',function (){
 	var wwidth = $(window).width();
 	if(dwidth!==wwidth){
-
-			initAnimation();
+		initAnimation();
 	}
 });
 
@@ -931,15 +843,7 @@ function reInit(){
 	tl1.clear();
 	tl2.clear();
 	tl3.clear();
-	gsap.set(".loader__center, .loader__back, .section1__house, .section1 .header, .sidebar, .section1__title," +
-			".scroll-page, .fullPageOverlay", {clearProps:"all"});
-	/*window.scrollTo({
-			top: 0,
-			behavior: "instant"
-	});*/
-	$('body').removeClass('active');
-	$('.loader').removeClass('hide');
-	$('.sidebar__global, .sidebar__burger, .sidebar__menu').removeClass('active');
+	gsap.set(".js-animation__col--2, .animation__bg.animation__bg__1, .js-animation__col--3", {clearProps:"all"});
 }
 
 function initScrollAnimationDesktop(){
@@ -948,7 +852,8 @@ function initScrollAnimationDesktop(){
 		y: "0%"
 	}, {
 		y: -1 * (col2Height - animationSectionHeight),
-		duration: 0.6,
+		// y: "-60%",
+		duration: 0.2,
 		ease: "none",
 		onStart: function () {
 			// $('.side-bar').removeClass('active');
@@ -964,18 +869,18 @@ function initScrollAnimationDesktop(){
 	tl1.fromTo(".animation__bg.animation__bg__1", {
 		y: "0%"
 	}, {
-		// y: -1 * (col3Height - animationSectionHeight),
-		y: "-70%",
-		duration: 0.6,
+		y: -0.5* (col3Height - animationSectionHeight),
+		// y: "-50%",
+		duration: 0.1,
 		ease: "none",
 
 	}, "<");
 	tl1.fromTo(".js-animation__col--3", {
-		y: "0%"
+		y: "40%"
 	}, {
 		// y: -1 * (col3Height - animationSectionHeight),
-		y: "-105%",
-		duration: 0.5,
+		y: "-70%",
+		duration: 0.2,
 		ease: "none",
 
 	}, "<");
@@ -993,12 +898,5 @@ function initScrollAnimationDesktop(){
 			animation: tl1,
 	});
 
-
-}
-function initScrollAnimationTablet(){
-
-}
-
-function initScrollAnimationMobile(){
 
 }

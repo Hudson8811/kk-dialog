@@ -41,7 +41,7 @@
       height: auto;
       margin-bottom: 20px;
     }
-    .swiper-slide{
+    &__slide{
       position: relative;
       display: flex;
       justify-content: center;
@@ -79,6 +79,16 @@
         object-position: center center;
         z-index: 1;
       }
+    }
+    &__storage {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-flow: row nowrap;
+      width: 100%;
+      visibility: hidden;
+      display: none;
     }
     .swiper-buttons.gallery-main--swiper-buttons {
       position: absolute;
@@ -141,7 +151,7 @@
           }
     
       }
-  }
+    }
   }
   
   
@@ -177,6 +187,16 @@
       @include max(md) {
         display: none;
       }
+    }
+    &__storage {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-flow: row nowrap;
+      width: 100%;
+      visibility: hidden;
+      display: none;
     }
     @include max(md) {
       width: 100%;

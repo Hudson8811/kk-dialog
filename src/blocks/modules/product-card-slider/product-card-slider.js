@@ -26,8 +26,8 @@ $('.product-card__slider').each(function () {
           }
       })
   });
-
-  group.find('.gallery-main').each(function () {
+  function startGalleryMain() {
+    group.find('.gallery-main').each(function () {
       var slider = $(this)
       galleryMain = new Swiper(slider[0], {
           watchOverflow: true,
@@ -53,48 +53,42 @@ $('.product-card__slider').each(function () {
       })
 
     //   galleryMain.controller.control = galleryThumbs;
-  });
+    });
+  }
+  startGalleryMain()
+
+  
   var wrap = $(this).closest('.product-card');
+  var galleryMainStorage = $(".gallery-main__storage .swiper-slide")
+  var galleryThumbsStorage = $(".gallery-thumbs__storage .swiper-slide")
   wrap.find('.product-card__color__filter__item').on( 'click', function() {
     var filter = $(this).attr('data-filter');
+    function filterMainStorage() {
+      let finishGalleryMainStorage = galleryMainStorage.filter(function() {
+         return $(this).attr('data-filter') == filter;
+      })
+      galleryMain.removeAllSlides();
+      galleryMain.appendSlide(finishGalleryMainStorage);
+      startGalleryMain()
+      
+    }
+    function filterThumbsStorage() {
+      let finishgalleryThumbsStorage = galleryThumbsStorage.filter(function() {
+         return $(this).attr('data-filter') == filter;
+      })
+      galleryThumbs.removeAllSlides();
+      galleryThumbs.appendSlide(finishgalleryThumbsStorage);
+      startGalleryMain()
+    }
+    filterMainStorage()
+    filterThumbsStorage()
+
     $(".product-card__color__filter__item").removeClass("active");
-    if(filter==='all'){
-        wrap.find('.swiper-slide').css('display', '');
-        wrap.find('.color-list__selected__element').css('display', '');
-    }
-    else{
-        wrap.find('.swiper-slide').css('display', 'none');
-        wrap.find('.swiper-slide[data-filter="' + filter+'"').css('display', '').addClass("active");
-        wrap.find('.color-list__selected__element').css('display', 'none');
-        wrap.find('.color-list__selected__element[data-filter="' + filter+'"').css('display', '').addClass("active");
-        
-        
-    }
-
-    // $.not(this).removeClass('news__categories-item--active');
     $( this ).addClass('active' );
-
-    function updateGalleryMain() {
-      galleryMain.updateSize();
-      galleryMain.updateSlides();
-      galleryMain.updateProgress();
-      galleryMain.updateSlidesClasses();
-      galleryMain.slideTo(0);
-      galleryMain.scrollbar.updateSize();
-    }
-    function updateGalleryThumbs() {
-      galleryThumbs.updateSize();
-      galleryThumbs.updateSlides();
-      galleryThumbs.updateProgress();
-      galleryThumbs.updateSlidesClasses();
-      galleryThumbs.slideTo(0);
-      galleryThumbs.scrollbar.updateSize();
-    }
-    updateGalleryMain();
-    updateGalleryThumbs();
-
     return false;
   });
+
+
   wrap.find('.product-card__color__filter__item').first().trigger("click")
 
 
