@@ -3447,7 +3447,7 @@ body {
 
 .site-main {
   flex: 1 0 auto;
-  padding-top: 6.40625vw;
+  padding-top: 4.6875vw;
   background: #EFEFEF;
   overflow: hidden;
   width: 100%;
@@ -3921,6 +3921,16 @@ body {
 .layout__col {
   position: relative;
   display: flex;
+  padding-top: 1.0416666667vw;
+}
+
+.layout__col__border-top {
+  position: absolute;
+  top: 0;
+  left: 1.5625vw;
+  width: calc(100% - 3.125vw);
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .layout__col:nth-child(1) {
@@ -6084,7 +6094,7 @@ body {
   padding: 0;
   background: transparent;
   z-index: 9999;
-  height: 6.40625vw;
+  height: 4.6875vw;
   box-sizing: border-box;
 }
 
@@ -6117,8 +6127,14 @@ body {
   background: #fff;
 }
 
-.section__header.bg__white .header__buttons {
-  border-bottom: none;
+.section__header.bg__white .header__logo img {
+  transition: all 0.3s;
+  height: 2.96875vw;
+  width: 100%;
+}
+
+.section__header.bg__white .header__menu--all-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .section__header .hamburger {
@@ -6179,10 +6195,13 @@ body {
 }
 
 .header__logo img {
-  position: relative;
+  transition: all 0.3s;
+  position: absolute;
   display: inline-block;
-  width: 100%;
-  height: 100%;
+  width: 11.3020833333vw;
+  height: 4.4270833333vw;
+  top: 0;
+  left: 0;
   object-fit: contain;
 }
 
@@ -6249,7 +6268,7 @@ body {
 
 .header__menu__list {
   position: absolute;
-  top: calc(100% - 10px);
+  top: calc(100% - 0vw);
   left: 0px;
   display: flex;
   visibility: hidden;
@@ -6320,7 +6339,7 @@ body {
 
 .header__menu--all-menu {
   position: absolute;
-  top: calc(100% + 0px);
+  top: calc(100% + 0.78125vw);
   left: -14.7395833333vw;
   display: flex;
   visibility: hidden;
@@ -6333,6 +6352,7 @@ body {
   opacity: 0;
   border-radius: 0;
   transition: all 0.3s;
+  z-index: 100;
 }
 
 .header__menu--all-menu.active {
@@ -6522,7 +6542,6 @@ body {
   align-items: flex-start;
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .header-bg {
@@ -6535,7 +6554,7 @@ body {
   width: 100%;
   padding: 0;
   z-index: 100;
-  height: 6.40625vw;
+  height: 4.6875vw;
   box-sizing: border-box;
 }
 
@@ -8378,7 +8397,7 @@ body {
     right: -11.1111111111vw;
     font-size: 2.2569444444vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }
@@ -8397,7 +8416,7 @@ body {
     font-size: 10.4166666667vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.6699652778vw;
   }
@@ -8406,7 +8425,7 @@ body {
     font-size: 10.4166666667vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.6699652778vw;
   }
@@ -8415,7 +8434,7 @@ body {
     font-size: 6.9444444444vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.1576388889vw;
   }
@@ -8423,7 +8442,7 @@ body {
   .title__40 {
     font-size: 5.5555555556vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.2444444444vw;
   }
@@ -8431,7 +8450,7 @@ body {
   .title__32 {
     font-size: 4.8611111111vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.2256944444vw;
   }
@@ -8439,21 +8458,21 @@ body {
   .text__24 {
     font-size: 3.8194444444vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
   }
 
   .text__20 {
     font-size: 3.4722222222vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
   }
 
   .text__16 {
     font-size: 2.7777777778vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0173611111vw;
   }
@@ -8461,13 +8480,17 @@ body {
   .text__13 {
     font-size: 2.2569444444vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }
 
   .layout {
     flex-flow: column nowrap;
+  }
+
+  .layout__col__border-top {
+    display: none;
   }
 
   .layout__col:nth-child(1) {
@@ -8645,7 +8668,7 @@ body {
   .card__title {
     font-size: 4.8611111111vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.2256944444vw;
     max-width: 70%;
@@ -8688,7 +8711,7 @@ body {
     font-size: 4.1666666667vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.2;
     /* 125% */
     letter-spacing: -0.0694444444vw;
   }
@@ -8957,7 +8980,7 @@ body {
   .article__title {
     font-size: 5.5555555556vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: -0.2444444444vw;
   }
@@ -9017,7 +9040,7 @@ body {
   .contacts__form__input-block__name {
     font-size: 2.2569444444vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }
@@ -9026,7 +9049,7 @@ body {
     bottom: -3.125vw;
     font-size: 2.2569444444vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }
@@ -9376,6 +9399,11 @@ body {
     padding-top: 1.7361111111vw;
   }
 
+  .section__header.bg__white .header__logo img {
+    width: 100%;
+    height: auto;
+  }
+
   .section__header .hamburger {
     display: block;
   }
@@ -9388,6 +9416,12 @@ body {
     width: 24.3055555556vw;
     min-width: 24.3055555556vw;
     margin-right: 3.4722222222vw;
+  }
+
+  .header__logo img {
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 
   .header__menu {
@@ -9787,7 +9821,7 @@ body {
   .text__20 {
     font-size: 3.7333333333vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }
@@ -9795,7 +9829,7 @@ body {
   .text__16 {
     font-size: 3.4666666667vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }
@@ -9803,7 +9837,7 @@ body {
   .text__13 {
     font-size: 3.4666666667vw;
     font-style: normal;
-    line-height: 1;
+    line-height: 1.2;
     /* 98.163% */
     letter-spacing: 0.0564236111vw;
   }

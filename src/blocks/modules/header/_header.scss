@@ -9,7 +9,7 @@
 	padding: 0;
 	background: transparent;
 	z-index: 9999;
-	height: vw(123);
+	height: vw(90);
 	box-sizing: border-box;
 	@include max(md) {
 		height: vw2(70);
@@ -67,8 +67,20 @@
 				}
 			}
 		}
-		.header__buttons {
-			border-bottom: none;
+		.header__logo {
+			img {
+				transition: all 0.3s;
+				height: vw(57);
+				width: 100%;
+				@include max(md) {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+		}
+		.header__menu--all-menu {
+			border-top: 1px solid rgba(0, 0, 0, 0.2);
 		}
 	}
 	.hamburger {
@@ -136,11 +148,19 @@
 			margin-right: vw2(20);			
 		}
 		img {
-			position: relative;
+			transition: all 0.3s;
+			position: absolute;
 			display: inline-block;
-			width: 100%;
-			height: 100%;
+			width: vw(217);
+			height: vw(85);
+			top: 0;
+			left: 0;
 			object-fit: contain;
+			@include max(md) {
+				position: relative;
+				width: 100%;
+				height: auto;
+			}
 		}
 		
 	
@@ -203,7 +223,7 @@
 		}
 		&__list {
 			position: absolute;
-			top: calc(100% - 10px);
+			top: calc(100% - vw(0));
 			left: 0px;
 			display: flex;
 			visibility: hidden;
@@ -270,7 +290,7 @@
 		}
 		&--all-menu {
 			position: absolute;
-			top: calc(100% + 0px);
+			top: calc(100% + vw(15));
 			left: vw(-283);
 			display: flex;
 			visibility: hidden;
@@ -283,6 +303,7 @@
 			opacity: 0;
 			border-radius: 0;
 			transition: all .3s;
+			z-index: 100;
 			&.active {
 				display: flex;
 				opacity: 1;
@@ -465,7 +486,8 @@
 		align-items: flex-start;
 		height: 100%;
 		width: 100%;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+		// border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
 		@include max(md) {
 			justify-content: space-between;
 			align-items: center;
@@ -483,7 +505,7 @@
 	width: 100%;
 	padding: 0;
 	z-index: 100;
-	height: vw(123);
+	height: vw(90);
 	box-sizing: border-box;
 	@include max(md) {
 		height: vw2(70);
