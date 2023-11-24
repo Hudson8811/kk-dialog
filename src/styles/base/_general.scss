@@ -509,7 +509,7 @@ body {
         line-height: 1; /* 98.163% */
     }
     @include max(xxs) {
-        font-size: 14px;
+        font-size: vw3(14);
         font-style: normal;
         line-height: 1; /* 98.163% */
         letter-spacing: vw2(0.325);
@@ -529,7 +529,7 @@ body {
         letter-spacing: vw2(0.1);
     }
     @include max(xxs) {
-        font-size: 13px;
+        font-size: vw3(13);
         font-style: normal;
         line-height: 1; /* 98.163% */
         letter-spacing: vw2(0.325);
@@ -550,7 +550,7 @@ body {
         letter-spacing: vw2(0.325);
     }
     @include max(xxs) {
-        font-size: 13px;
+        font-size: vw3(13);
         font-style: normal;
         line-height: 1; /* 98.163% */
         letter-spacing: vw2(0.325);

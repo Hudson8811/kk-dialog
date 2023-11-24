@@ -9785,7 +9785,7 @@ body {
 
 @media only screen and (max-width: 375px) {
   .text__20 {
-    font-size: 14px;
+    font-size: 3.7333333333vw;
     font-style: normal;
     line-height: 1;
     /* 98.163% */
@@ -9793,7 +9793,7 @@ body {
   }
 
   .text__16 {
-    font-size: 13px;
+    font-size: 3.4666666667vw;
     font-style: normal;
     line-height: 1;
     /* 98.163% */
@@ -9801,7 +9801,7 @@ body {
   }
 
   .text__13 {
-    font-size: 13px;
+    font-size: 3.4666666667vw;
     font-style: normal;
     line-height: 1;
     /* 98.163% */

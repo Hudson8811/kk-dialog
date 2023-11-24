@@ -11,6 +11,10 @@
 	$temp: #{math.div($px, $resolutiond) * 100};
 	@return $temp +'vw';
 }
+@function vw3($px, $resolutiond: 375) {
+	$temp: #{math.div($px, $resolutiond) * 100};
+	@return $temp +'vw';
+}
 
 @function vh($px, $resolutiond: 1080) {
 	$temp: #{math.div($px, $resolutiond) * 100};
