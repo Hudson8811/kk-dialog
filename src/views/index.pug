@@ -20,6 +20,9 @@ block content
 						.start__subtitle.title__40
 							!="<span>Самый крупный производитель в России оборудования </span>для удаления и фильтрации табачного дыма"
 						a.start__btn.link Подробнее
+					.video(href="https://www.youtube.com/watch?v=J7oOamYSKz0" data-fancybox="video"  data-caption="Большое нзвание для фото 1")
+						.video__picture
+							img(src="img/video.png" alt="")
 				.layout__col
 					.swiper-container.start__slider.js-start__slider
 						.swiper-wrapper
@@ -58,6 +61,12 @@ block content
 				.layout--trio__col.js-animation__col--2
 					.animation__title(id="main1" data-color="blue").title__60 
 						!='<span class="green">"Dиалог"</span > - российский производитель №1 оборудования <span>для организации эффективных, комфортных и безопасных мест для курения.</span>'
+					.animation__desc.animation__desc--mob
+						.animation__desc__picture 	
+							img(src="img/animation__desc__picture__1.png", alt="")
+						.animation__desc__text.text__24
+							!="Мы производим полный ассортимент продукции для решения проблем организации мест для курения и удаления табачного дыма. В зависимости от специфики курения в вашей организации, а также от характеристик мест, выделенных под курение сотрудников, Вы можете подобрать оборудование, максимально отвечающее Вашим потребностям, а именно:"
+										
 					a(href="#").card(id="main2" data-color="blue")
 						.card__title
 							!="Курительные  <br>кабины"
@@ -95,11 +104,12 @@ block content
 									<path d="M10.2143 7.86522H18V10.2842H10.2143V18.0747H7.78571V10.2842H0V7.86522H7.78571V0.074707H10.2143V7.86522Z" fill="white"/>
 									</svg>									
 				.layout--trio__col.js-animation__col--3
-					.animation__desc
+					.animation__desc.animation__desc--desktop
 						.animation__desc__picture 	
 							img(src="img/animation__desc__picture__1.png", alt="")
 						.animation__desc__text.text__24
 							!="Мы производим полный ассортимент продукции для решения проблем организации мест для курения и удаления табачного дыма. В зависимости от специфики курения в вашей организации, а также от характеристик мест, выделенных под курение сотрудников, Вы можете подобрать оборудование, максимально отвечающее Вашим потребностям, а именно:"
+					
 					a(href="#").card
 						.card__title
 							!="Павильоны для курения <br>с вытяжной вентиляцией"
@@ -192,9 +202,6 @@ block content
 									.industry__text.text__20 собственное уникальное производство всех компонентов входящих в комплект фильтров "Элемент" и "ДВО"
 							
 				.layout--trio__col
-					//- .industry__label 
-					//- 	.industry__label__date 02
-					//- 	.industry__label__num /03
 					.swiper-container.industry__slider.industry__slider--two.js-industry--two__slider
 						.swiper-wrapper
 							.industry__slide.swiper-slide
@@ -224,6 +231,7 @@ block content
 								<path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
 								</svg>
 					.swiper-pagination.swiper-pagination__industry__slider--two
+	
 	.section(id="main4" data-color="gray").certification__section.section--gray
 		.container
 			.layout--trio

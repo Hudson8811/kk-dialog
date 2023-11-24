@@ -113,8 +113,8 @@ jQuery(function () {
 						// autoHeight: true,
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
-						// direction: 'horizontal',
-						direction: 'vertical',
+						direction: 'horizontal',
+						// direction: 'vertical',
 						centeredSlides: false,
 						centeredSlidesBounds: false,
 						// loop: true,
@@ -123,6 +123,12 @@ jQuery(function () {
 								nextEl: ".gallery-thumbs-next",
 								prevEl: ".gallery-thumbs-prev"
 						},
+						breakpoints: {
+						    // when window width is >= 480px
+						    992: {
+									direction: 'vertical'
+						    },
+						}
 				})
 		});
 	
@@ -397,7 +403,7 @@ let tl = gsap.timeline({});
 
 var initMode = null;
 
-let addTime = 350;
+let addTime = 300;
 
 let st1, st2, st3;
 let tl1 = gsap.timeline({});
@@ -475,17 +481,17 @@ function initScrollAnimationDesktop(){
 	tl1.fromTo(".animation__bg.animation__bg__1", {
 		y: "0%"
 	}, {
-		y: -0.5* (col3Height - animationSectionHeight),
-		// y: "-50%",
+		y: -1* (col3Height - animationSectionHeight),
+		// y: "-100%",
 		duration: 0.1,
 		ease: "none",
 
 	}, "<");
 	tl1.fromTo(".js-animation__col--3", {
-		y: "40%"
+		y: "23%"
 	}, {
-		// y: -1 * (col3Height - animationSectionHeight),
-		y: "-70%",
+		y: -1 * (col3Height - animationSectionHeight),
+		// y: "-70%",
 		duration: 0.2,
 		ease: "none",
 

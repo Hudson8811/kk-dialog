@@ -28,15 +28,18 @@ block content
 										.product-card__color__filter__item(data-filter="01" style="background: #E4E6E8")
 										.product-card__color__filter__item(data-filter="02" style="background: #fff")
 										.product-card__color__filter__item(data-filter="03" style="background: #CECECE")
-							.product-card__col__bottom
+							.product-card__col__bottom.product-card__col__bottom--desc
 								.product-card__desc.text__20
 									!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
+						
 						.product-card__col
 							.product-card__links
 								a(href="#").product-card__link.text__13.active Титан 1
 								a(href="#").product-card__link.text__13 Титан 2
 							include ../../blocks/modules/product-card-slider/product-card-slider
-
+							.product-card__col__bottom.product-card__col__bottom--mob
+								.product-card__desc.text__20
+									!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
 				.layout__col
 					.nav-tabs.product-card__tabs
 						a.product-card__tab.nav-tab.text__13(href="#" data-tab="1" ) Описание
