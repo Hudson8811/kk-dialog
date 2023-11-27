@@ -7,6 +7,8 @@
 @@include("./libs/gsap.min.js")
 @@include("./libs/ScrollTrigger.min.js")
 @@include("./libs/ScrollToPlugin.min.js")
+@@include("./libs/resizeSensor.js")
+@@include("./libs/sticky-sidebar.js")
 
 //my files
 

@@ -38,6 +38,7 @@ jQuery(function () {
 		showMore (companyCardItem, 2);
 	}
 	
+
 	
 
 	var startSlider
@@ -172,7 +173,10 @@ jQuery(function () {
 	  industryOne.controller.control = industryTwo;
 		industryTwo.controller.control = industryOne;
 	});
-
+	$( ".accordion-link" ).on( "click", function( event ) {
+		event.stopPropagation();
+		// Do something
+	});
 	var pluginName = 'simpleAccordion',
 	defaults = {
 			multiple: false,
@@ -367,6 +371,23 @@ function MapInit() {
 	
 }
 
+
+$('.contacts__form__input').on('input', function (e) {
+		var state = e.target.value;
+		if (state.length > 0) {
+			$(this).addClass( "value" );
+		} else {
+			$(this).removeClass( "value" );
+		}
+});
+$('.contacts__form__textarea').on('input', function (e) {
+	var state = e.target.value;
+	if (state.length > 0) {
+		$(this).addClass( "value" );
+	} else {
+		$(this).removeClass( "value" );
+	}
+});
 
 let sideBar = document.querySelector(".side-bar");
 if (window.innerWidth > 999 && sideBar !== null){

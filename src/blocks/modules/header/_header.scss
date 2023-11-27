@@ -85,30 +85,31 @@
 	}
 	.hamburger {
 		display: none;
-		width: vw2(20);
-		height: vw2(18);
+		width: vw2(30);
+		height: vw2(20);
 		padding: 0;
 		margin-top: vw2(-8);
 		@include max(md) {
 			display: block;
 		}
 		&-box {
-			width: vw2(20);
-			height: vw2(18);
+			width: vw2(30);
+			height: vw2(20);
 		}
 		.hamburger-inner,
 		.hamburger-inner::before,
 		.hamburger-inner::after {
-			width: vw2(20);
-			height: vw2(2);
+			width: vw2(30);
+			height: vw2(4);
 		}
 		.hamburger-inner::after {
-			top: vw2(-10); 
+			top: vw2(-14); 
 			bottom: auto;
+			height: vw2(4);
 		}
 		.hamburger-inner::before{
-			top: vw2(-5);
-			width: vw2(-15);
+			top: vw2(-7);
+			width: vw2(25);
 		}
 		
 		&.is-active {
@@ -116,7 +117,7 @@
 				transform: translate3d(0, vw2(-5), 0) rotate(-45deg);
 				&::before{
 					top: 0px;
-					width: vw2(20);
+					width: vw2(30);
 				}
 			}
 		}
@@ -493,6 +494,11 @@
 			align-items: center;
 			border-bottom: none;
 		}
+		.btn {
+			@include max(md) {
+				min-height: vw2(46);
+			}
+		}
 	}
 }
 .header-bg {
@@ -804,7 +810,6 @@
 			letter-spacing: vw2(0.5);
 			margin-bottom: vw2(16);
 			text-decoration: none;
-			text-transform: uppercase;
 			&--two {
 				font-size: vw2(18);
 				font-style: normal;
@@ -827,8 +832,6 @@
 		}
 		.accordion-link {
 			position: relative;
-			top: 0;
-			left: vw2(25);
 			width: 100%;
 			color: #fff;
 			font-size: vw2(25);
@@ -843,7 +846,6 @@
 			display: flex;
 			justify-content: flex-start;
 			padding-left: 0px;
-			text-transform: uppercase;
 			text-decoration: none;
 		}
 		.accordion-body {
@@ -863,14 +865,12 @@
 			line-height: normal;
 			letter-spacing: vw2(0.5);
 			margin-bottom: vw2(16);
-			margin-left: vw2(25);
+			padding-left: vw2(35);
 			cursor: pointer;
 			position: relative;
 			display: flex;
 			justify-content: flex-start;
 			min-height: vw2(28);
-			padding-left: 0px;
-			text-transform: uppercase;
 			&::before {
 				content: url(../img/folder.svg);
 				margin-right: vw2(8);
@@ -883,12 +883,14 @@
 				content: url(../img/svg/open__row.svg);
 				color: #25CA6A;
 				position: absolute;
-				width: vw2(20);
+				width: vw2(60);
 				height: vw2(20);
-				left: vw2(-25);
-				top: vw2(-5);
-				height: vw2(12);
+				left: vw2(-0);
+				top: vw2(0);
 				transition: all .3s;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
 				transform: rotate(45deg);
 				animation-name: accordionRotationOpen;
 				animation-duration: .2s;
@@ -915,24 +917,24 @@
 		}
 		@keyframes accordionRotationOpen  {
 			0% {
-				transform-origin: 50% 50%;
-				transform: rotate(30deg);
+				transform-origin: 13% 62%;
+				transform: rotate(180deg);
 			}
 		
 			100% {
-				transform-origin: 50% 50%;
+				transform-origin: 13% 62%;
 				transform: rotate(0deg);
 			}
 		
 		}
 		@keyframes accordionRotationClose {
 			0% {
-				transform-origin: 50% 50%;
+				transform-origin: 13% 62%;
 				transform: rotate(0deg);
 			}
 			100% {
-				transform-origin: 50% 50%;
-				transform: rotate(30deg);
+				transform-origin: 13% 62%;
+				transform: rotate(180deg);
 			}
 		
 		}

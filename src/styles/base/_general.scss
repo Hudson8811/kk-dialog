@@ -2522,6 +2522,10 @@ body {
             top: 0;
             opacity: 0.2;
         }
+        &.value + .contacts__form__input-block__name { 
+            top: 0;
+            opacity: 0.2;
+        }
         &:active + .contacts__form__input-block__name { 
             top: 0;
             opacity: 0.2;
@@ -2564,6 +2568,10 @@ body {
             opacity: 0.2;
         }
         &:active + .contacts__form__input-block__name { 
+            top: 0;
+            opacity: 0.2;
+        }
+        &.value + .contacts__form__input-block__name { 
             top: 0;
             opacity: 0.2;
         }
@@ -3252,7 +3260,15 @@ body {
 .tab-pane.active {
     display: flex;
 }
+.sidebar{
+    will-change: min-height;
+}
 
+.sidebar__inner{
+    transform: translate(0, 0); /* For browsers don't support translate3d. */
+    transform: translate3d(0, 0, 0);
+    will-change: position, transform;
+}
 
 .catalog {
 
@@ -3284,6 +3300,7 @@ body {
                 flex-flow: column nowrap;
                 &:nth-child(1) {
                     padding-top: vw(30);
+                    padding-bottom: vw(30);
                     @include max(md) {
                         display: none;
                         border-right: none;

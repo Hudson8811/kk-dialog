@@ -1,7 +1,9 @@
+// #catalog-bar.is-affixed {
+// 	.catalog-bar {
+// 		padding-top: vw(110);
+// 	}
+// }
 .catalog-bar {
-	// position: fixed;
-	// top: vw(130);
-	// left: vw(30);
 	position: relative;
 	display: flex;
 	justify-content: flex-start;
@@ -9,6 +11,7 @@
 	flex-flow: column nowrap;
 	z-index: 50;
 	transition: all 0.3s;
+	padding-bottom: vw(100);
 	// visibility: hidden;
 	@include max(md) {
 			display: none;
