@@ -26,18 +26,6 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <div class="section preloader__section section--gray">
-      <div class="container">
-        <div class="preloader__animation"></div>
-        <div class="layout--trio">
-          <div class="layout--trio__col"></div>
-          <div class="layout--trio__col">
-            <div class="preloader__picture"> <img src="img/preloader__img.png" alt=""></div>
-          </div>
-          <div class="layout--trio__col"></div>
-        </div>
-      </div>
-    </div>
     <div class="section__header">
       <div class="container">
         <div class="layout">
@@ -221,7 +209,7 @@
       </div>
       <div class="section company-card__section section--gray">
         <div class="container">
-          <div class="layout">
+          <div class="layout" id="company-bar__container-selector">
             <div class="layout__col">
               <div class="btn btn--back btn--white company-card__back company-card__back--desc"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
 <path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="#212A39"/>
@@ -334,62 +322,68 @@
               <div class="articles__btn btn btn--white more">Показать еще			</div>
             </div>
             <div class="layout__col">
-              <div class="btn btn--back btn--white company-card__back company-card__back--mob"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+              <div id="company-bar">
+                <div class="sidebar__inner">
+                  <div class="company-card__bar">
+                    <div class="btn btn--back btn--white company-card__back company-card__back--mob"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
 <path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="#212A39"/>
 </svg>
-                <p>назад
-                </p>
-              </div>
-              <div class="layout__col__border-top"></div>
-              <div class="company-card__desc">
-                <div class="company-card__desc__top">
-                  <div class="company-card__desc__title title__40">Оzon</div>
-                  <div class="company-card__desc__logo"><img src="img/company-card__desc__logo__1.png" alt=""></div>
-                </div>
-                <div class="company-card__desc__text text__20">Курительная комната на 20 человек, выполненная по индивидуальному проекту.Курительная комната на 20 человек, выполненная по индивидуальному проекту.Курительная комната на 20 человек, выполненная по индивидуальному проекту.Курительная комната на 20 человек, выполненная по индивидуальному проекту.
-                </div>
-              </div>
-              <div class="portfolio__slider">
-                <div class="swiper-container gallery-main">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
-                           <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
-                    <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
-                           <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
-                    <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
-                           <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
-                    <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
-                           <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
-                    <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
-                           <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
-                    <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
-                           <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
-                  </div>
-                  <div class="swiper-buttons swiper-buttons--white">
-                    <div class="swiper-button-prev gallery-main-prev"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                      <p>назад
+                      </p>
+                    </div>
+                    <div class="layout__col__border-top"></div>
+                    <div class="company-card__desc">
+                      <div class="company-card__desc__top">
+                        <div class="company-card__desc__title title__40">Оzon</div>
+                        <div class="company-card__desc__logo"><img src="img/company-card__desc__logo__1.png" alt=""></div>
+                      </div>
+                      <div class="company-card__desc__text text__20">Курительная комната на 20 человек, выполненная по индивидуальному проекту.Курительная комната на 20 человек, выполненная по индивидуальному проекту.Курительная комната на 20 человек, выполненная по индивидуальному проекту.Курительная комната на 20 человек, выполненная по индивидуальному проекту.
+                      </div>
+                    </div>
+                    <div class="portfolio__slider">
+                      <div class="swiper-container gallery-main">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
+                                 <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
+                          <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
+                                 <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
+                          <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
+                                 <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
+                          <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
+                                 <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
+                          <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
+                                 <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
+                          <div class="swiper-slide" href="img/portfolio__slider__1.png" srcset="img/portfolio__slider__1.png 2x" data-fancybox="portfolio__slider" data-caption="Большое нзвание для фото 1">
+                                 <img src="img/portfolio__slider.png", srcset="img/portfolio__slider__1.png 2x" alt=""></div>
+                        </div>
+                        <div class="swiper-buttons swiper-buttons--white">
+                          <div class="swiper-button-prev gallery-main-prev"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
 <path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
 </svg>
-                    </div>
-                    <div class="swiper-button-next gallery-main-next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                          </div>
+                          <div class="swiper-button-next gallery-main-next"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
 <path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
 </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="gallery-thumbs__section">
-                  <div class="swiper-container gallery-thumbs">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
-                      <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
-                      <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
-                      <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
-                      <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
-                      <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
-                    </div>
-                    <div class="gallery-thumbs__counter">+13</div>
-                    <div class="gallery-thumbs__swiper-buttons">   
-                      <div class="swiper-button-prev gallery-thumbs-prev"></div>
-                      <div class="swiper-button-next gallery-thumbs-next"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="gallery-thumbs__section">
+                        <div class="swiper-container gallery-thumbs">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
+                            <div class="swiper-slide"><img src="img/portfolio__slider__1.png" alt=""></div>
+                          </div>
+                          <div class="gallery-thumbs__counter">+13</div>
+                          <div class="gallery-thumbs__swiper-buttons">   
+                            <div class="swiper-button-prev gallery-thumbs-prev"></div>
+                            <div class="swiper-button-next gallery-thumbs-next"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

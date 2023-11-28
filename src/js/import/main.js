@@ -1,5 +1,18 @@
 jQuery(function () { 
 
+	let companyBarContainerSelector = document.querySelector("#company-bar__container-selector")
+	if(companyBarContainerSelector !== null && document.documentElement.clientWidth > 992) {
+			var companyBar = new StickySidebar('#company-bar', {
+				containerSelector: '#company-bar__container-selector',
+				innerWrapperSelector: '.sidebar__inner',
+				topSpacing: 92,
+				containerSelector: false,
+				resizeSensor: true,
+				minWidth: 0
+			});
+		
+	}
+
 	$(".product-card__tab").on("click", function(e) {
 		e.preventDefault();
 		var nav = $(this);

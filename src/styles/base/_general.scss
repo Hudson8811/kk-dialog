@@ -1708,6 +1708,7 @@ body {
                 &:nth-child(2) {
                     background: #fff;
                     padding-right: 0;
+                    padding-top: 0;
                     @include max(md) {
                         background: #fff;
                     }
@@ -3009,6 +3010,12 @@ body {
         }
     }
 }
+#company-bar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
 .company-card {
     position: relative;
     display: flex;
@@ -3029,6 +3036,11 @@ body {
     &__section {
         @include max(md) {
             margin-bottom: vw2(30);
+        }
+        .layout__col__border-top {
+            top: vw(0);
+            left: 0;
+            width: calc(100% - vw(30));
         }
         .layout {
             align-items: stretch;
@@ -3055,11 +3067,6 @@ body {
 
                 }
                 &:nth-child(2) {
-                    position: fixed;
-                    top: vw(90);
-                    right: 0;
-                    height: calc(100vh - vw(90));
-                    overflow: auto;
                     background: #fff;
                     padding-right: vw(0);
                     padding-left: vw(30);
@@ -3114,6 +3121,16 @@ body {
                 margin-bottom: vw2(30);
             }
         }
+    }
+    &__bar {
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        padding-bottom: vw(30);
+        padding-top: vw(30);
+        // height: calc(100vh - vw(90));
+        // overflow: auto;
     }
     &__list {
         position: relative;

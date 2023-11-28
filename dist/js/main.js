@@ -1386,7 +1386,7 @@ $('.product-card__slider').each(function () {
 });
 
 let preloaderSection = document.querySelector(".preloader__section")
-if(preloaderSection.length !== null ) {
+if(preloaderSection !== null ) {
 	setTimeout(() => {
 		preloaderSection.classList.add("puff-out-center")
 	}, 3090)
@@ -1534,7 +1534,7 @@ $('.portfolio__slider').each(function () {
 });
 
 let catalogBarContainerSelector = document.querySelector("#catalog-bar__container-selector")
-if(catalogBarContainerSelector != null && document.documentElement.clientWidth > 992) {
+if(catalogBarContainerSelector !== null && document.documentElement.clientWidth > 992) {
 		var sidebar = new StickySidebar('#catalog-bar', {
 			containerSelector: '#catalog-bar__container-selector',
 			innerWrapperSelector: '.sidebar__inner',
@@ -1546,6 +1546,19 @@ if(catalogBarContainerSelector != null && document.documentElement.clientWidth >
 	
 }
 jQuery(function () { 
+
+	let companyBarContainerSelector = document.querySelector("#company-bar__container-selector")
+	if(companyBarContainerSelector !== null && document.documentElement.clientWidth > 992) {
+			var companyBar = new StickySidebar('#company-bar', {
+				containerSelector: '#company-bar__container-selector',
+				innerWrapperSelector: '.sidebar__inner',
+				topSpacing: 92,
+				containerSelector: false,
+				resizeSensor: true,
+				minWidth: 0
+			});
+		
+	}
 
 	$(".product-card__tab").on("click", function(e) {
 		e.preventDefault();

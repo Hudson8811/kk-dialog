@@ -4750,6 +4750,7 @@ body {
 .contacts__section .layout__col:nth-child(2) {
   background: #fff;
   padding-right: 0;
+  padding-top: 0;
 }
 
 .contacts__map {
@@ -5764,6 +5765,13 @@ body {
   margin-bottom: 2.7604166667vw;
 }
 
+#company-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .company-card {
   position: relative;
   display: flex;
@@ -5773,6 +5781,12 @@ body {
   flex-flow: row nowrap;
   padding-top: 0.5729166667vw;
   padding-bottom: 1.71875vw;
+}
+
+.company-card__section .layout__col__border-top {
+  top: 0vw;
+  left: 0;
+  width: calc(100% - 1.5625vw);
 }
 
 .company-card__section .layout {
@@ -5793,11 +5807,6 @@ body {
 }
 
 .company-card__section .layout .layout__col:nth-child(2) {
-  position: fixed;
-  top: 4.6875vw;
-  right: 0;
-  height: calc(100vh - 4.6875vw);
-  overflow: auto;
   background: #fff;
   padding-right: 0vw;
   padding-left: 1.5625vw;
@@ -5833,6 +5842,15 @@ body {
 
 .company-card__section .articles__btn {
   margin-bottom: 1.5625vw;
+}
+
+.company-card__bar {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding-bottom: 1.5625vw;
+  padding-top: 1.5625vw;
 }
 
 .company-card__list {

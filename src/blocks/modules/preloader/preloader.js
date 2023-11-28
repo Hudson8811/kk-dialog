@@ -1,5 +1,5 @@
 let preloaderSection = document.querySelector(".preloader__section")
-if(preloaderSection.length !== null ) {
+if(preloaderSection !== null ) {
 	setTimeout(() => {
 		preloaderSection.classList.add("puff-out-center")
 	}, 3090)
