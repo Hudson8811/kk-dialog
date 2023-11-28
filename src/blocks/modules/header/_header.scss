@@ -22,6 +22,7 @@
 		}
 		&__col {
 			&:nth-child(1) {
+				transition: all 0.3s;
 				padding-top: vw(20);
 				background: transparent;
 				border-right: none;
@@ -39,6 +40,7 @@
 				}
 			}
 			&:nth-child(2) {
+				transition: all 0.3s;
 				padding-top: vw(20);
 				background: transparent;
 				padding-bottom: vw(17);
@@ -59,10 +61,12 @@
 		.layout {
 			&__col {
 				&:nth-child(1) {
+					transition: all 0.3s;
 					background: #fff;
 					border-right: none;
 				}
 				&:nth-child(2) {
+					transition: all 0.3s;
 					background: #fff;
 				}
 			}

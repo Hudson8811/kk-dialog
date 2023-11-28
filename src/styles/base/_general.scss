@@ -998,6 +998,9 @@ body {
       left: vw(30);
       color: #fff;
       width: 110%;
+      span {
+        color: rgba(255, 255, 255, 0.30);
+      }
       @include max(md) {
         position: relative;
         width: 100%;
@@ -1119,7 +1122,7 @@ body {
             }
         }
         &__text {
-            color: #fff;
+            color: rgba(255, 255, 255, 0.71);
             margin-bottom: vw(95);
             max-width: vw(383);
             @include max(md) {
@@ -1333,9 +1336,12 @@ body {
     &__section {
         z-index: 10;
         .layout--trio {
-            height: vw(933);
+            height: calc(100vh - vw(90));
+            max-height: vw(933);
+            // height: vw(933);
             @include max(md) {
                 height: auto;
+                max-height: 100%;
                 margin-bottom: vw2(30);
                 align-items: flex-start;
             }
@@ -1531,13 +1537,13 @@ body {
         &--one {
             z-index:5;
             @include max(md) {
-                height: vw2(300);
+                // height: vw2(300);
                 // height: 100%;
             }
             .industry__slide {
                 justify-content: space-between;
                 @include max(md) {
-                    height: vw2(300);
+                    height: auto;
                     // height: 100%;
                 }
             }

@@ -134,7 +134,7 @@
 	}
 	.contacts__form {
 		&__title {
-			margin-bottom: vw(155);
+			margin-bottom: vw(95);
 		}
 		&__input {
 			&--name  {
@@ -142,7 +142,7 @@
 			}
 		}
 		&__textarea {
-			min-height: vw(259);
+			min-height: vw(200);
 		}
 		&__btn {
 			min-height: vw(82);
