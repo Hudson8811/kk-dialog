@@ -161,7 +161,7 @@
     width: 100%;
     z-index: 5;
     height: 100%;
-    max-height: vw(700);
+    max-height: calc(vw(700) - vw(144));
     overflow: hidden;
     &__counter {
       position: absolute;

@@ -1,0 +1,126 @@
+.preloader {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	&__section {
+		position: fixed;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 99999;
+		&.no-active {
+			display: none;
+			visibility: hidden;
+		}
+		.container {
+			height: 100%;
+			@include max(md) {
+				max-width: 100%;
+			}
+		}
+		.layout--trio {
+			height: 100%;
+			align-items: stretch;
+			&__col {
+				align-items: center;
+				&:nth-child(1) {
+					@include max(md) {
+						display: none;
+					}
+				}
+				&:nth-child(2) {
+					@include max(md) {
+						border-right: none;
+					}
+				}
+				&:nth-child(3) {
+					@include max(md) {
+						display: none;
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+			}
+
+		}
+	}
+	&__animation {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: vw(15);
+		background: rgba(12, 36, 72, 0.2);
+		&::before {
+			position: absolute;
+			content: '';
+			display: block;
+			background: rgba(12, 36, 72, 1);
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: vw(15);
+			animation: myAnim 3s ease 0s 1 normal forwards;
+		}
+	}
+	&__picture  {
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+		&::before {
+				position: relative;
+				content: "";
+				width: 100%;
+				padding-top: 56.31%;
+		}
+		picture, img {
+				position: absolute;
+				display: block;
+				width: 100%;
+				object-fit: contain;
+				object-position: center center;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+		}
+}
+
+}
+
+@keyframes myAnim {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 100vw;
+	}
+}
+.puff-out-center {
+	animation: puff-out-center 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) both;
+}
+@keyframes puff-out-center {
+  0% {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    filter: blur(4px);
+    opacity: 0;
+  }
+}

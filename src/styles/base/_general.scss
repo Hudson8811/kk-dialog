@@ -2709,6 +2709,7 @@ body {
     &__section {
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         margin-bottom: vw(20);
+        z-index: 5;
         @include max(md) {
             margin-bottom: vw2(30);
         }
@@ -2745,6 +2746,10 @@ body {
 
                 }
                 &:nth-child(2) {
+                    // position: fixed;
+                    // top:  vw(90);
+                    // right: 0;
+                    // height: calc(100vh - vw(90));
                     background: #fff;
                     padding-right: vw(0);
                     padding-left: vw(30);
@@ -3023,7 +3028,9 @@ body {
             align-items: stretch;
             @include max(md) {
                 height: auto;
+                flex-flow: column-reverse nowrap;
             }
+            
             .layout__col {
                 display: flex;
                 justify-content: flex-start;
@@ -3034,17 +3041,40 @@ body {
                     margin-top: vw(162);
                     padding-top: vw(30);
                     @include max(md) {
-                        margin-top: vw2(132);
+                        margin-top: vw2(100);
+                        border-top: none;
                         padding-top: vw2(30);
-                        margin-bottom: vw2(100);
+                        margin-bottom: vw2(50);
                     }
 
                 }
                 &:nth-child(2) {
+                    position: fixed;
+                    top: vw(90);
+                    right: 0;
+                    height: calc(100vh - vw(90));
+                    overflow: auto;
                     background: #fff;
                     padding-right: vw(0);
                     padding-left: vw(30);
+                    &::-webkit-scrollbar {
+                        width: vw(5);
+                        background-color: #ffff;
+                      }
+                      
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 35px;
+                        background: #D9D9D9;
+                      }
+                      
+                    &::-webkit-scrollbar-track {
+                        border-radius: 35px;
+                        background: #fff;
+                    }
                     @include max(md) {
+                        position: relative;
+                        top: auto;
+                        right: auto;
                         flex: 1 0 100%;
                         max-width: 100%;
                         border-right: none;
@@ -3118,8 +3148,22 @@ body {
         left: vw(30);
         top: vw(-95);
         @include max(md) {
+            position: relative;
             left: vw2(0);
-            top: vw2(-75);
+            top: auto;
+            margin-bottom: vw2(50);
+            margin-top: vw2(30);
+        }
+        &--desc{
+            @include max(md) {
+                display: none;
+            }  
+        }
+        &--mob{
+            display: none;
+            @include max(md) {
+                display: flex;
+            }  
         }
         
     }
@@ -3130,8 +3174,8 @@ body {
         align-items: flex-start;
         flex-flow: column nowrap;
         width: 100%;
-        overflow: auto;
-        max-height: vw(622);
+        // overflow: auto;
+        // max-height: vw(622);
         padding-right: vw(30);
         margin-bottom: 0;
         padding-bottom: 0;

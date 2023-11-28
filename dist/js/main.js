@@ -1385,6 +1385,16 @@ $('.product-card__slider').each(function () {
   galleryMain.controller.control = galleryThumbs;
 });
 
+let preloaderSection = document.querySelector(".preloader__section")
+if(preloaderSection.length !== null ) {
+	setTimeout(() => {
+		preloaderSection.classList.add("puff-out-center")
+	}, 3090)
+	setTimeout(() => {
+		preloaderSection.classList.add("no-active")
+	}, 3800)
+
+}
 var clientsSlider
 $('.js-clients__slider').each(function(){
 	var slider=$(this)
