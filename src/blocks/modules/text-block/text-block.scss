@@ -12,6 +12,13 @@
     font-weight: 500;
     line-height: vw(90.03); /* 98.163% */
     letter-spacing: vw(-3.859);
+    @include max(md) {
+      font-size: vw2(60);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.2;  /* 98.163% */
+      letter-spacing: vw2(-3.859);  
+    }
     span {
         color: #B3B4B7;
         &.green {
@@ -36,7 +43,7 @@
         font-size: vw2(60);
         font-style: normal;
         font-weight: 500;
-        line-height: 1; /* 98.163% */
+        line-height: 1.2; /* 98.163% */
         letter-spacing: vw2(-3.859);  
     }
   }
@@ -58,7 +65,7 @@
         font-size: vw2(40);
         font-style: normal;
         font-weight: 500;
-        line-height: 1; /* 98.163% */
+        line-height: 1.2; /* 98.163% */
         letter-spacing: vw2(-0.908);
     }
   }
@@ -79,7 +86,7 @@
     @include max(md) {
         font-size: vw2(32);
         font-style: normal;
-        line-height: 1; /* 98.163% */
+        line-height: 1.2; /* 98.163% */
         letter-spacing: vw2(-1.408);
     }
   }
@@ -90,9 +97,9 @@
     font-weight: 400;
     line-height: vw(27); /* 131.25% */ 
     @include max(md) {
-        font-size: vw2(20);
+        font-size: vw2(22);
         font-style: normal;
-        line-height: 1; /* 98.163% */
+        line-height: 1.2; /* 98.163% */
     }  
     &:last-child {
       margin-bottom: 0;
@@ -111,9 +118,9 @@
     font-weight: 400;
     line-height: vw(27); /* 131.25% */ 
     @include max(md) {
-        font-size: vw2(20);
+        font-size: vw2(22);
         font-style: normal;
-        line-height: 1; /* 98.163% */
+        line-height: 1.2; /* 98.163% */
         margin-bottom: vw(10);
     }  
 		li {
@@ -125,9 +132,9 @@
       font-weight: 400;
       line-height: vw(27); /* 131.25% */ 
       @include max(md) {
-          font-size: vw2(20);
+          font-size: vw2(22);
           font-style: normal;
-          line-height: 1; /* 98.163% */
+          line-height: 1.2; /* 98.163% */
       }  
 			&::before {
 				content: '';
@@ -152,9 +159,9 @@
     font-weight: 400;
     line-height: vw(27); /* 131.25% */ 
     @include max(md) {
-        font-size: vw2(20);
+        font-size: vw2(22);
         font-style: normal;
-        line-height: 1; /* 98.163% */
+        line-height: 1.2; /* 98.163% */
     }  
     text-decoration: underline;
     transition: all .3s;
@@ -201,9 +208,9 @@
       font-weight: 400;
       line-height: vw(27);/* 131.25% */ 
       @include max(md) {
-          font-size: vw2(20);
+          font-size: vw2(22);
           font-style: normal;
-          line-height: 1; /* 98.163% */
+          line-height: 1.2; /* 98.163% */
       }  
       &:first-child {
         font-size: vw(13);
@@ -212,9 +219,9 @@
         letter-spacing: vw(0.325);
         line-height: normal;
         @include max(md) {
-          font-size: vw2(13);      
+          font-size: vw2(20);      
           letter-spacing: vw2(0.325);
-          line-height: normal;
+          line-height: 1.2;
       }  
       }
       &:last-child {

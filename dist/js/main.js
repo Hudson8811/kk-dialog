@@ -1280,6 +1280,16 @@ humb.addEventListener("click", function () {
   }
 });
 
+$(window).scroll(function() {
+	var height = $(window).scrollTop();
+	 /*Если сделали скролл на 100px задаём новый класс для header*/
+	if(height > 10){
+		$('.section__header').addClass('bg__white');
+	} else{
+	/*Если меньше 100px удаляем класс для header*/
+		$('.section__header').removeClass('bg__white');
+	}
+});
 
 
 
@@ -1389,10 +1399,10 @@ let preloaderSection = document.querySelector(".preloader__section")
 if(preloaderSection !== null ) {
 	setTimeout(() => {
 		preloaderSection.classList.add("puff-out-center")
-	}, 3090)
+	}, 1590)
 	setTimeout(() => {
 		preloaderSection.classList.add("no-active")
-	}, 3800)
+	}, 2300)
 
 }
 var clientsSlider
@@ -1856,16 +1866,7 @@ jQuery(function () {
 
 });
 
-$(window).scroll(function() {
-	var height = $(window).scrollTop();
-	 /*Если сделали скролл на 100px задаём новый класс для header*/
-	if(height > 50){
-		$('.section__header').addClass('bg__white');
-	} else{
-	/*Если меньше 100px удаляем класс для header*/
-		$('.section__header').removeClass('bg__white');
-	}
-});
+
 
 function bodyNoScroll() {
 	let bodyBodymotionless = document.querySelector('body')

@@ -26,26 +26,16 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <div class="section preloader__section section--gray">
-      <div class="container">
-        <div class="preloader__animation"></div>
-        <div class="layout--trio">
-          <div class="layout--trio__col"></div>
-          <div class="layout--trio__col">
-            <div class="preloader__picture"> <img src="img/preloader__img.png" alt=""></div>
-          </div>
-          <div class="layout--trio__col"></div>
-        </div>
-      </div>
-    </div>
     <div class="section__header">
       <div class="container">
         <div class="layout">
           <div class="layout__col"><a class="header__logo" href="index.html"> <img src="img/svg/logo.svg" alt="logo"></a>
             <div class="header__menu">
-              <div class="header__menu__item">каталог<svg class="js-row m-top" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
+              <div class="header__menu__item">каталог
+                <div class="header__menu__item__arrow"><svg class="js-row m-top" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
 <path d="M6.50513 1.00049L3.50445 4.00117L0.503768 1.00049" stroke="black"/>
 </svg>
+                </div>
                 <div class="header__menu__list header__menu--all-menu">
                   <ul class="header__menu--all-menu__list">
                     <li class="header__menu--all-menu__list__title">Курительные кабины</li>
@@ -100,11 +90,15 @@
             </div>
             <div class="header__other">
               <div class="header__other__item header__menu__item">
-                <div class="header__other__top"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                <div class="header__other__top">
+                  <div class="header__menu__item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
 <path d="M12 0H4C1.6 0 0 1.23529 0 4.11765V9.88235C0 12.7647 1.6 14 4 14H12C14.4 14 16 12.7647 16 9.88235V4.11765C16 1.23529 14.4 0 12 0ZM12.376 5.01529L9.872 7.07412C9.344 7.51059 8.672 7.72471 8 7.72471C7.328 7.72471 6.648 7.51059 6.128 7.07412L3.624 5.01529C3.368 4.80118 3.328 4.40588 3.528 4.14235C3.736 3.87882 4.112 3.82941 4.368 4.04353L6.872 6.10235C7.48 6.60471 8.512 6.60471 9.12 6.10235L11.624 4.04353C11.88 3.82941 12.264 3.87059 12.464 4.14235C12.672 4.40588 12.632 4.80118 12.376 5.01529Z" fill="#25CA6A"/>
-</svg><a href="mailto:info@kk-dialog.ru"> info@kk-dialog.ru<svg class="js-row" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
+</svg>
+                  </div><a href="mailto:info@kk-dialog.ru"> info@kk-dialog.ru
+                    <div class="header__menu__item__arrow"><svg class="js-row" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
 <path d="M6.50513 1.00049L3.50445 4.00117L0.503768 1.00049" stroke="black"/>
-</svg></a>
+</svg>
+                    </div></a>
                 </div>
                 <ul class="header__menu__list">
                   <li class="header__menu__list__item"><a href="mailto:info@kk-dialog.ru"> info@kk-dialog.ru</a></li>
@@ -112,11 +106,15 @@
                 </ul>
               </div>
               <div class="header__other__item header__other__fone header__other__fone--desc header__menu__item">
-                <div class="header__other__top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <div class="header__other__top">
+                  <div class="header__menu__item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
 <path d="M0 11.431C0 11.683 0.0560846 11.942 0.175263 12.194C0.294442 12.446 0.448672 12.684 0.651977 12.908C0.995492 13.286 1.37406 13.559 1.8017 13.734C2.22233 13.909 2.67802 14 3.16875 14C3.88383 14 4.64797 13.832 5.45418 13.489C6.26039 13.146 7.0666 12.684 7.8658 12.103C8.67201 11.515 9.43615 10.864 10.1652 10.143C10.8873 9.415 11.5393 8.652 12.1212 7.854C12.696 7.056 13.1587 6.258 13.4952 5.467C13.8317 4.669 14 3.906 14 3.178C14 2.702 13.9159 2.247 13.7476 1.827C13.5794 1.4 13.313 1.008 12.9414 0.658C12.4927 0.217 12.002 0 11.4832 0C11.2869 0 11.0906 0.042 10.9154 0.126C10.7331 0.21 10.5719 0.336 10.4457 0.518L8.81923 2.807C8.69304 2.982 8.6019 3.143 8.53881 3.297C8.47571 3.444 8.44066 3.591 8.44066 3.724C8.44066 3.892 8.48973 4.06 8.58788 4.221C8.67902 4.382 8.81222 4.55 8.98047 4.718L9.51327 5.271C9.59039 5.348 9.62544 5.439 9.62544 5.551C9.62544 5.607 9.61843 5.656 9.60441 5.712C9.58337 5.768 9.56234 5.81 9.54832 5.852C9.42213 6.083 9.20481 6.384 8.89634 6.748C8.58087 7.112 8.24437 7.483 7.87982 7.854C7.50125 8.225 7.1367 8.568 6.76515 8.883C6.4006 9.191 6.09915 9.401 5.86079 9.527C5.82574 9.541 5.78368 9.562 5.7346 9.583C5.67852 9.604 5.62243 9.611 5.55934 9.611C5.44016 9.611 5.34902 9.569 5.27191 9.492L4.73911 8.967C4.56385 8.792 4.39559 8.659 4.23435 8.575C4.07311 8.477 3.91187 8.428 3.7366 8.428C3.6034 8.428 3.46319 8.456 3.30896 8.519C3.15473 8.582 2.99349 8.673 2.81823 8.792L0.497746 10.437C0.315473 10.563 0.189284 10.71 0.112168 10.885C0.0420628 11.06 0 11.235 0 11.431Z" fill="#25CA6A"/>
-</svg><a href="tel:+74997847890">(499) 784 78 90<svg class="js-row" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
+</svg>
+                  </div><a href="tel:+74997847890">(499) 784 78 90
+                    <div class="header__menu__item__arrow"><svg class="js-row" xmlns="http://www.w3.org/2000/svg" width="7" height="5" viewBox="0 0 7 5" fill="none">
 <path d="M6.50513 1.00049L3.50445 4.00117L0.503768 1.00049" stroke="black"/>
-</svg></a>
+</svg>
+                    </div></a>
                 </div>
                 <ul class="header__menu__list">
                   <li class="header__menu__list__item"><a href="tel:+74997847890">(499) 784 78 90</a></li>
