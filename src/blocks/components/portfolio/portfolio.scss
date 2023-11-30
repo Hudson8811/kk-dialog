@@ -49,6 +49,7 @@
         width: 100%;
         border-radius: vw(14);
         overflow: hidden;
+        // margin-right: vw(17);
         cursor: pointer;
 
   
@@ -78,8 +79,8 @@
         position: absolute;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        height: vw(60);
+        align-items: flex-end;
+        height: vw(49);
         width: 100%;
         max-width: vw(110);
         top: vw(22);
@@ -87,9 +88,9 @@
         overflow: visible;
         z-index: 15;
         @include max(md) {
-          height: vw2(40);
-          max-width: vw2(70);
-          top: vw2(52);
+          height: vw2(50);
+          max-width: vw2(110);
+          top: vw2(22);
           left: vw2(22);
         }
         .swiper-button-prev,.swiper-button-next {
@@ -104,11 +105,11 @@
             border-radius: vw(14);
             top: 0;
             @include max(md) {
-                width: vw2(30);
-                height: vw2(30);
-                min-width: vw2(30);
-                min-height: vw2(30);
-                border-radius: vw2(8);           
+              width: vw2(49);
+              height: vw2(49);
+              min-width: vw2(49);
+              min-height: vw2(49);
+              border-radius: vw2(8);           
             }
             svg {
                 width: vw(9.67);
@@ -131,13 +132,15 @@
         }
         .swiper-button-prev {
            left: 0;
+           top: 0;
       
         }
         .swiper-button-next {
             right: 0;
+            top: 0;
       
         }
-    }
+      }
     }
     
     
@@ -166,18 +169,76 @@
         align-items: center;
         z-index: 100;
         box-sizing: border-box;
-        width: vw(103);
-        height: vw(103);
+        // width: vw(103);
+        width: calc((100% - 17px * 4) / 5);
+        // height: vw(103);
         padding: vw(20);
         cursor: pointer;
         border-radius: vw(14);
         overflow: hidden;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.41) 0%, rgba(0, 0, 0, 0.41) 100%);
         color: #fff;
         font-size: vw(20);
         font-style: normal;
         font-weight: 500;
         line-height: vw(27);
+        &__velue {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+        }
+        &__overlay {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.41) 0%, rgba(0, 0, 0, 0.41) 100%);
+          img, picture {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+          }
+          
+
+        }
+        &__picture {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          img, picture {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+          }
+          
+
+        }
+        &:before {
+          content: "";
+          width: 100%;
+          display: block;
+          padding-top: 100%;   
+          position: relative;
+          
+        }
         @include max(md) {
           display: none;
         }
@@ -205,15 +266,16 @@
         width: 100%;
         box-sizing: border-box;
         width: vw(102);
-        height: vw(102);
+        // height: vw(102);
         padding: vw(0);
+        margin-right: vw(17);
         cursor: pointer;
         border-radius: vw(14);
         overflow: hidden;
         background: transparent;
         @include max(md) {
-          width: vw2(102);
-          height: vw2(102);
+          // width: vw2(102);
+          // height: vw2(102);
           border-radius: vw2(14);
         }
         &:before {

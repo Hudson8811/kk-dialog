@@ -13,7 +13,7 @@
     line-height: vw(90.03); /* 98.163% */
     letter-spacing: vw(-3.859);
     @include max(md) {
-      font-size: vw2(60);
+      font-size: vw2(45);
       font-style: normal;
       font-weight: 500;
       line-height: 1.2;  /* 98.163% */
@@ -40,7 +40,7 @@
         }
     }
     @include max(md) {
-        font-size: vw2(60);
+        font-size: vw2(40);
         font-style: normal;
         font-weight: 500;
         line-height: 1.2; /* 98.163% */
@@ -62,7 +62,7 @@
     }
 
     @include max(md) {
-        font-size: vw2(40);
+        font-size: vw2(35);
         font-style: normal;
         font-weight: 500;
         line-height: 1.2; /* 98.163% */

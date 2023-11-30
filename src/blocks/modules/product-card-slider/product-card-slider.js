@@ -6,17 +6,13 @@ $('.product-card__slider').each(function () {
   group.find('.gallery-thumbs').each(function () {
       var slider = $(this)
       galleryThumbs = new Swiper(slider[0], {
-          slidesPerView: "auto",
+          slidesPerView: 4,
           watchOverflow: true,
           watchSlidesVisibility: true,
           watchSlidesProgress: true,
           direction: 'horizontal',
           autoHeight: true,
           spaceBetween: 20,
-          navigation: {
-              nextEl: ".gallery-thumbs-next",
-              prevEl: ".gallery-thumbs-prev"
-          },
           breakpoints: {
               // when window width is >= 480px
               993: {
@@ -40,9 +36,9 @@ $('.product-card__slider').each(function () {
               swiper: galleryThumbs
           },
           navigation: {
-              nextEl: ".gallery-main-next",
-              prevEl: ".gallery-main-prev"
-          },
+            nextEl: ".product-card-main-next",
+            prevEl: ".product-card-main-prev"
+        },
           // breakpoints: {
           //     // when window width is >= 480px
           //     992: {

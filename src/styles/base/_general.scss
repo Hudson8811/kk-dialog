@@ -137,7 +137,7 @@ body {
     @include max(md) {
         height: vw2(50);
         width: 100%;
-        max-width: vw2(70);
+        max-width: vw2(110);
         top: auto;
         bottom: 0;
         left: vw2(20);
@@ -161,10 +161,10 @@ body {
             background: #1F4D92; 
         }
         @include max(md) {
-            width: vw2(30);
-            height: vw2(30);
-            min-width: vw2(30);
-            min-height: vw2(30);
+            width: vw2(49);
+            height: vw2(49);
+            min-width: vw2(49);
+            min-height: vw2(49);
             border-radius: vw2(8);           
         }
         svg {
@@ -266,9 +266,9 @@ body {
     cursor: pointer;
     @include max(md) {
         border-radius: vw2(10);
-        font-size: vw2(13);
+        font-size: vw2(20);
         letter-spacing: vw2(0.325);
-        min-height: vw2(40);
+        min-height: vw2(49);
         padding: vw2(10) vw2(20);
     }
     &:hover {
@@ -314,9 +314,9 @@ body {
             letter-spacing: vw(0.325);
             text-transform: uppercase; /* 131.25% */
             @include max(md) {
-                top: calc(50% - vw2(8));
-                right: vw2(-64);
-                font-size: vw2(13);
+                top: calc(50% - vw2(10));
+                right: vw2(-84);
+                font-size: vw2(20);
                 font-style: normal;
                 line-height: 1.2; /* 98.163% */
                 letter-spacing: vw2(0.325);
@@ -355,7 +355,7 @@ body {
         transition: all 0.3s;
     }
     @include max(md) {
-        font-size: vw2(13);
+        font-size: vw2(20);
         font-style: normal;
         font-weight: 500;
         line-height: normal;
@@ -1376,9 +1376,11 @@ body {
             justify-content: flex-end;
             align-items: flex-start;
             @include max(md) {
-                top: calc(0% - vw2(30));
+                top: calc(0% - vw2(55));
                 left: auto;
                 right: vw(30);
+                width: vw2(100);
+                height: vw2(100);
             }
             .swiper-pagination-current {
                 color: #FFF;
@@ -1391,7 +1393,11 @@ body {
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-start;
-                width: 100%;                      
+                width: 100%;
+                @include max(md) {
+                    font-size: vw2(42); 
+                    margin-top: vw2(10);
+                }                      
             }
             .swiper-pagination-total {
                 color: #FFF;
@@ -1405,6 +1411,11 @@ body {
                 justify-content: flex-end;
                 align-items: flex-start;
                 width: 100%; 
+                @include max(md) {
+                    font-size: vw2(24);
+                    margin-bottom: vw2(2); 
+                    
+                }  
                 &:before {
                     position: relative;
                     content: "/";
@@ -1415,7 +1426,12 @@ body {
                     font-weight: 500;
                     line-height: vw(36); /* 78.014% */
                     letter-spacing: vw(-1.3);
-                    margin-right: 1px;                        
+                    margin-right: 1px; 
+                    @include max(md) {
+                        font-size: vw2(24);
+                        margin-bottom: vw2(2); 
+                        
+                    }                         
                 }
             }
 
@@ -1626,6 +1642,7 @@ body {
                     flex-flow: column nowrap;
                     @include max(md) {
                         border-right: none;
+                        margin-bottom: vw2(30);
                     }
 
                 }
@@ -1881,10 +1898,10 @@ body {
             overflow: visible;
             z-index: 15;
             @include max(md) {
-                height: vw2(30);
+                height: vw2(50);
                 width: 100%;
-                max-width: vw2(70);
-                top: vw(-140);
+                max-width: vw2(110);
+                top: vw(-190);
                 bottom: auto;
                 left: auto;
                 right: 0;
@@ -1901,10 +1918,10 @@ body {
                 border-radius: vw(14);
                 top: 0;
                 @include max(md) {
-                    width: vw2(30);
-                    height: vw2(30);
-                    min-width: vw2(30);
-                    min-height: vw2(30);
+                    width: vw2(49);
+                    height: vw2(49);
+                    min-width: vw2(49);
+                    min-height: vw2(49);
                     border-radius: vw2(8);           
                 }
                 svg {
@@ -2147,7 +2164,7 @@ body {
         margin-bottom: vw(173);
         &__title {
             margin-bottom: vw(63);
-            max-width: vw(885);
+            max-width: 100%;
             position: relative;
             width: 100%;
             display: block;
@@ -2197,6 +2214,7 @@ body {
         line-height: vw(42); /* 102.926% */
         letter-spacing: vw(-1.408);
         @include max(md) {
+
             font-size: vw2(32);
             font-style: normal;
             line-height: 1.2; /* 98.163% */
@@ -2417,7 +2435,7 @@ body {
             text-transform: uppercase; /* 131.25% */
             transition: all 0.3s;
             @include max(md) {
-                font-size: vw2(13);
+                font-size: vw2(20);
                 font-style: normal;
                 line-height: 1.2; /* 98.163% */
                 letter-spacing: vw2(0.325);
@@ -2436,8 +2454,8 @@ body {
             line-height: normal;
             letter-spacing: vw(0.35);
             @include max(md) {
-                bottom: vw2(-18);
-                font-size: vw2(13);
+                bottom: vw2(-28);
+                font-size: vw2(20);
                 font-style: normal;
                 line-height: 1.2; /* 98.163% */
                 letter-spacing: vw2(0.325);
@@ -2495,6 +2513,7 @@ body {
         @include max(md) {
             padding-top: vw2(20);
             min-height: vw2(71);
+            font-size: vw2(20);
             padding-right: vw2(18);
         }
 
@@ -2545,6 +2564,7 @@ body {
             margin-bottom: vw2(15);
             padding-top: vw2(35);
             padding-right: vw2(18);
+            font-size: vw2(20);
         }
         &:hover {        
             border-bottom:1px solid rgba(255, 255, 255, 1);
@@ -2737,7 +2757,7 @@ body {
                 overflow: hidden;
                 &:nth-child(1) {
                     @include max(md) {
-                        margin-bottom: vw2(100);
+                        margin-bottom: vw2(0);
                     }
 
                 }
@@ -2822,6 +2842,15 @@ body {
         }
     }
     &__tab{
+        cursor: pointer;
+        transition: all 0.3s;
+        @include max(md) {
+            min-height: vw2(49);
+            border-radius: vw2(8);           
+        }
+        &:hover {
+            background: $green;
+        }
         &__pane {
             height: 100%;
             overflow-y: auto;
@@ -2891,7 +2920,18 @@ body {
             border-radius: vw2(18);
             padding: vw2(7) vw2(5);
             margin-bottom: vw2(19);             
-        }       
+        }
+        &--desc {
+            @include max(md) {
+                display: none;
+            } 
+        }      
+        &--mob {
+            display: none;
+            @include max(md) {
+                display: flex;
+            } 
+        }      
     }
     &__link {
         position: relative;
@@ -2909,7 +2949,7 @@ body {
         transition: all 0.3s;
         @include max(md) {
             width: vw2(114);
-            min-height: vw2(48);
+            min-height: vw2(49);
             border-radius: vw2(14);
         }
         &:hover {
@@ -2945,6 +2985,7 @@ body {
             padding: vw(7);
             border-radius: vw(14);
             background: #E7E7E7;
+            cursor: pointer;
             @include max(md) {
                 padding: vw2(7);
                 border-radius: vw2(14);
@@ -3048,7 +3089,7 @@ body {
                     margin-top: vw(162);
                     padding-top: vw(30);
                     @include max(md) {
-                        margin-top: vw2(100);
+                        margin-top: vw2(30);
                         border-top: none;
                         padding-top: vw2(30);
                         margin-bottom: vw2(50);
@@ -3220,7 +3261,7 @@ body {
             flex-flow: row nowrap;
             margin-bottom: vw(101);
             @include max(md) {
-                margin-bottom: vw2(101); 
+                margin-bottom: vw2(30); 
             }
             
         }
@@ -3533,3 +3574,6 @@ body {
 
 }
 
+.compensate-for-scrollbar {
+    margin-right: 0 !important;
+}

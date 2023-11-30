@@ -66,7 +66,7 @@
 					@include max(md) {
 							height: vw2(50);
 							width: 100%;
-							max-width: vw2(70);
+							max-width: vw2(110);
 							top: auto;
 							bottom: 0;
 							left: vw2(20);
@@ -83,12 +83,12 @@
 							border-radius: vw(14);
 							top: 0;
 							@include max(md) {
-									width: vw2(30);
-									height: vw2(30);
-									min-width: vw2(30);
-									min-height: vw2(30);
-									border-radius: vw2(8);           
-							}
+								width: vw2(49);
+								height: vw2(49);
+								min-width: vw2(49);
+								min-height: vw2(49);
+								border-radius: vw2(8);           
+						}
 							svg {
 									width: vw(9.67);
 									height: vw(9.67);

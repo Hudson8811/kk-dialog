@@ -34,9 +34,87 @@
 
   }
   .gallery-main {
-    width: calc(100% - vw(124));
+    position: relative;
+    width: 100%;
     overflow: hidden;
-    z-index: 5;
+    &__wrap {
+      width: calc(100% - vw(124 + 111));
+      z-index: 5;
+      position: relative;
+      @include max(md) {
+        width: 100%;
+        margin-bottom: vw2(30);
+      }
+      .swiper-buttons {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: vw(49);
+        width: 100%;
+        max-width: vw(110);
+        top: vw(0);
+        right: vw(-80);
+        left: auto;
+        overflow: visible;
+        z-index: 15;
+        @include max(md) {
+          height: vw2(50);
+          max-width: 100%;
+          top: auto;
+          bottom: 0;
+          right: auto;
+          left: 0;
+        }
+        .swiper-button-prev,.swiper-button-next {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: vw(49);
+            height: vw(49);
+            min-width: vw(49);
+            min-height: vw(49);
+            border-radius: vw(14);
+            top: 0;
+            @include max(md) {
+              width: vw2(49);
+              height: vw2(49);
+              min-width: vw2(49);
+              min-height: vw2(49);
+              border-radius: vw2(8);           
+          }
+            svg {
+                width: vw(9.67);
+                height: vw(9.67);
+                min-width: vw(9.67);
+                min-height: vw(9.67);
+                @include max(md) {
+                    width: vw2(9.67);
+                    height: vw2(9.67);
+                    min-width: vw2(9.67);
+                    min-height: vw2(9.67)                
+                }            
+            }
+            &::after {
+                font-size: 0;
+                display: none;
+            }
+      
+      
+        }
+        .swiper-button-prev {
+           left: 0;
+           top: 0;
+      
+        }
+        .swiper-button-next {
+            right: 0;
+            top: 0;
+      
+        }
+      }
+    }
     @include max(md) {
       width: 100%;
       height: auto;
@@ -91,68 +169,7 @@
       visibility: hidden;
       display: none;
     }
-    .swiper-buttons.gallery-main--swiper-buttons {
-      position: absolute;
-      
-      width: calc(100% - 32px);
-      max-width: 100%;
-      top: calc(25%);
-      left: 16px;
-      overflow: visible;
-      display: none;
-      @include max(md) {
-        display: flex;
-      }
-      .swiper-button-prev,.swiper-button-next {
-          width: 28px;
-          height: 56px;
-          top: 0;
-          display: none;
-          width: 49px;
-          height: 49px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          left: auto;
-          right: auto;
-          top: auto;
-          bottom: auto;
-          background: $greyBlack;
-          @include max(md) {
-              display: flex;
-              width: 33px;
-              height: 33px;
-          }
-    
-    
-      }
-      .swiper-button-prev {
-          @include max(md) {
-            display: none;
-          }
-          &::after {
-              content: url(../img/svg/button-prev.svg);
-              @media (max-width: 1450px)  {
-                  content: url(../img/svg/gallery-main-prev.svg);   
-              }
-          }
-    
-      }
-      .swiper-button-next {
-        @include max(md) {
-          display: none;
-        }
-          &::after {
-              content: url(../img/svg/button-next.svg);
-              @media (max-width: 1450px) {
-                  content: url(../img/svg/gallery-main-next.svg);   
-              }
-          }
-    
-      }
-    }
+
   }
   
   
@@ -163,28 +180,110 @@
     height: 100%;
     max-height: calc(vw(700) - vw(144));
     overflow: hidden;
+    margin-bottom: 20px;
+    // &__counter {
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: vw(68);
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   width: 100%;
+    //   z-index: 100;
+    //   box-sizing: border-box;
+    //   width: vw(124);
+    //   height: vw(124);
+    //   padding: vw(20);
+    //   cursor: pointer;
+    //   border-radius: vw(14);
+    //   overflow: hidden;
+    //   background: rgba(255, 255, 255, 0.75);
+    //   color: #000;
+    //   font-size: vw(20);
+    //   font-style: normal;
+    //   font-weight: 500;
+    //   line-height: vw(27);
+    //   @include max(md) {
+    //     display: none;
+    //   }
+    // }
     &__counter {
-      position: absolute;
-      left: 0;
-      bottom: vw(68);
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
       z-index: 100;
       box-sizing: border-box;
+      // width: calc((100% - 17px * 4) / 5);
       width: vw(124);
       height: vw(124);
       padding: vw(20);
       cursor: pointer;
       border-radius: vw(14);
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.75);
       color: #000;
       font-size: vw(20);
       font-style: normal;
       font-weight: 500;
       line-height: vw(27);
+      &__velue {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      &__overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.75);
+        img, picture {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+        
+
+      }
+      &__picture {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        img, picture {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+        }
+        
+
+      }
+      &:before {
+        content: "";
+        width: 100%;
+        display: block;
+        padding-top: 100%;   
+        position: relative;
+        
+      }
       @include max(md) {
         display: none;
       }
@@ -212,6 +311,7 @@
       margin-left: vw(111);
       justify-content: flex-start;
       align-items: flex-start;
+      flex-flow: column nowrap;
       @include max(md) {
         width: 100%;
         height: auto;

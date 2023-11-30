@@ -225,7 +225,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: vw(15);
+				width: vw(16);
 				margin-right: vw(6);
 				svg {
 					position: relative;
@@ -249,7 +249,7 @@
 				}
 			}
 			.m-top{
-				margin-top: vw(4);
+				margin-top: vw(6);
 			}
 			svg {
 				// margin-left: vw(5);
@@ -677,7 +677,7 @@
 		width: 100%;
 		justify-content: flex-start;
 		align-items: flex-start;
-		margin-bottom: 32px;
+		margin-bottom: vw2(32);
 		border-bottom: 1px solid $grey;
 	}
 	&--item {
@@ -847,7 +847,7 @@
 				line-height: normal;
 				letter-spacing: vw2(0.5);
 				margin-bottom: vw2(10);
-				margin-left: vw2(20);				
+				margin-left: vw2(40);				
 			}
 		}
 		.accordion-group { 
@@ -947,23 +947,23 @@
 		}
 		@keyframes accordionRotationOpen  {
 			0% {
-				transform-origin: 13% 62%;
+				transform-origin: 14% 69%;
 				transform: rotate(180deg);
 			}
 		
 			100% {
-				transform-origin: 13% 62%;
+				transform-origin: 14% 69%;
 				transform: rotate(0deg);
 			}
 		
 		}
 		@keyframes accordionRotationClose {
 			0% {
-				transform-origin: 13% 62%;
+				transform-origin: 14% 69%;
 				transform: rotate(0deg);
 			}
 			100% {
-				transform-origin: 13% 62%;
+				transform-origin: 14% 69%;
 				transform: rotate(180deg);
 			}
 		

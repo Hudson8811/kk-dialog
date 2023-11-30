@@ -1,19 +1,29 @@
 //- .product-card__slider__wrap.product-card__slider__wrap--desc
 .product-card__slider
-  .swiper-container.gallery-main
-    .swiper-wrapper
+  .gallery-main__wrap
+    .swiper-container.gallery-main
+      .swiper-wrapper
 
-    .swiper-buttons.gallery-main--swiper-buttons
-      .swiper-button-prev.gallery-main-prev
-      .swiper-button-next.gallery-main-next  
+    .swiper-buttons.swiper-buttons--white
+      .swiper-button-prev.product-card-main-prev
+        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+        <path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
+        </svg>
+      .swiper-button-next.product-card-main-next
+        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+        <path d="M5.59031 6.84261L0.377064 12.0559L1.99679 13.6756L7.21003 8.46233L8.83618 6.83618L7.21655 5.21637L2 0L0.37385 1.62615L5.59031 6.84261Z" fill="white"/>
+        </svg>
   .gallery-thumbs__section
     .swiper-container.gallery-thumbs
       .swiper-wrapper
-
-      .gallery-thumbs__counter +13
       .gallery-thumbs__swiper-buttons    
         .swiper-button-prev.gallery-thumbs-prev
         .swiper-button-next.gallery-thumbs-next
+    .gallery-thumbs__counter 
+      .gallery-thumbs__counter__picture 
+        <img src="img/card__picture__4.png", srcset="img/card__picture__4.png 2x" alt="">
+      .gallery-thumbs__counter__overlay
+      .gallery-thumbs__counter__velue +13
   .gallery-main__storage
     .gallery-main__slide.swiper-slide(href="img/card__picture__1.png" srcset="img/card__picture__1.png 2x" data-filter="01" data-fancybox="product-card__slider"  data-caption="Большое нзвание для фото 1")      
       <img src="img/card__picture__1.png", srcset="img/card__picture__1.png 2x" alt="">

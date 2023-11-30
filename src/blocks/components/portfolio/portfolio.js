@@ -6,7 +6,8 @@ $('.portfolio__slider').each(function () {
   group.find('.gallery-thumbs').each(function () {
       var slider = $(this)
       galleryThumbs = new Swiper(slider[0], {
-          slidesPerView: "auto",
+          // slidesPerView: "auto",
+          slidesPerView: 4,
           watchOverflow: true,
           watchSlidesVisibility: true,
           watchSlidesProgress: true,
