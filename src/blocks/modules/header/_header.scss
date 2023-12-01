@@ -241,7 +241,7 @@
 				align-items: center;
 				width: vw(7);
 				margin-left: vw(4);
-				svg {
+				svg,img {
 					width: 100%;
 					display: block;
 					position: relative;
@@ -249,7 +249,8 @@
 				}
 			}
 			.m-top{
-				margin-top: vw(6);
+				padding-top: vw(5);
+				// margin-top: vw(6);
 			}
 			svg {
 				// margin-left: vw(5);
@@ -263,9 +264,9 @@
 			visibility: hidden;
 			justify-content: flex-start;
 			align-items: flex-start;
-			padding: 10px 15px;
+			padding: vw(10) vw(15);
 			background:  #fff;
-			border-radius: 8px;
+			border-radius: vw(8);
 			width: auto;
 			flex-flow: column nowrap;
 			opacity: 0;
@@ -910,13 +911,14 @@
 			}
 		}
 		.accordion-header::after {
-				content: url(../img/svg/open__row.svg);
+				content: "";
 				color: #25CA6A;
 				position: absolute;
-				width: vw2(60);
-				height: vw2(20);
+				width: vw2(33);
+				height: vw2(33);
 				left: vw2(-0);
 				top: vw2(0);
+				z-index: 99999;
 				transition: all .3s;
 				display: flex;
 				justify-content: flex-start;
@@ -927,6 +929,31 @@
 				animation-iteration-count: 1;
 				animation-timing-function: linear;
 				animation-fill-mode: forwards;
+				
+		}
+		.accordion-header__icon  {
+				position: absolute;
+				width: vw2(15);
+				height: vw2(15);
+				left: vw2(-0);
+				top: vw2(7.5);
+				transition: all .3s;
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				transform: rotate(45deg);
+				animation-name: accordionRotationOpen;
+				animation-duration: .2s;
+				animation-iteration-count: 1;
+				animation-timing-function: linear;
+				animation-fill-mode: forwards;
+				img {
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+				
 		}
 		.accordion-link + .accordion-header.open {
 			color: $green;
@@ -934,10 +961,7 @@
 		.accordion-header.open {
 				color: #25CA6A;
 				margin-bottom: vw2(16);
-				&::before {
-					content: url(../img/folder__red.svg);
-				}
-				&::after {
+				.accordion-header__icon  {
 					animation-name: accordionRotationClose;
 					animation-duration: .2s;
 					animation-iteration-count: 1;
@@ -947,23 +971,23 @@
 		}
 		@keyframes accordionRotationOpen  {
 			0% {
-				transform-origin: 14% 69%;
+				transform-origin: center center;
 				transform: rotate(180deg);
 			}
 		
 			100% {
-				transform-origin: 14% 69%;
+				transform-origin: center center;
 				transform: rotate(0deg);
 			}
 		
 		}
 		@keyframes accordionRotationClose {
 			0% {
-				transform-origin: 14% 69%;
+				transform-origin: center center;
 				transform: rotate(0deg);
 			}
 			100% {
-				transform-origin: 14% 69%;
+				transform-origin: center center;
 				transform: rotate(180deg);
 			}
 		

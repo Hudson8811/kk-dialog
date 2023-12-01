@@ -1643,6 +1643,7 @@ body {
                     flex-flow: column nowrap;
                     @include max(md) {
                         border-right: none;
+                        padding-top: vw2(30);
                         margin-bottom: vw2(30);
                     }
 
@@ -3050,7 +3051,8 @@ body {
             color: #212A39;
             margin-bottom: vw(53);
             @include max(md) {
-                max-width: vw2(100);
+                max-width: 100%;
+                margin-top: vw2(15);
             }
         }
     }

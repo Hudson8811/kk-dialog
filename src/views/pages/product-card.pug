@@ -46,11 +46,11 @@ block content
 				.layout__col
 					.layout__col__border-top
 					.nav-tabs.product-card__tabs
-						a.product-card__tab.nav-tab.text__13(href="#" data-tab="1" ) Описание
+						a.product-card__tab.nav-tab.text__13.active(href="#" data-tab="1" ) Описание
 						a.product-card__tab.nav-tab.text__13(href="#" data-tab="2" ) характеристики
-						a.product-card__tab.nav-tab.text__13.active(href="#" data-tab="3" ) Галерея
+						a.product-card__tab.nav-tab.text__13(href="#" data-tab="3" ) Галерея
 					.tab-content.product-card__content
-						.product-card__tab__pane.product-card__tab__pane--text.tab-pane(data-tab-content="1")
+						.product-card__tab__pane.product-card__tab__pane--text.tab-pane.active(data-tab-content="1")
 							.text-block 
 								h2 Ключевые качества
 								br
@@ -195,7 +195,7 @@ block content
 									</tr>
 								</table>
 						.product-card__shadow
-						.product-card__tab__pane.tab-pane.active(data-tab-content="3")
+						.product-card__tab__pane.tab-pane(data-tab-content="3")
 							include ../../blocks/components/portfolio/portfolio						
 							include ../../blocks/components/clients__slider-product/clients__slider-product
 	.section.see-also__section.section--gray
