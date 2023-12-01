@@ -8745,7 +8745,7 @@ body {
   }
 
   .btn {
-    border-radius: 1.7361111111vw;
+    border-radius: 1.3888888889vw;
     font-size: 3.4722222222vw;
     letter-spacing: 0.0564236111vw;
     min-height: 8.5069444444vw;
@@ -8992,7 +8992,7 @@ body {
   }
 
   .animation__section .layout--trio__col:nth-child(3) {
-    padding-top: 3.4722222222vw;
+    padding-top: 0vw;
   }
 
   .animation__bg {
@@ -9049,10 +9049,11 @@ body {
   }
 
   .card__bottom__btn {
-    width: 9.2013888889vw;
-    height: 9.2013888889vw;
-    min-width: 9.2013888889vw;
-    min-height: 9.2013888889vw;
+    width: 8.5069444444vw;
+    height: 8.5069444444vw;
+    min-width: 8.5069444444vw;
+    min-height: 8.5069444444vw;
+    padding: 1.7361111111vw;
   }
 
   .card__bottom__btn svg {
@@ -9387,10 +9388,11 @@ body {
   }
 
   .article__bottom__btn {
-    width: 9.2013888889vw;
-    height: 9.2013888889vw;
-    min-width: 9.2013888889vw;
-    min-height: 9.2013888889vw;
+    width: 8.5069444444vw;
+    height: 8.5069444444vw;
+    min-width: 8.5069444444vw;
+    min-height: 8.5069444444vw;
+    border-radius: 1.3888888889vw;
   }
 
   .article__bottom__btn svg {
@@ -9454,6 +9456,11 @@ body {
     padding-top: 6.0763888889vw;
     padding-right: 3.125vw;
     font-size: 3.4722222222vw;
+  }
+
+  .contacts__form__btn {
+    height: 8.5069444444vw;
+    min-height: 8.5069444444vw;
   }
 
   .contacts__form__mess {
@@ -9533,8 +9540,15 @@ body {
   }
 
   .product-card__tab {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
     min-height: 8.5069444444vw;
-    border-radius: 1.3888888889vw;
+    border-radius: 1.3888888889vw !important;
+  }
+
+  .product-card__tab:last-child {
+    margin-right: 0;
   }
 
   .product-card__tab__pane--text {
@@ -9549,7 +9563,7 @@ body {
     width: 42.7083333333vw;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 3.125vw;
+    border-radius: 1.3888888889vw;
     padding: 1.2152777778vw 0.8680555556vw;
     margin-bottom: 3.2986111111vw;
   }
@@ -9565,7 +9579,8 @@ body {
   .product-card__link {
     width: 19.7916666667vw;
     min-height: 8.5069444444vw;
-    border-radius: 2.4305555556vw;
+    height: 8.5069444444vw;
+    border-radius: 1.3888888889vw;
   }
 
   .product-card__color {
@@ -9578,13 +9593,15 @@ body {
 
   .product-card__color__filter {
     padding: 1.2152777778vw;
-    border-radius: 2.4305555556vw;
+    border-radius: 1.3888888889vw;
   }
 
   .product-card__color__filter__item {
-    width: 8.3333333333vw;
-    height: 8.3333333333vw;
-    border-radius: 2.4305555556vw;
+    width: 8.5069444444vw;
+    height: 8.5069444444vw;
+    min-width: 8.5069444444vw;
+    min-height: 8.5069444444vw;
+    border-radius: 1.3888888889vw;
     margin-right: 1.0416666667vw;
   }
 
@@ -9859,7 +9876,7 @@ body {
   }
 
   .header__buttons .btn {
-    min-height: 7.9861111111vw;
+    min-height: 8.5069444444vw;
   }
 
   .header-bg {

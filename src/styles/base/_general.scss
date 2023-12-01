@@ -265,7 +265,7 @@ body {
     white-space: nowrap;
     cursor: pointer;
     @include max(md) {
-        border-radius: vw2(10);
+        border-radius: vw2(8);
         font-size: vw2(20);
         letter-spacing: vw2(0.325);
         min-height: vw2(49);
@@ -1023,7 +1023,7 @@ body {
                 &:nth-child(3) {
                     // padding-top: vw(1500);
                     @include max(md) {
-                        padding-top: vw2(20);
+                        padding-top: vw2(0);
                      }
                     
                 }
@@ -1212,10 +1212,11 @@ body {
             min-height: vw(83);
             cursor: pointer;
             @include max(md) {
-                width: vw2(53);
-                height: vw2(53);
-                min-width: vw2(53);
-                min-height: vw2(53);
+                width: vw2(49);
+                height: vw2(49);
+                min-width: vw2(49);
+                min-height: vw2(49);
+                padding: vw2(10);
             } 
             svg {
                 width: vw(18);
@@ -2314,10 +2315,11 @@ body {
             cursor: pointer;
             margin-left: auto;
             @include max(md) {
-                width: vw2(53);
-                height: vw2(53);
-                min-width: vw2(53);
-                min-height: vw2(53);
+                width: vw2(49);
+                height: vw2(49);
+                min-width: vw2(49);
+                min-height: vw2(49);
+                border-radius: vw2(8);   
             } 
             svg {
                 width: vw(18);
@@ -2607,6 +2609,10 @@ body {
     &__btn {
         width: 100%;
         max-width: 100%;
+        @include max(md) {
+            height: vw2(49);
+            min-height: vw2(49); 
+        }
     }
     &__mess {
         position: relative;
@@ -2845,8 +2851,14 @@ body {
         cursor: pointer;
         transition: all 0.3s;
         @include max(md) {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            width: 100%;
             min-height: vw2(49);
-            border-radius: vw2(8);           
+            border-radius: vw2(8) !important;
+            &:last-child {
+                margin-right: 0;
+            }        
         }
         &:hover {
             background: $green;
@@ -2917,7 +2929,7 @@ body {
             width: vw2(246);
             margin-left: auto;
             margin-right: auto;
-            border-radius: vw2(18);
+            border-radius: vw2(8);
             padding: vw2(7) vw2(5);
             margin-bottom: vw2(19);             
         }
@@ -2950,7 +2962,8 @@ body {
         @include max(md) {
             width: vw2(114);
             min-height: vw2(49);
-            border-radius: vw2(14);
+            height: vw2(49);
+            border-radius: vw2(8);
         }
         &:hover {
             background: $green;
@@ -2988,7 +3001,7 @@ body {
             cursor: pointer;
             @include max(md) {
                 padding: vw2(7);
-                border-radius: vw2(14);
+                border-radius: vw2(8);
             }   
             &__item {
                position: relative;
@@ -3000,9 +3013,11 @@ body {
                border-radius: vw(14);
                margin-right: vw(6);
                @include max(md) {
-                width: vw2(48);
-                height: vw2(48);
-                border-radius: vw2(14);
+                width: vw2(49);
+                height: vw2(49);
+                min-width: vw2(49);
+                min-height: vw2(49);
+                border-radius: vw2(8);      
                 margin-right: vw2(6);
             }   
                &:last-child {
