@@ -3503,7 +3503,7 @@ body {
 
 .swiper-buttons .swiper-button-prev:hover,
 .swiper-buttons .swiper-button-next:hover {
-  background: #1F4D92;
+  background: #25CA6A;
 }
 
 .swiper-buttons .swiper-button-prev svg,
@@ -3613,7 +3613,7 @@ body {
 }
 
 .btn--blue:hover {
-  background: #1F4D92;
+  background: #25CA6A;
 }
 
 .btn--white {
@@ -5585,7 +5585,7 @@ body {
 }
 
 .product-card__content::-webkit-scrollbar {
-  width: 0.2604166667vw;
+  width: 0.5208333333vw;
   background-color: white;
 }
 
@@ -5642,7 +5642,7 @@ body {
 }
 
 .product-card__tab__pane::-webkit-scrollbar {
-  width: 0.2604166667vw;
+  width: 0.5208333333vw;
   background-color: white;
 }
 
@@ -5835,7 +5835,7 @@ body {
 }
 
 .company-card__section .layout .layout__col:nth-child(2)::-webkit-scrollbar {
-  width: 0.2604166667vw;
+  width: 0.5208333333vw;
   background-color: white;
 }
 
@@ -5921,7 +5921,7 @@ body {
 }
 
 .company-card__desc::-webkit-scrollbar {
-  width: 0.2604166667vw;
+  width: 0.5208333333vw;
   background-color: white;
 }
 
@@ -6138,6 +6138,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .video__picture {
@@ -6391,7 +6392,9 @@ body {
 }
 
 .header__menu__item .m-top {
-  margin-top: 0.2604166667vw;
+  position: absolute;
+  right: -0.625vw;
+  top: 0.2604166667vw;
 }
 
 .header__menu__list {

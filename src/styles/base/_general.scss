@@ -158,7 +158,7 @@ body {
             opacity: 0.2;
         }
         &:hover {
-            background: #1F4D92; 
+            background: $green; 
         }
         @include max(md) {
             width: vw2(49);
@@ -278,7 +278,8 @@ body {
     &--blue {
         background: #0C2448;
         &:hover {
-            background: #1F4D92;
+            background: #25CA6A;
+            // background: #1F4D92;
         }
     }
     &--white {
@@ -2796,7 +2797,7 @@ body {
             padding-bottom: vw2(30);
         }
         &::-webkit-scrollbar {
-            width: vw(5);
+            width: vw(10);
             background-color: #ffff;
           }
           
@@ -2868,7 +2869,7 @@ body {
             height: 100%;
             overflow-y: auto;
             &::-webkit-scrollbar {
-                width: vw(5);
+                width: vw(10);
                 background-color: #ffff;
               }
               
@@ -3118,7 +3119,7 @@ body {
                     padding-right: vw(0);
                     padding-left: vw(30);
                     &::-webkit-scrollbar {
-                        width: vw(5);
+                        width: vw(10);
                         background-color: #ffff;
                       }
                       
@@ -3256,7 +3257,7 @@ body {
             padding-right: vw2(30);            
         }
         &::-webkit-scrollbar {
-            width: vw(5);
+            width: vw(10);
             background-color: #ffff;
           }
           
@@ -3552,6 +3553,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     &__picture  {
         position: relative;
         display: flex;

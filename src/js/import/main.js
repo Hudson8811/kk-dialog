@@ -5,9 +5,9 @@ jQuery(function () {
 			var companyBar = new StickySidebar('#company-bar', {
 				containerSelector: '#company-bar__container-selector',
 				innerWrapperSelector: '.sidebar__inner',
-				topSpacing: 92,
-				containerSelector: false,
-				resizeSensor: true,
+				topSpacing: function() {
+					return $(".section__header").height();
+				},
 				minWidth: 0
 			});
 		

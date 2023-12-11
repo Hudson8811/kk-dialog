@@ -249,8 +249,9 @@
 				}
 			}
 			.m-top{
-				// padding-top: vw(5);
-				margin-top: vw(5);
+				position: absolute;
+				right: vw(-12);
+				top: vw(5);
 			}
 			svg {
 				// margin-left: vw(5);
