@@ -517,6 +517,11 @@ body {
     font-weight: 400;
     line-height: vw(21); /* 131.25% */
     letter-spacing: vw(0.1);
+	@include max(lg) {
+		font-size: vw(16,1440);
+		line-height: vw(21,1440);
+		letter-spacing: vw(0.1,1440);
+	}
     @include max(md) {
         font-size: vw2(20);
         font-style: normal;
@@ -532,6 +537,10 @@ body {
     line-height: normal;
     letter-spacing: vw(0.325);
     text-transform: uppercase; /* 131.25% */
+	@include max(lg) {
+		font-size: vw(13,1440);
+		letter-spacing: vw(0.325,1440);
+	}
     @include max(md) {
         font-size: vw2(20);
         font-style: normal;
@@ -2438,6 +2447,10 @@ body {
             letter-spacing: vw(0.325);
             text-transform: uppercase; /* 131.25% */
             transition: all 0.3s;
+			@include max(lg) {
+				font-size: vw(13,1440);
+				letter-spacing: vw(0.325,1440);
+			}
             @include max(md) {
                 font-size: vw2(20);
                 font-style: normal;
@@ -2457,6 +2470,10 @@ body {
             font-weight: 400;
             line-height: normal;
             letter-spacing: vw(0.35);
+			@include max(lg) {
+				font-size: vw(14,1440);
+				letter-spacing: vw(0.35,1440);
+			}
             @include max(md) {
                 bottom: vw2(-28);
                 font-size: vw2(20);
@@ -2611,6 +2628,12 @@ body {
     &__btn {
         width: 100%;
         max-width: 100%;
+		@include min(md) {
+			font-size: vw(13,1440);
+		}
+		@include min(lg) {
+			font-size: vw(13);
+		}
         @include max(md) {
             height: vw2(49);
             min-height: vw2(49); 

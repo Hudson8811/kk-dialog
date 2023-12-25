@@ -400,7 +400,6 @@ if (window.innerWidth > 999 && sideBar !== null){
 		let fromTop = window.scrollY + 200;
 		navigationLinks.forEach(link => {
 			let section = document.querySelector(link.hash);
-			console
 			if (
 				section.offsetTop <= fromTop &&
 				section.offsetTop + section.offsetHeight > fromTop
@@ -428,7 +427,7 @@ let tl = gsap.timeline({});
 
 var initMode = null;
 
-let addTime = 300;
+let addTime = 200;
 
 let st1, st2, st3;
 let tl1 = gsap.timeline({});
@@ -444,21 +443,35 @@ let yValue = urlParams.get('y');
 
 let animationSection = $('.animation__section')
 function initAnimation(){
-	siteMainHeight = $('.site-main').innerHeight();
-	animationSectionHeight =  $('.animation__section').innerHeight();
-	col2Height =  $('.js-animation__col--2').innerHeight();
-	col3Height =  $('.js-animation__col--3').innerHeight();
 	if (window.innerWidth > 992 && animationSection.length > 0 ){
-			if (initMode != 'desk'){
-					window.scrollTo({
-							top: 0,
-							behavior: "instant"
-					});
-					initMode = 'desk';
-					reInit();
-					initScrollAnimationDesktop();
-			}
-	}
+        if (initMode != 'desk'){
+            siteMainHeight = $('.site-main').innerHeight();
+            animationSectionHeight =  $('.animation__section').innerHeight();
+            col2Height =  $('.js-animation__col--2').innerHeight();
+            col3Height =  $('.js-animation__col--3').innerHeight();
+            window.scrollTo({
+                    top: 0,
+                    behavior: "instant"
+            });
+            initMode = 'desk';
+            reInit();
+            initScrollAnimationDesktop();
+        } else {
+            reInit();
+            siteMainHeight = $('.site-main').innerHeight();
+            animationSectionHeight =  $('.animation__section').innerHeight();
+            col2Height =  $('.js-animation__col--2').innerHeight();
+            col3Height =  $('.js-animation__col--3').innerHeight();
+
+            initScrollAnimationDesktop();
+        }
+
+
+	} else {
+	    if (initMode == 'desk'){
+            reInit();
+        }
+    }
 }
 
 initAnimation();
@@ -480,7 +493,10 @@ function reInit(){
 	tl1.clear();
 	tl2.clear();
 	tl3.clear();
-	gsap.set(".js-animation__col--2, .animation__bg.animation__bg__1, .js-animation__col--3", {clearProps:"all"});
+	gsap.set(
+	    ".js-animation__col--2, .animation__bg.animation__bg__1, .js-animation__col--3",
+        {clearProps:"all"}
+    );
 }
 
 function initScrollAnimationDesktop(){

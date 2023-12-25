@@ -28,6 +28,10 @@
 				border-right: none;
 				padding-bottom: vw(0);
 				padding-right: vw(20);
+				@include max(lg) {
+					flex:1 0 77.4%;
+					max-width: 77.4%;
+				}
 				@include max(md) {
 					flex:1 0 33.33%;
 					max-width: 33.333%;
@@ -46,6 +50,10 @@
 				padding-bottom: vw(17);
 				padding-right: vw(30);
 				padding-left: vw(30);
+				@include max(lg) {
+					flex:1 0 22.6%;
+					max-width: 22.6%;
+				}
 				@include max(md) {
 					flex:1 0 66.666%;
 					max-width: 66.666%;
@@ -201,6 +209,10 @@
 			cursor: pointer;
 			transition: all 0.3s;
 			border-bottom: 1px solid transparent;
+			@include max(lg) {
+				font-size: vw(13,1440);
+				letter-spacing: vw(0.325,1440);
+			}
 			&:hover {
 				color: $green;
 				transition: all 0.3s;
@@ -227,6 +239,10 @@
 				align-items: center;
 				width: vw(16);
 				margin-right: vw(6);
+				@include max(lg) {
+					width: vw(16,1440);
+					margin-right: vw(6,1440);
+				}
 				svg {
 					position: relative;
 					display: block;
@@ -241,6 +257,10 @@
 				align-items: center;
 				width: vw(7);
 				margin-left: vw(4);
+				@include max(lg) {
+					width: vw(7,1440);
+					margin-left: vw(4,1440);
+				}
 				svg,img {
 					width: 100%;
 					display: block;
@@ -295,6 +315,10 @@
 				margin-bottom: vw(9);
 				border-bottom: 1px solid  rgba(0, 0, 0, 0.2);
 				text-transform: none;
+				@include max(lg) {
+					font-size: vw(13,1440);
+					letter-spacing: vw(0.325,1440);
+				}
 				&:last-child {
 					margin-bottom: 0;
 					padding-bottom: 0;
@@ -315,6 +339,10 @@
 					text-transform: uppercase;
 					text-decoration: none;
 					transition: all .3s;
+					@include max(lg) {
+						font-size: vw(13,1440);
+						letter-spacing: vw(0.325,1440);
+					}
 					&:hover {
 						transition: all .3s;
 						color: $green;
@@ -380,6 +408,10 @@
 					max-width: vw(380);
 					min-height: vw(90);
 					text-transform: none;
+					@include max(lg) {
+						font-size: vw(20,1440);
+						letter-spacing: vw(-0.4,1440);
+					}
 				}
 				&__item {
 					position: relative;
@@ -398,6 +430,11 @@
 					width: 100%;
 					max-width: vw(170);
 					height: auto;
+					@include max(lg) {
+						font-size: vw(13,1440);
+						letter-spacing: vw(0.325,1440);
+						margin-bottom: vw(10,1440);
+					}
 					&:last-child {
 						margin-bottom: 0;
 					}
@@ -417,6 +454,10 @@
 						height: auto;
 						white-space: wrap;
 						text-align: left;
+						@include max(lg) {
+							font-size: vw(13,1440);
+							letter-spacing: vw(0.325,1440);
+						}
 						&:hover {
 							transition: all .3s;
 							color: $green;
@@ -491,6 +532,10 @@
 				text-transform: uppercase;
 				text-decoration: none;
 				transition: all .3s;
+				@include max(lg) {
+					font-size: vw(13,1440);
+					letter-spacing: vw(0.325,1440);
+				}
 				&:hover {
 					transition: all .3s;
 					color: $green;
@@ -527,6 +572,12 @@
 			border-bottom: none;
 		}
 		.btn {
+			@include min(md) {
+				font-size: vw(13,1440);
+			}
+			@include min(lg) {
+				font-size: vw(13);
+			}
 			@include max(md) {
 				min-height: vw2(49);
 			}

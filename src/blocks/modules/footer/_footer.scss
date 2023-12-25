@@ -101,6 +101,9 @@
 			text-decoration: none;
 			transition: all 0.3s;
 			margin-bottom: vw(18);
+			@include max(lg) {
+				margin-bottom: vw(18,1440);
+			}
 			&:hover {
 				transition: all 0.3s;
 				color: $green;
@@ -110,6 +113,9 @@
 		&--contacts {
 			.footer__menu__link {
 				margin-bottom: vw(9);
+				@include max(lg) {
+					margin-bottom: vw(9,1440);
+				}
 			}
 		}
 	}
@@ -127,6 +133,10 @@
 		&:hover {
 			transition: all 0.3s;
 			color: $green;
+		}
+		@include max(lg) {
+			left: vw(30,1440);
+			bottom: vw(30,1440);
 		}
 		@include max(md) {
 			left: 0;
