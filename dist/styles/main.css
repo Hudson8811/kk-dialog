@@ -7319,6 +7319,7 @@ body {
   color: #212A39;
   transition: all 0.3s;
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -8138,7 +8139,7 @@ body {
   height: 100%;
   width: 1px;
   background-color: #fff;
-  left: -1.7447916667vw;
+  left: -1.71875vw;
   top: 0;
   position: absolute;
 }

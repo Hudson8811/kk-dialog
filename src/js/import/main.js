@@ -398,21 +398,21 @@ if (window.innerWidth > 999 && sideBar !== null){
 	window.addEventListener('scroll', event => {
 		let navigationLinks = document.querySelectorAll('.side-bar__item');
 		let fromTop = window.scrollY + 200;
-		navigationLinks.forEach(link => {
+		let activeIndex = 0;
+		navigationLinks.forEach((link, index) => {
 			let section = document.querySelector(link.hash);
-			if (
-				section.offsetTop <= fromTop &&
-				section.offsetTop + section.offsetHeight > fromTop
-			) {
-				link.classList.add('active');
+			if (section.offsetTop <= fromTop ) {
+			    activeIndex = index;
 				let sectionData = section.getAttribute('data-color');
 				let sideBar = document.querySelector(".side-bar")
 				sideBar.classList.remove("blue", "white", "gray")
-				sideBar.classList.add(sectionData)
-			} else {
-				link.classList.remove('active');
+				sideBar.classList.add(sectionData);
 			}
 		});
+        navigationLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        navigationLinks[activeIndex].classList.add('active');
 	});
 }
 
@@ -427,7 +427,7 @@ let tl = gsap.timeline({});
 
 var initMode = null;
 
-let addTime = 200;
+let addTime = 250;
 
 let st1, st2, st3;
 let tl1 = gsap.timeline({});
@@ -550,6 +550,17 @@ function initScrollAnimationDesktop(){
 			scrub: 0, //2.5
 			animation: tl1,
 	});
-
-
 }
+
+$(document).on('click','[data-gsap-scroll]',function (){
+    let href = $(this).attr('href');
+    let target = $(href);
+    if (target.length > 0 && target.parents('.pin-spacer').length > 0){
+        event.preventDefault();
+        let targetTop = target[0].offsetTop + target.parents('.pin-spacer')[0].offsetTop
+        gsap.to(window, {
+            scrollTo: { y: targetTop, autoKill: false },
+            duration: 0,
+        });
+    }
+});
