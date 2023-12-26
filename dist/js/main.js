@@ -2053,3 +2053,12 @@ $(document).on('click','[data-gsap-scroll]',function (){
         });
     }
 });
+
+$(document).on('click', '.js-fancy-product',function (){
+    event.preventDefault();
+    $(this).closest('.product-card__slider').find('.swiper-slide-active').trigger('click');
+});
+$(document).on('click', '.js-fancy-gallery',function (){
+    event.preventDefault();
+    $(this).closest('.portfolio__slider').find('.swiper-slide-active').trigger('click');
+});

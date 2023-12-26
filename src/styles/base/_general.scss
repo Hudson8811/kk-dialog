@@ -2775,7 +2775,7 @@ body {
             }
         }
         .layout {
-            height: vw(893);
+            height: vw(980);
             align-items: stretch;
             @include max(md) {
                 height: auto;
@@ -2863,7 +2863,7 @@ body {
         position: absolute;
         width: 100%;
         height: vw(122);
-        top: vw(722);
+        top: vw(809);
         left: 0;
         z-index: 2;
         background: #fff;
@@ -2921,6 +2921,9 @@ body {
     }
     &__title {
         margin-bottom: vw(20);
+		@include min(md) {
+			width: calc(100% + 5vw);
+		}
     }
     &__cost {
         position: relative;
@@ -3198,7 +3201,7 @@ body {
         display: flex;
         flex-flow: column nowrap;
         width: 100%;
-        padding-bottom: vw(30);
+        padding-bottom: vw(60);
         padding-top: vw(30);
         // height: calc(100vh - vw(90));
         // overflow: auto;
@@ -3618,4 +3621,22 @@ body {
 
 .compensate-for-scrollbar {
     margin-right: 0 !important;
+}
+
+
+.fancybox-thumbs {
+	top: auto;
+	width: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 95px;
+	padding: 10px 10px 5px 10px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.fancybox-show-thumbs .fancybox-inner {
+	right: 0;
+	bottom: 95px;
 }
