@@ -5,6 +5,21 @@
   @include max(sm) {
     margin-bottom: 0px;
   }
+	&,p {
+		color: $black;
+		font-size: vw(20);
+		font-style: normal;
+		font-weight: 400;
+		line-height: vw(27); /* 131.25% */
+		@include max(md) {
+			font-size: vw2(22);
+			font-style: normal;
+			line-height: 1.2; /* 98.163% */
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
   h1 {
     color: $black;
     font-size: vw(95);
@@ -90,21 +105,7 @@
         letter-spacing: vw2(-1.408);
     }
   }
-  p {
-    color: $black;
-    font-size: vw(20);
-    font-style: normal;
-    font-weight: 400;
-    line-height: vw(27); /* 131.25% */ 
-    @include max(md) {
-        font-size: vw2(22);
-        font-style: normal;
-        line-height: 1.2; /* 98.163% */
-    }  
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+
   ul {
 		position: relative;
 		display: block;
