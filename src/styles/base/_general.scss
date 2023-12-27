@@ -2710,21 +2710,27 @@ body {
 }
 .product-card {
     position: relative;
-    display: flex;
-    justify-content: flex-start;
     height: vw(893);
-    align-items: stretch;
     width: 100%;
-    flex-flow: row nowrap;
     padding-top: vw(11);
     padding-bottom: vw(33);
+	display: flex;
+	flex-direction: column;
     @include max(md) {
-        flex-flow: column nowrap;
         height: auto;
         padding-top: vw2(20);
         padding-bottom: vw2(30);
         margin-bottom: vw2(30);
     }
+	&__inner{
+		display: flex;
+		justify-content: flex-start;
+		flex-flow: column nowrap;
+		align-items: stretch;
+		flex-flow: row nowrap;
+		width: 100%;
+		flex-grow: 1;
+	}
     &__col {
         position: relative;
         display: flex;
@@ -2968,13 +2974,9 @@ body {
 	&__links{
 		display: flex;
 		justify-content: center;
-		padding-right: vw(359);
-		padding-left: vw(40);
 		width: 100%;
 		box-sizing: border-box;
 		@include max(md) {
-			padding-left: 0;
-			padding-right: 0;
 			margin-bottom: vw3(18);
 		}
 		&-inner{
@@ -2991,16 +2993,6 @@ body {
 		}
 
 
-		&--desc {
-			@include max(md) {
-				display: none;
-			}
-		}
-		&--mob {
-			@include min(md) {
-				display: none;
-			}
-		}
 	}
 	&__link{
 		display: flex;

@@ -16,38 +16,37 @@ block content
 			.layout
 				.layout__col
 					.product-card
-						.product-card__col
-							.product-card__links.product-card__links--mob
-								.product-card__links-inner
-									a(href="#").product-card__link.text__13.active Титан 1
-									a(href="#").product-card__link.text__13 Титан 2
-							.product-card__col__top
-								.product-card__title.title__50
-									!="МАКС I. Комплектация №1"
-								.product-card__cost
-									.product-card__cost__title.text__13 Цена от
-									.product-card__cost__value.title__40 499 000 руб
-								.product-card__color
-									.product-card__color__title.text__13 цвет
-									.product-card__color__filter
-										.product-card__color__filter__item(data-filter="01" style="background: #E4E6E8")
-										.product-card__color__filter__item(data-filter="02" style="background: #fff")
-										.product-card__color__filter__item(data-filter="03" style="background: #CECECE")
-							.product-card__col__bottom.product-card__col__bottom--desc
-								.product-card__desc.text__20
-									!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
-						
-						.product-card__col
-							.product-card__links.product-card__links--desc
-								.product-card__links-inner
-									a(href="#").product-card__link.text__13.active МАКС I. Комплектация №1
-									a(href="#").product-card__link.text__13 МАКС I. Комплектация №1
-									a(href="#").product-card__link.text__13 Титан 2
-									a(href="#").product-card__link.text__13 Титан 2
-							include ../../blocks/modules/product-card-slider/product-card-slider
-							.product-card__col__bottom.product-card__col__bottom--mob
-								.product-card__desc.text__20
-									!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
+						.product-card__links.product-card__links
+							.product-card__links-inner
+								a(href="#").product-card__link.text__13.active МАКС I. Комплектация №1
+								a(href="#").product-card__link.text__13 МАКС I. Комплектация №1
+								a(href="#").product-card__link.text__13 Титан 2
+								a(href="#").product-card__link.text__13 Титан 2
+						.product-card__inner
+							.product-card__col
+
+								.product-card__col__top
+									.product-card__title.title__50
+										!="МАКС I. Комплектация №1"
+									.product-card__cost
+										.product-card__cost__title.text__13 Цена от
+										.product-card__cost__value.title__40 499 000 руб
+									.product-card__color
+										.product-card__color__title.text__13 цвет
+										.product-card__color__filter
+											.product-card__color__filter__item(data-filter="01" style="background: #E4E6E8")
+											.product-card__color__filter__item(data-filter="02" style="background: #fff")
+											.product-card__color__filter__item(data-filter="03" style="background: #CECECE")
+								.product-card__col__bottom.product-card__col__bottom--desc
+									.product-card__desc.text__20
+										!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
+
+							.product-card__col
+
+								include ../../blocks/modules/product-card-slider/product-card-slider
+								.product-card__col__bottom.product-card__col__bottom--mob
+									.product-card__desc.text__20
+										!="Данные кабины являются полностью одобренным и сертифицированным местом для курения."
 				.layout__col
 					.layout__col__border-top
 					.nav-tabs.product-card__tabs
