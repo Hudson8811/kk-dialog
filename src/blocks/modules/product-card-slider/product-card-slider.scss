@@ -143,7 +143,9 @@
         display: block;
         padding-top: 115.35%;   
         position: relative;
-        
+		  @include min(md) {
+			  padding-top: 100%;
+		  }
       }
       img, picture {
         position: absolute;

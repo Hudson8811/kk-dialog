@@ -2062,3 +2062,25 @@ $(document).on('click', '.js-fancy-gallery',function (){
     event.preventDefault();
     $(this).closest('.portfolio__slider').find('.swiper-slide-active').trigger('click');
 });
+
+
+function checkProductSlider(){
+    if ($(window).width() > 992){
+        let titleHeight = $('.product-card__title').outerHeight(true);
+        $('.product-card .gallery-main').css('margin-top',titleHeight);
+    } else {
+        $('.product-card .gallery-main').css('margin-top',0);
+    }
+}
+
+$(document).on('ready',function (){
+    if ($('.product-card .gallery-main').length > 0) {
+        checkProductSlider();
+    }
+});
+$(window).on('load resize',function (){
+    if ($('.product-card .gallery-main').length > 0) {
+        checkProductSlider();
+    }
+});
+
