@@ -196,7 +196,7 @@
 			align-items: flex-start;
 			color: #212A39;
 			text-align: center;
-			font-size: vw(13);
+			font-size: vw(14);
 			font-style: normal;
 			font-weight: 500;
 			line-height: normal;
@@ -305,7 +305,7 @@
 				align-items: flex-start;
 				color: #212A39;
 				text-align: center;
-				font-size: vw(13);
+				font-size: vw(14);
 				font-style: normal;
 				font-weight: 500;
 				line-height: normal;
@@ -331,7 +331,7 @@
 					align-items: flex-start;
 					color: #212A39;
 					text-align: center;
-					font-size: vw(13);
+					font-size: vw(14);
 					font-style: normal;
 					font-weight: 500;
 					line-height: normal;
@@ -379,7 +379,7 @@
 			&__list {
 				position: relative;
 				display: flex;
-				justify-content: flex-start;
+				justify-content: space-between;
 				align-items: flex-start;
 				flex-flow: column nowrap;
 				padding-left: vw(35);
@@ -421,7 +421,7 @@
 					justify-content: flex-start;
 					align-items: flex-start;
 					color: $black;
-					font-size: vw(13);
+					font-size: vw(14);
 					font-style: normal;
 					font-weight: 500;
 					line-height: normal;
@@ -444,7 +444,7 @@
 						position: relative;
 						display: inline-block;
 						color: $black;
-						font-size: vw(13);
+						font-size: vw(14);
 						font-style: normal;
 						font-weight: 500;
 						line-height: normal;
@@ -488,7 +488,7 @@
 			align-items: flex-start;
 			color: #212A39;
 			text-align: center;
-			font-size: vw(13);
+			font-size: vw(14);
 			font-style: normal;
 			font-weight: 500;
 			line-height: normal;
@@ -526,7 +526,7 @@
 				align-items: center;
 				color: #212A39;
 				text-align: center;
-				font-size: vw(13);
+				font-size: vw(14);
 				font-style: normal;
 				font-weight: 500;
 				line-height: normal;

@@ -1344,8 +1344,13 @@ $('.js-clients__slider').each(function(){
 		// watchSlidesVisibility: true,
 		// watchSlidesProgress: true,
 		// preventInteractionOnTransition: true,
-		// loop: true,
 		// spaceBetween: 30,
+		loop: true,
+		autoplay: {
+			delay: 1500,
+			// reverseDirection: true,
+			disableOnInteraction: false,
+		},
 		slidesPerView: 3,
 		navigation: {
 			nextEl: slider.find('.swiper-button-next')[0],

@@ -9,7 +9,7 @@ $('.js-clients__slider').each(function(){
 		// spaceBetween: 30,
 		loop: true,
 		autoplay: {
-			delay: 750,
+			delay: 1500,
 			// reverseDirection: true,
 			disableOnInteraction: false,
 		},
