@@ -552,17 +552,32 @@ function initScrollAnimationDesktop(){
 	});
 }
 
-$(document).on('click','[data-gsap-scroll]',function (){
-    let href = $(this).attr('href');
-    let target = $(href);
-    if (target.length > 0 && target.parents('.pin-spacer').length > 0){
-        event.preventDefault();
-        let targetTop = target[0].offsetTop + target.parents('.pin-spacer')[0].offsetTop
-        gsap.to(window, {
-            scrollTo: { y: targetTop, autoKill: false },
-            duration: 0,
-        });
-    }
+$(document).on('click','.side-bar__list a[href^="#"]',function (){
+	let href = $(this).attr('href');
+	let target = $(href);
+
+	let headerHeight = $('.section__header').innerHeight();
+
+	if (target.length > 0 && target.parents('.pin-spacer').length > 0){
+		event.preventDefault();
+		let targetTop = target[0].offsetTop + target.parents('.pin-spacer')[0].offsetTop - headerHeight;
+		if (href === '#main2'){
+			let targetTop2 = $(window).innerHeight()*0.9 + target.parents('.pin-spacer')[0].offsetTop - headerHeight;
+			if (targetTop2 < targetTop){
+				targetTop = targetTop2;
+			}
+		}
+		gsap.to(window, {
+			scrollTo: { y: targetTop, autoKill: false },
+			duration: 0,
+		});
+	} else if (target.length > 0) {
+		event.preventDefault();
+		let targetTop = target[0].offsetTop - headerHeight;
+		$('html, body').animate({
+			scrollTop: targetTop
+		}, 0);
+	}
 });
 
 $(document).on('click', '.js-fancy-product',function (){
