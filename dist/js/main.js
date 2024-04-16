@@ -1646,16 +1646,20 @@ jQuery(function () {
 					return (num > 9) ? num : '0' + num;
 				}
 				industryTwo = new Swiper(slider[0], {
-						watchOverflow: true,
-						watchSlidesVisibility: true,
-						watchSlidesProgress: true,
-						preventInteractionOnTransition: true,
-						slidesPerView: 1,
-						// autoHeight: true,
-						// thumbs: {
-						// 		swiper: industryOne
-						// },
-						navigation: {
+					watchOverflow: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					preventInteractionOnTransition: true,
+					slidesPerView: 1,
+					// autoHeight: true,
+					// thumbs: {
+					// 		swiper: industryOne
+					// },
+					autoplay: {
+						delay: 2500,
+						disableOnInteraction: false,
+					},
+					navigation: {
 							nextEl: slider.find('.swiper-button-next')[0],
 							prevEl: slider.find('.swiper-button-prev')[0]
 						},

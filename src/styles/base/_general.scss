@@ -1402,8 +1402,7 @@ body {
             font-style: normal;
             font-weight: 500;
             line-height: vw(36); /* 78.014% */
-            letter-spacing: vw(-1.3); 
-            align-self: flex-end;
+            letter-spacing: vw(-1.3);
             display: flex;
             justify-content: flex-end;
             align-items: flex-start;
@@ -1413,6 +1412,7 @@ body {
                 right: vw(30);
                 width: vw2(100);
                 height: vw2(100);
+                align-self: flex-end;
             }
             .swiper-pagination-current {
                 color: #FFF;

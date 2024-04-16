@@ -4488,7 +4488,6 @@ body {
   line-height: 1.875vw;
   /* 78.014% */
   letter-spacing: -0.0677083333vw;
-  align-self: flex-end;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -9335,6 +9334,7 @@ body {
     right: 1.5625vw;
     width: 17.3611111111vw;
     height: 17.3611111111vw;
+    align-self: flex-end;
   }
 
   .industry__section .swiper-pagination .swiper-pagination-current {
