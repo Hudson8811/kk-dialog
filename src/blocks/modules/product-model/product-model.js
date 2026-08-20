@@ -10,6 +10,8 @@
         return;
     }
 
+    document.body.appendChild(modal);
+
     var viewport = modal.querySelector(".js-product-model-viewport");
     var loading = modal.querySelector(".js-product-model-loading");
     var fallback = modal.querySelector(".js-product-model-fallback");
