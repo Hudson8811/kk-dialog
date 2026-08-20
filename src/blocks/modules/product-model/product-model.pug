@@ -1,0 +1,21 @@
+.product-model__modal#product-model-modal.js-product-model-modal(role="dialog" aria-modal="true" aria-labelledby="product-model-title" hidden)
+  .product-model__backdrop.js-product-model-close
+  .product-model__dialog
+    .product-model__header
+      .product-model__heading
+        span.product-model__eyebrow Интерактивный просмотр
+        h2.product-model__title#product-model-title МАКС I. Комплектация №1
+      button.product-model__close.js-product-model-close(type="button" aria-label="Закрыть 3D-просмотр")
+        span(aria-hidden="true")
+    .product-model__viewport.js-product-model-viewport
+      .product-model__loading.js-product-model-loading Загрузка 3D-модели…
+      .product-model__fallback.js-product-model-fallback(hidden)
+        strong 3D-просмотр недоступен
+        span Включите аппаратное ускорение или откройте страницу в современном браузере.
+    .product-model__footer
+      span.product-model__hint
+        span.product-model__hint-icon(aria-hidden="true") ↔
+        | Перетаскивайте, чтобы вращать
+      span.product-model__hint
+        span.product-model__hint-icon(aria-hidden="true") +−
+        | Колесо или жест — масштаб

@@ -245,6 +245,7 @@
                         <div class="swiper-container gallery-main">
                           <div class="swiper-wrapper"></div>
                         </div>
+                        <button class="product-model__open js-product-model-open" type="button" aria-haspopup="dialog" aria-controls="product-model-modal"><span class="product-model__open-badge" aria-hidden="true">3D</span><span class="product-model__open-text">Смотреть в 3D</span></button>
                         <div class="swiper-buttons swiper-buttons--white">
                           <div class="swiper-button-prev product-card-main-prev"><svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
 <path d="M3.40969 6.84261L8.62294 12.0559L7.00321 13.6756L1.78997 8.46233L0.163818 6.83618L1.78345 5.21637L7 0L8.62615 1.62615L3.40969 6.84261Z" fill="white"/>
@@ -323,6 +324,22 @@
                         <div class="swiper-slide" data-filter="03"><img src="img/product-card__3.png" alt=""></div>
                         <div class="swiper-slide" data-filter="03"><img src="img/product-card__3.png" alt=""></div>
                         <div class="swiper-slide" data-filter="03"><img src="img/product-card__3.png" alt=""></div>
+                      </div>
+                    </div>
+                    <div class="product-model__modal js-product-model-modal" id="product-model-modal" role="dialog" aria-modal="true" aria-labelledby="product-model-title" hidden>
+                      <div class="product-model__backdrop js-product-model-close"></div>
+                      <div class="product-model__dialog">
+                        <div class="product-model__header">
+                          <div class="product-model__heading"><span class="product-model__eyebrow">Интерактивный просмотр</span>
+                            <h2 class="product-model__title" id="product-model-title">МАКС I. Комплектация №1</h2>
+                          </div>
+                          <button class="product-model__close js-product-model-close" type="button" aria-label="Закрыть 3D-просмотр"><span aria-hidden="true"></span></button>
+                        </div>
+                        <div class="product-model__viewport js-product-model-viewport">
+                          <div class="product-model__loading js-product-model-loading">Загрузка 3D-модели…</div>
+                          <div class="product-model__fallback js-product-model-fallback" hidden><strong>3D-просмотр недоступен</strong><span>Включите аппаратное ускорение или откройте страницу в современном браузере.</span></div>
+                        </div>
+                        <div class="product-model__footer"><span class="product-model__hint"><span class="product-model__hint-icon" aria-hidden="true">↔</span>Перетаскивайте, чтобы вращать</span><span class="product-model__hint"><span class="product-model__hint-icon" aria-hidden="true">+−</span>Колесо или жест — масштаб</span></div>
                       </div>
                     </div>
                     <div class="product-card__col__bottom product-card__col__bottom--mob">

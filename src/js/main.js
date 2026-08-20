@@ -9,6 +9,7 @@
 @@include("./libs/ScrollToPlugin.min.js")
 @@include("./libs/resizeSensor.js")
 @@include("./libs/sticky-sidebar.js")
+@@include("./libs/three.min.js")
 
 //my files
 
