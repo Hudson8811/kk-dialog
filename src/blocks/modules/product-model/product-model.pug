@@ -3,15 +3,60 @@
   .product-model__dialog
     .product-model__header
       .product-model__heading
-        span.product-model__eyebrow Интерактивный просмотр
-        h2.product-model__title#product-model-title МАКС I. Комплектация №1
-      button.product-model__close.js-product-model-close(type="button" aria-label="Закрыть 3D-просмотр")
+        span.product-model__eyebrow 3D-конструктор
+        h2.product-model__title#product-model-title.js-product-model-title ПТЗ-02
+      button.product-model__close.js-product-model-close(type="button" aria-label="Закрыть 3D-конструктор")
         span(aria-hidden="true")
-    .product-model__viewport.js-product-model-viewport
-      .product-model__loading.js-product-model-loading Загрузка 3D-модели…
-      .product-model__fallback.js-product-model-fallback(hidden)
-        strong 3D-просмотр недоступен
-        span Включите аппаратное ускорение или откройте страницу в современном браузере.
+    .product-model__content
+      aside.product-model__config(aria-label="Параметры кабины")
+        .product-model__config-scroll
+          .product-model__option-group
+            .product-model__option-label Модель кабины
+            .product-model__cabin-list
+              button.product-model__cabin-option.active(type="button" data-cabin="ptz-02" aria-pressed="true")
+                span.product-model__cabin-name ПТЗ-02
+                span.product-model__cabin-capacity до 3 чел.
+              button.product-model__cabin-option(type="button" data-cabin="ptz-04" aria-pressed="false")
+                span.product-model__cabin-name ПТЗ-04
+                span.product-model__cabin-capacity до 6 чел.
+              button.product-model__cabin-option(type="button" data-cabin="ptz-06" aria-pressed="false")
+                span.product-model__cabin-name ПТЗ-06
+                span.product-model__cabin-capacity до 10 чел.
+          .product-model__option-group
+            .product-model__option-label Цвет каркаса
+            .product-model__color-list
+              button.product-model__color-option.active(type="button" data-frame-color="#aeb7bc" aria-label="Серебристый RAL 9006" aria-pressed="true" style="--swatch-color: #aeb7bc")
+              button.product-model__color-option(type="button" data-frame-color="#26313e" aria-label="Графитовый" aria-pressed="false" style="--swatch-color: #26313e")
+              button.product-model__color-option(type="button" data-frame-color="#f2f3f0" aria-label="Белый" aria-pressed="false" style="--swatch-color: #f2f3f0")
+              button.product-model__color-option(type="button" data-frame-color="#1c7a4a" aria-label="Зелёный" aria-pressed="false" style="--swatch-color: #1c7a4a")
+          .product-model__option-group
+            .product-model__option-label Отделка панелей
+            .product-model__texture-list
+              button.product-model__texture-option.active(type="button" data-finish="glass" aria-pressed="true")
+                span.product-model__texture-preview.product-model__texture-preview--glass
+                span Прозрачное стекло
+              button.product-model__texture-option(type="button" data-finish="frosted" aria-pressed="false")
+                span.product-model__texture-preview.product-model__texture-preview--frosted
+                span Матовое стекло
+              button.product-model__texture-option(type="button" data-finish="wood" aria-pressed="false")
+                span.product-model__texture-preview.product-model__texture-preview--wood
+                span Дуб / HPL
+          .product-model__summary(aria-live="polite")
+            .product-model__summary-row
+              span Вместимость
+              strong.js-product-model-capacity до 3 человек
+            .product-model__summary-row
+              span Габариты
+              strong.js-product-model-dimensions 1650 × 1400 × 2350 / 2700 мм
+            .product-model__summary-row
+              span Цена от
+              strong.js-product-model-price 299 000 ₽
+          button.product-model__reset.js-product-model-reset(type="button") Сбросить настройки
+      .product-model__viewport.js-product-model-viewport
+        .product-model__loading.js-product-model-loading Загрузка 3D-модели…
+        .product-model__fallback.js-product-model-fallback(hidden)
+          strong 3D-просмотр недоступен
+          span.product-model__fallback-text Включите аппаратное ускорение или откройте страницу в современном браузере.
     .product-model__footer
       span.product-model__hint
         span.product-model__hint-icon(aria-hidden="true") ↔

@@ -3,6 +3,48 @@
 (function () {
     "use strict";
 
+    var CABINS = {
+        "ptz-02": {
+            name: "ПТЗ-02",
+            capacity: "до 3 человек",
+            dimensions: "1650 × 1400 × 2350 / 2700 мм",
+            price: "299 000 ₽",
+            width: 3.3,
+            depth: 2.8,
+            vents: 1,
+            benches: 1
+        },
+        "ptz-04": {
+            name: "ПТЗ-04",
+            capacity: "до 6 человек",
+            dimensions: "1900 × 1900 × 2350 / 2700 мм",
+            price: "345 000 ₽",
+            width: 3.8,
+            depth: 3.8,
+            vents: 1,
+            benches: 2
+        },
+        "ptz-06": {
+            name: "ПТЗ-06",
+            capacity: "до 10 человек",
+            dimensions: "3250 × 1900 × 2350 / 2700 мм",
+            price: "470 000 ₽",
+            width: 6.5,
+            depth: 3.8,
+            vents: 2,
+            benches: 2
+        }
+    };
+    var DEFAULT_STATE = {
+        cabin: "ptz-02",
+        color: "#aeb7bc",
+        finish: "glass"
+    };
+    var state = {
+        cabin: DEFAULT_STATE.cabin,
+        color: DEFAULT_STATE.color,
+        finish: DEFAULT_STATE.finish
+    };
     var openButtons = document.querySelectorAll(".js-product-model-open");
     var modal = document.querySelector(".js-product-model-modal");
 
@@ -17,8 +59,37 @@
     var fallback = modal.querySelector(".js-product-model-fallback");
     var closeButton = modal.querySelector(".product-model__close");
     var closeElements = modal.querySelectorAll(".js-product-model-close");
+    var title = modal.querySelector(".js-product-model-title");
+    var capacity = modal.querySelector(".js-product-model-capacity");
+    var dimensions = modal.querySelector(".js-product-model-dimensions");
+    var price = modal.querySelector(".js-product-model-price");
+    var resetButton = modal.querySelector(".js-product-model-reset");
     var previousFocus = null;
     var viewer = null;
+
+    function setActiveOption(selector, attribute, value) {
+        modal.querySelectorAll(selector).forEach(function (button) {
+            var active = button.getAttribute(attribute) === value;
+            button.classList.toggle("active", active);
+            button.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+    }
+
+    function updateConfiguration() {
+        var cabin = CABINS[state.cabin];
+
+        title.textContent = cabin.name;
+        capacity.textContent = cabin.capacity;
+        dimensions.textContent = cabin.dimensions;
+        price.textContent = cabin.price;
+        setActiveOption("[data-cabin]", "data-cabin", state.cabin);
+        setActiveOption("[data-frame-color]", "data-frame-color", state.color);
+        setActiveOption("[data-finish]", "data-finish", state.finish);
+
+        if (viewer) {
+            viewer.setConfiguration(cabin, state.color, state.finish);
+        }
+    }
 
     function createViewer(container) {
         if (typeof THREE === "undefined") {
@@ -50,6 +121,7 @@
         var pointers = {};
         var lastPointer = null;
         var pinchDistance = 0;
+        var booth = null;
 
         scene.add(new THREE.HemisphereLight(0xf8fbff, 0x64707a, 2.1));
 
@@ -57,8 +129,8 @@
         keyLight.position.set(6, 10, 8);
         keyLight.castShadow = true;
         keyLight.shadow.mapSize.set(2048, 2048);
-        keyLight.shadow.camera.left = -8;
-        keyLight.shadow.camera.right = 8;
+        keyLight.shadow.camera.left = -9;
+        keyLight.shadow.camera.right = 9;
         keyLight.shadow.camera.top = 9;
         keyLight.shadow.camera.bottom = -5;
         scene.add(keyLight);
@@ -67,8 +139,8 @@
         fillLight.position.set(-7, 5, -5);
         scene.add(fillLight);
 
-        var rimLight = new THREE.PointLight(0x30e97d, 1.8, 15);
-        rimLight.position.set(-4, 4, 5);
+        var rimLight = new THREE.PointLight(0x30e97d, 1.8, 18);
+        rimLight.position.set(-5, 4, 6);
         scene.add(rimLight);
 
         var floorMaterial = new THREE.MeshStandardMaterial({
@@ -76,23 +148,53 @@
             metalness: 0,
             roughness: 0.85
         });
-        var floor = new THREE.Mesh(new THREE.CircleGeometry(7.2, 80), floorMaterial);
+        var floor = new THREE.Mesh(new THREE.CircleGeometry(8.5, 80), floorMaterial);
         floor.rotation.x = -Math.PI / 2;
         floor.position.y = -0.04;
         floor.receiveShadow = true;
         scene.add(floor);
 
-        var booth = new THREE.Group();
-        booth.rotation.y = -0.1;
-        scene.add(booth);
+        function createWoodTexture() {
+            var canvas = document.createElement("canvas");
+            var context = canvas.getContext("2d");
+            var gradient;
+            var row;
 
+            canvas.width = 256;
+            canvas.height = 256;
+            gradient = context.createLinearGradient(0, 0, 256, 0);
+            gradient.addColorStop(0, "#9a673d");
+            gradient.addColorStop(0.45, "#c8945e");
+            gradient.addColorStop(1, "#865733");
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, 256, 256);
+
+            for (row = 12; row < 256; row += 18) {
+                context.beginPath();
+                context.strokeStyle = row % 36 === 0 ? "rgba(75, 43, 24, 0.32)" : "rgba(255, 225, 180, 0.25)";
+                context.lineWidth = row % 36 === 0 ? 2 : 1;
+                context.moveTo(0, row);
+                context.bezierCurveTo(70, row - 8, 170, row + 9, 256, row - 2);
+                context.stroke();
+            }
+
+            var texture = new THREE.CanvasTexture(canvas);
+            texture.wrapS = THREE.RepeatWrapping;
+            texture.wrapT = THREE.RepeatWrapping;
+            texture.repeat.set(2, 2);
+            texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+            texture.encoding = THREE.sRGBEncoding;
+            return texture;
+        }
+
+        var woodTexture = createWoodTexture();
         var frameMaterial = new THREE.MeshStandardMaterial({
-            color: 0x27313d,
+            color: 0xaeb7bc,
             metalness: 0.72,
             roughness: 0.35
         });
         var darkMaterial = new THREE.MeshStandardMaterial({
-            color: 0x111a25,
+            color: 0x4e5559,
             metalness: 0.55,
             roughness: 0.45
         });
@@ -102,7 +204,7 @@
             metalness: 0.2,
             roughness: 0.34
         });
-        var glassMaterial = new THREE.MeshPhysicalMaterial({
+        var clearGlassMaterial = new THREE.MeshPhysicalMaterial({
             color: 0xd8f3f5,
             transparent: true,
             opacity: 0.3,
@@ -112,6 +214,22 @@
             clearcoatRoughness: 0.08,
             side: THREE.DoubleSide,
             depthWrite: false
+        });
+        var frostedGlassMaterial = new THREE.MeshPhysicalMaterial({
+            color: 0xe9f0ef,
+            transparent: true,
+            opacity: 0.76,
+            metalness: 0,
+            roughness: 0.74,
+            clearcoat: 0.25,
+            side: THREE.DoubleSide,
+            depthWrite: false
+        });
+        var woodPanelMaterial = new THREE.MeshStandardMaterial({
+            color: 0xffffff,
+            map: woodTexture,
+            metalness: 0.05,
+            roughness: 0.62
         });
         var interiorMaterial = new THREE.MeshStandardMaterial({
             color: 0xaab3ba,
@@ -129,74 +247,139 @@
             return mesh;
         }
 
-        var width = 4.4;
-        var depth = 3.4;
-        var height = 5.4;
-        var post = 0.18;
-        var beam = 0.2;
-        var sideX = width / 2 - post / 2;
-        var sideZ = depth / 2 - post / 2;
-        var lowY = beam / 2;
-        var highY = height - beam / 2;
-
-        [[-sideX, -sideZ], [sideX, -sideZ], [-sideX, sideZ], [sideX, sideZ]].forEach(function (point) {
-            addBox([post, height, post], [point[0], height / 2, point[1]], frameMaterial);
-        });
-
-        [lowY, highY].forEach(function (y) {
-            addBox([width, beam, post], [0, y, -sideZ], frameMaterial);
-            addBox([width, beam, post], [0, y, sideZ], frameMaterial);
-            addBox([post, beam, depth], [-sideX, y, 0], frameMaterial);
-            addBox([post, beam, depth], [sideX, y, 0], frameMaterial);
-        });
-
-        addBox([width - 0.35, height - 0.45, 0.045], [0, height / 2, -depth / 2], glassMaterial, booth, false);
-        addBox([0.045, height - 0.45, depth - 0.35], [-width / 2, height / 2, 0], glassMaterial, booth, false);
-        addBox([0.045, height - 0.45, depth - 0.35], [width / 2, height / 2, 0], glassMaterial, booth, false);
-
-        var door = new THREE.Group();
-        door.position.set(0.48, 0, depth / 2);
-        booth.add(door);
-        addBox([2.35, height - 0.45, 0.05], [0, height / 2, 0], glassMaterial, door, false);
-        addBox([post, height - 0.3, post], [-1.18, height / 2, 0], frameMaterial, door);
-        addBox([post, height - 0.3, post], [1.18, height / 2, 0], frameMaterial, door);
-        addBox([2.52, beam, post], [0, lowY, 0], frameMaterial, door);
-        addBox([2.52, beam, post], [0, highY, 0], frameMaterial, door);
-        addBox([0.09, 0.72, 0.12], [-0.83, 2.65, 0.12], accentMaterial, door);
-
-        addBox([1.42, height - 0.45, 0.045], [-1.45, height / 2, depth / 2], glassMaterial, booth, false);
-        addBox([post, height - 0.25, post], [-0.72, height / 2, sideZ], frameMaterial);
-
-        addBox([width - 0.15, 0.16, depth - 0.15], [0, 0.18, 0], darkMaterial);
-        addBox([width - 0.18, 0.18, depth - 0.18], [0, height - 0.12, 0], frameMaterial);
-
-        var canopy = addBox([2.7, 0.42, 1.85], [0, height + 0.22, -0.1], darkMaterial);
-        canopy.castShadow = true;
-        addBox([1.82, 0.16, 1.12], [0, height + 0.52, -0.1], accentMaterial);
-        for (var vent = -0.58; vent <= 0.58; vent += 0.29) {
-            addBox([1.42, 0.035, 0.08], [0, height + 0.62, vent - 0.1], darkMaterial);
+        function disposeBooth() {
+            if (!booth) {
+                return;
+            }
+            booth.traverse(function (object) {
+                if (object.geometry) {
+                    object.geometry.dispose();
+                }
+            });
+            scene.remove(booth);
+            booth = null;
         }
 
-        addBox([3.3, 0.16, 0.78], [0, 1.12, -1.12], interiorMaterial);
-        addBox([3.3, 0.82, 0.14], [0, 1.48, -1.43], interiorMaterial);
-        addBox([0.18, 0.95, 0.18], [-1.35, 0.62, -1.12], darkMaterial);
-        addBox([0.18, 0.95, 0.18], [1.35, 0.62, -1.12], darkMaterial);
+        function getPanelMaterial(finish) {
+            if (finish === "frosted") {
+                return frostedGlassMaterial;
+            }
+            if (finish === "wood") {
+                return woodPanelMaterial;
+            }
+            return clearGlassMaterial;
+        }
 
-        var ashtray = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.18, 0.24, 1.12, 24),
-            frameMaterial
-        );
-        ashtray.position.set(-1.55, 0.74, 0.45);
-        ashtray.castShadow = true;
-        booth.add(ashtray);
+        function addBench(width, x, z, rotation) {
+            var bench = new THREE.Group();
+            bench.position.set(x, 0, z);
+            bench.rotation.y = rotation || 0;
+            booth.add(bench);
+            addBox([width, 0.16, 0.74], [0, 1.1, 0], interiorMaterial, bench);
+            addBox([width, 0.78, 0.14], [0, 1.45, -0.3], interiorMaterial, bench);
+            addBox([0.15, 0.94, 0.15], [-width / 2 + 0.18, 0.6, 0], darkMaterial, bench);
+            addBox([0.15, 0.94, 0.15], [width / 2 - 0.18, 0.6, 0], darkMaterial, bench);
+        }
 
-        var ashtrayTop = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.3, 0.3, 0.08, 24),
-            accentMaterial
-        );
-        ashtrayTop.position.set(-1.55, 1.32, 0.45);
-        ashtrayTop.castShadow = true;
-        booth.add(ashtrayTop);
+        function buildBooth(config, frameColor, finish) {
+            var width = config.width;
+            var depth = config.depth;
+            var height = 5.4;
+            var post = 0.18;
+            var beam = 0.2;
+            var sideX = width / 2 - post / 2;
+            var sideZ = depth / 2 - post / 2;
+            var lowY = beam / 2;
+            var highY = height - beam / 2;
+            var doorWidth = 1.62;
+            var doorCenter = width / 2 - doorWidth / 2 - post;
+            var fixedWidth = width - doorWidth - post * 3;
+            var fixedCenter = -width / 2 + fixedWidth / 2 + post;
+            var panelMaterial = getPanelMaterial(finish);
+            var ventPositions = config.vents === 2 ? [-width * 0.22, width * 0.22] : [0];
+            var support;
+
+            disposeBooth();
+            frameMaterial.color.set(frameColor);
+            darkMaterial.color.copy(frameMaterial.color).multiplyScalar(0.43);
+            frameMaterial.needsUpdate = true;
+            darkMaterial.needsUpdate = true;
+
+            booth = new THREE.Group();
+            booth.rotation.y = -0.1;
+            scene.add(booth);
+
+            [[-sideX, -sideZ], [sideX, -sideZ], [-sideX, sideZ], [sideX, sideZ]].forEach(function (point) {
+                addBox([post, height, post], [point[0], height / 2, point[1]], frameMaterial);
+            });
+
+            if (width > 5) {
+                for (support = -1; support <= 1; support += 2) {
+                    addBox([post, height, post], [0, height / 2, sideZ * support], frameMaterial);
+                }
+            }
+
+            [lowY, highY].forEach(function (y) {
+                addBox([width, beam, post], [0, y, -sideZ], frameMaterial);
+                addBox([width, beam, post], [0, y, sideZ], frameMaterial);
+                addBox([post, beam, depth], [-sideX, y, 0], frameMaterial);
+                addBox([post, beam, depth], [sideX, y, 0], frameMaterial);
+            });
+
+            addBox([width - 0.35, height - 0.45, 0.05], [0, height / 2, -depth / 2], panelMaterial, booth, finish !== "glass");
+            addBox([0.05, height - 0.45, depth - 0.35], [-width / 2, height / 2, 0], panelMaterial, booth, finish !== "glass");
+            addBox([0.05, height - 0.45, depth - 0.35], [width / 2, height / 2, 0], panelMaterial, booth, finish !== "glass");
+            addBox([fixedWidth, height - 0.45, 0.05], [fixedCenter, height / 2, depth / 2], panelMaterial, booth, finish !== "glass");
+
+            var door = new THREE.Group();
+            door.position.set(doorCenter, 0, depth / 2);
+            booth.add(door);
+            addBox([doorWidth, height - 0.45, 0.05], [0, height / 2, 0], clearGlassMaterial, door, false);
+            addBox([post, height - 0.3, post], [-doorWidth / 2, height / 2, 0], frameMaterial, door);
+            addBox([post, height - 0.3, post], [doorWidth / 2, height / 2, 0], frameMaterial, door);
+            addBox([doorWidth + post, beam, post], [0, lowY, 0], frameMaterial, door);
+            addBox([doorWidth + post, beam, post], [0, highY, 0], frameMaterial, door);
+            addBox([0.09, 0.72, 0.12], [-doorWidth * 0.3, 2.65, 0.12], accentMaterial, door);
+
+            addBox([post, height - 0.25, post], [doorCenter - doorWidth / 2 - post, height / 2, sideZ], frameMaterial);
+            addBox([width - 0.15, 0.16, depth - 0.15], [0, 0.18, 0], darkMaterial);
+            addBox([width - 0.18, 0.18, depth - 0.18], [0, height - 0.12, 0], frameMaterial);
+
+            ventPositions.forEach(function (ventX) {
+                addBox([2.15, 0.4, 1.55], [ventX, height + 0.2, -0.1], darkMaterial);
+                addBox([1.55, 0.14, 0.92], [ventX, height + 0.48, -0.1], accentMaterial);
+                [-0.36, -0.12, 0.12, 0.36].forEach(function (ventZ) {
+                    addBox([1.18, 0.035, 0.07], [ventX, height + 0.57, ventZ - 0.1], darkMaterial);
+                });
+            });
+
+            if (config.benches === 1) {
+                addBench(Math.min(width - 0.65, 2.7), 0, -depth / 2 + 0.5, 0);
+            } else {
+                addBench(Math.min((width - 1) / 2, 2.55), -width * 0.25, -depth / 2 + 0.5, 0);
+                addBench(Math.min((width - 1) / 2, 2.55), width * 0.25, -depth / 2 + 0.5, 0);
+            }
+
+            var ashtray = new THREE.Mesh(
+                new THREE.CylinderGeometry(0.18, 0.24, 1.12, 24),
+                frameMaterial
+            );
+            ashtray.position.set(-width / 2 + 0.56, 0.74, depth * 0.12);
+            ashtray.castShadow = true;
+            booth.add(ashtray);
+
+            var ashtrayTop = new THREE.Mesh(
+                new THREE.CylinderGeometry(0.3, 0.3, 0.08, 24),
+                accentMaterial
+            );
+            ashtrayTop.position.set(-width / 2 + 0.56, 1.32, depth * 0.12);
+            ashtrayTop.castShadow = true;
+            booth.add(ashtrayTop);
+
+            target.set(0, height * 0.47, 0);
+            distance = Math.max(12.2, Math.max(width, depth) * 2.05);
+            updateCamera();
+        }
 
         function updateCamera() {
             var aspectScale = Math.max(1, 0.82 / Math.max(camera.aspect, 0.1));
@@ -260,7 +443,7 @@
             if (keys.length > 1) {
                 var nextPinchDistance = pointerDistance();
                 if (pinchDistance > 0 && nextPinchDistance > 0) {
-                    distance = THREE.MathUtils.clamp(distance * pinchDistance / nextPinchDistance, 8, 18);
+                    distance = THREE.MathUtils.clamp(distance * pinchDistance / nextPinchDistance, 7.5, 20);
                     updateCamera();
                 }
                 pinchDistance = nextPinchDistance;
@@ -286,7 +469,7 @@
         renderer.domElement.addEventListener("pointercancel", releasePointer);
         renderer.domElement.addEventListener("wheel", function (event) {
             event.preventDefault();
-            distance = THREE.MathUtils.clamp(distance * Math.exp(event.deltaY * 0.001), 8, 18);
+            distance = THREE.MathUtils.clamp(distance * Math.exp(event.deltaY * 0.001), 7.5, 20);
             updateCamera();
             lastInteraction = Date.now();
         }, { passive: false });
@@ -309,7 +492,8 @@
                     frameId = null;
                 }
             },
-            resize: resize
+            resize: resize,
+            setConfiguration: buildBooth
         };
     }
 
@@ -329,6 +513,7 @@
                     viewer = createViewer(viewport);
                     loading.hidden = true;
                 }
+                updateConfiguration();
                 viewer.start();
             } catch (error) {
                 showFallback();
@@ -350,6 +535,34 @@
             previousFocus.focus();
         }
     }
+
+    modal.querySelectorAll("[data-cabin]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            state.cabin = button.getAttribute("data-cabin");
+            updateConfiguration();
+        });
+    });
+
+    modal.querySelectorAll("[data-frame-color]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            state.color = button.getAttribute("data-frame-color");
+            updateConfiguration();
+        });
+    });
+
+    modal.querySelectorAll("[data-finish]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            state.finish = button.getAttribute("data-finish");
+            updateConfiguration();
+        });
+    });
+
+    resetButton.addEventListener("click", function () {
+        state.cabin = DEFAULT_STATE.cabin;
+        state.color = DEFAULT_STATE.color;
+        state.finish = DEFAULT_STATE.finish;
+        updateConfiguration();
+    });
 
     openButtons.forEach(function (button) {
         button.addEventListener("click", openModal);

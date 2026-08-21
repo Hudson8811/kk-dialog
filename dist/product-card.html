@@ -330,14 +330,51 @@
                       <div class="product-model__backdrop js-product-model-close"></div>
                       <div class="product-model__dialog">
                         <div class="product-model__header">
-                          <div class="product-model__heading"><span class="product-model__eyebrow">Интерактивный просмотр</span>
-                            <h2 class="product-model__title" id="product-model-title">МАКС I. Комплектация №1</h2>
+                          <div class="product-model__heading"><span class="product-model__eyebrow">3D-конструктор</span>
+                            <h2 class="product-model__title js-product-model-title" id="product-model-title">ПТЗ-02</h2>
                           </div>
-                          <button class="product-model__close js-product-model-close" type="button" aria-label="Закрыть 3D-просмотр"><span aria-hidden="true"></span></button>
+                          <button class="product-model__close js-product-model-close" type="button" aria-label="Закрыть 3D-конструктор"><span aria-hidden="true"></span></button>
                         </div>
-                        <div class="product-model__viewport js-product-model-viewport">
-                          <div class="product-model__loading js-product-model-loading">Загрузка 3D-модели…</div>
-                          <div class="product-model__fallback js-product-model-fallback" hidden><strong>3D-просмотр недоступен</strong><span>Включите аппаратное ускорение или откройте страницу в современном браузере.</span></div>
+                        <div class="product-model__content">
+                          <aside class="product-model__config" aria-label="Параметры кабины">
+                            <div class="product-model__config-scroll">
+                              <div class="product-model__option-group">
+                                <div class="product-model__option-label">Модель кабины</div>
+                                <div class="product-model__cabin-list">
+                                  <button class="product-model__cabin-option active" type="button" data-cabin="ptz-02" aria-pressed="true"><span class="product-model__cabin-name">ПТЗ-02</span><span class="product-model__cabin-capacity">до 3 чел.</span></button>
+                                  <button class="product-model__cabin-option" type="button" data-cabin="ptz-04" aria-pressed="false"><span class="product-model__cabin-name">ПТЗ-04</span><span class="product-model__cabin-capacity">до 6 чел.</span></button>
+                                  <button class="product-model__cabin-option" type="button" data-cabin="ptz-06" aria-pressed="false"><span class="product-model__cabin-name">ПТЗ-06</span><span class="product-model__cabin-capacity">до 10 чел.</span></button>
+                                </div>
+                              </div>
+                              <div class="product-model__option-group">
+                                <div class="product-model__option-label">Цвет каркаса</div>
+                                <div class="product-model__color-list">
+                                  <button class="product-model__color-option active" type="button" data-frame-color="#aeb7bc" aria-label="Серебристый RAL 9006" aria-pressed="true" style="--swatch-color: #aeb7bc"></button>
+                                  <button class="product-model__color-option" type="button" data-frame-color="#26313e" aria-label="Графитовый" aria-pressed="false" style="--swatch-color: #26313e"></button>
+                                  <button class="product-model__color-option" type="button" data-frame-color="#f2f3f0" aria-label="Белый" aria-pressed="false" style="--swatch-color: #f2f3f0"></button>
+                                  <button class="product-model__color-option" type="button" data-frame-color="#1c7a4a" aria-label="Зелёный" aria-pressed="false" style="--swatch-color: #1c7a4a"></button>
+                                </div>
+                              </div>
+                              <div class="product-model__option-group">
+                                <div class="product-model__option-label">Отделка панелей</div>
+                                <div class="product-model__texture-list">
+                                  <button class="product-model__texture-option active" type="button" data-finish="glass" aria-pressed="true"><span class="product-model__texture-preview product-model__texture-preview--glass"></span><span>Прозрачное стекло</span></button>
+                                  <button class="product-model__texture-option" type="button" data-finish="frosted" aria-pressed="false"><span class="product-model__texture-preview product-model__texture-preview--frosted"></span><span>Матовое стекло</span></button>
+                                  <button class="product-model__texture-option" type="button" data-finish="wood" aria-pressed="false"><span class="product-model__texture-preview product-model__texture-preview--wood"></span><span>Дуб / HPL</span></button>
+                                </div>
+                              </div>
+                              <div class="product-model__summary" aria-live="polite">
+                                <div class="product-model__summary-row"><span>Вместимость</span><strong class="js-product-model-capacity">до 3 человек</strong></div>
+                                <div class="product-model__summary-row"><span>Габариты</span><strong class="js-product-model-dimensions">1650 × 1400 × 2350 / 2700 мм</strong></div>
+                                <div class="product-model__summary-row"><span>Цена от</span><strong class="js-product-model-price">299 000 ₽</strong></div>
+                              </div>
+                              <button class="product-model__reset js-product-model-reset" type="button">Сбросить настройки</button>
+                            </div>
+                          </aside>
+                          <div class="product-model__viewport js-product-model-viewport">
+                            <div class="product-model__loading js-product-model-loading">Загрузка 3D-модели…</div>
+                            <div class="product-model__fallback js-product-model-fallback" hidden><strong>3D-просмотр недоступен</strong><span class="product-model__fallback-text">Включите аппаратное ускорение или откройте страницу в современном браузере.</span></div>
+                          </div>
                         </div>
                         <div class="product-model__footer"><span class="product-model__hint"><span class="product-model__hint-icon" aria-hidden="true">↔</span>Перетаскивайте, чтобы вращать</span><span class="product-model__hint"><span class="product-model__hint-icon" aria-hidden="true">+−</span>Колесо или жест — масштаб</span></div>
                       </div>
