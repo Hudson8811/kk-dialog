@@ -492,8 +492,8 @@
             background-size: 4px 4px;
         }
 
-        &--wood {
-            background: repeating-linear-gradient(4deg, #845533 0, #845533 3px, #be8957 4px, #a87345 8px);
+        &--tinted {
+            background: linear-gradient(135deg, #27373f 0%, #5b747e 42%, #25323a 44%, #69838c 100%);
         }
     }
 

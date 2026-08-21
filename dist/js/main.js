@@ -1489,40 +1489,6 @@ $('.product-card__slider').each(function () {
         floor.receiveShadow = true;
         scene.add(floor);
 
-        function createWoodTexture() {
-            var canvas = document.createElement("canvas");
-            var context = canvas.getContext("2d");
-            var gradient;
-            var row;
-
-            canvas.width = 256;
-            canvas.height = 256;
-            gradient = context.createLinearGradient(0, 0, 256, 0);
-            gradient.addColorStop(0, "#9a673d");
-            gradient.addColorStop(0.45, "#c8945e");
-            gradient.addColorStop(1, "#865733");
-            context.fillStyle = gradient;
-            context.fillRect(0, 0, 256, 256);
-
-            for (row = 12; row < 256; row += 18) {
-                context.beginPath();
-                context.strokeStyle = row % 36 === 0 ? "rgba(75, 43, 24, 0.32)" : "rgba(255, 225, 180, 0.25)";
-                context.lineWidth = row % 36 === 0 ? 2 : 1;
-                context.moveTo(0, row);
-                context.bezierCurveTo(70, row - 8, 170, row + 9, 256, row - 2);
-                context.stroke();
-            }
-
-            var texture = new THREE.CanvasTexture(canvas);
-            texture.wrapS = THREE.RepeatWrapping;
-            texture.wrapT = THREE.RepeatWrapping;
-            texture.repeat.set(2, 2);
-            texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-            texture.encoding = THREE.sRGBEncoding;
-            return texture;
-        }
-
-        var woodTexture = createWoodTexture();
         var frameMaterial = new THREE.MeshStandardMaterial({
             color: 0xaeb7bc,
             metalness: 0.72,
@@ -1560,11 +1526,16 @@ $('.product-card__slider').each(function () {
             side: THREE.DoubleSide,
             depthWrite: false
         });
-        var woodPanelMaterial = new THREE.MeshStandardMaterial({
-            color: 0xffffff,
-            map: woodTexture,
+        var tintedGlassMaterial = new THREE.MeshPhysicalMaterial({
+            color: 0x1f343d,
+            transparent: true,
+            opacity: 0.7,
             metalness: 0.05,
-            roughness: 0.62
+            roughness: 0.24,
+            clearcoat: 0.65,
+            clearcoatRoughness: 0.18,
+            side: THREE.DoubleSide,
+            depthWrite: false
         });
         var interiorMaterial = new THREE.MeshStandardMaterial({
             color: 0xaab3ba,
@@ -1599,8 +1570,8 @@ $('.product-card__slider').each(function () {
             if (finish === "frosted") {
                 return frostedGlassMaterial;
             }
-            if (finish === "wood") {
-                return woodPanelMaterial;
+            if (finish === "tinted") {
+                return tintedGlassMaterial;
             }
             return clearGlassMaterial;
         }
@@ -1661,10 +1632,10 @@ $('.product-card__slider').each(function () {
                 addBox([post, beam, depth], [sideX, y, 0], frameMaterial);
             });
 
-            addBox([width - 0.35, height - 0.45, 0.05], [0, height / 2, -depth / 2], panelMaterial, booth, finish !== "glass");
-            addBox([0.05, height - 0.45, depth - 0.35], [-width / 2, height / 2, 0], panelMaterial, booth, finish !== "glass");
-            addBox([0.05, height - 0.45, depth - 0.35], [width / 2, height / 2, 0], panelMaterial, booth, finish !== "glass");
-            addBox([fixedWidth, height - 0.45, 0.05], [fixedCenter, height / 2, depth / 2], panelMaterial, booth, finish !== "glass");
+            addBox([width - 0.35, height - 0.45, 0.05], [0, height / 2, -depth / 2], panelMaterial, booth, false);
+            addBox([0.05, height - 0.45, depth - 0.35], [-width / 2, height / 2, 0], panelMaterial, booth, false);
+            addBox([0.05, height - 0.45, depth - 0.35], [width / 2, height / 2, 0], panelMaterial, booth, false);
+            addBox([fixedWidth, height - 0.45, 0.05], [fixedCenter, height / 2, depth / 2], panelMaterial, booth, false);
 
             var door = new THREE.Group();
             door.position.set(doorCenter, 0, depth / 2);
